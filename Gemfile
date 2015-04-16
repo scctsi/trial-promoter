@@ -6,7 +6,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
@@ -18,6 +17,8 @@ gem 'formtastic'
 gem 'roo'
 gem 'oauth2'
 gem 'httparty'
+
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,8 +45,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'webmock'
   gem 'vcr'
+  gem 'webmock'
   gem 'factory_girl_rails'
 end
 

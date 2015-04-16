@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'rspec', cmd: 'CODECLIMATE_REPO_TOKEN=b2cb51d814f4c0017c017b27a624503becdf029f9011f055f6b9b3149cf5b59d bin/spring rspec spec' do
+guard 'rspec', cmd: 'CODECLIMATE_REPO_TOKEN=e88cf94755dde1803c584ee61cd0c8c915376e7b6416e95a2bdca0b8b58f2605 bin/spring rspec spec' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
