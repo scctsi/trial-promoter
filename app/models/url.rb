@@ -1,4 +1,6 @@
 class Url < ActiveRecord::Base
+  has_one :utm_parameter_set
+
   validates :value, presence: true
 
   def value=(value)

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Url do
   it { is_expected.to validate_presence_of :value }
+  it { is_expected.to have_one :utm_parameter_set }
 
   it 'always users PostRank::URI.clean to set a clean value' do
     allow(PostRank::URI).to receive(:clean).and_return('cleaned_url')
