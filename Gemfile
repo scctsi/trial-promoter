@@ -19,6 +19,8 @@ gem 'roo'
 gem 'oauth2'
 gem 'httparty'
 gem 'postrank-uri'
+gem 'bitly'
+gem 'seed-fu'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

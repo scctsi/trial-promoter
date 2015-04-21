@@ -12,4 +12,8 @@ class Url < ActiveRecord::Base
 
     write_attribute(:value, PostRank::URI.clean(value))
   end
+
+  def tracking_url
+    read_attribute(:value) + '?' + utm_parameter_set.tracking_fragment
+  end
 end
