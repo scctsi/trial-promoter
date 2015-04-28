@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MessageTemplate do
   it { is_expected.to validate_presence_of :content }
+  it { is_expected.to belong_to :platform }
 
   it 'is taggable on categories' do
     message_template = MessageTemplate.new(content: 'Content')

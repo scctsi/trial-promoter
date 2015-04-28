@@ -11,15 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417220944) do
+ActiveRecord::Schema.define(version: 20150428215546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "message_templates", force: :cascade do |t|
     t.text     "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "platform_id"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string   "name"
+    t.string   "medium"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "social_profiles", force: :cascade do |t|
+    t.string   "network_name"
+    t.string   "username"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "taggings", force: :cascade do |t|

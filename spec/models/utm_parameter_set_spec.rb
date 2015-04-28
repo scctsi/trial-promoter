@@ -4,7 +4,6 @@ RSpec.describe UtmParameterSet do
   it { is_expected.to validate_presence_of :source }
   it { is_expected.to validate_presence_of :medium }
   it { is_expected.to validate_presence_of :campaign }
-  it { is_expected.to belong_to :url }
 
   before do
     @utm_parameter_set = FactoryGirl.build(:utm_parameter_set)
