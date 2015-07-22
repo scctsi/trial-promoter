@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722175614) do
+ActiveRecord::Schema.define(version: 20150722225039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clinical_trials", force: :cascade do |t|
-    t.string   "title",               limit: 1000
+    t.string   "title",                limit: 1000
     t.string   "pi_name"
-    t.string   "url",                 limit: 2000
+    t.string   "url",                  limit: 2000
     t.string   "nct_id"
     t.string   "initial_database_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "randomization_status"
   end
 
   create_table "message_templates", force: :cascade do |t|
