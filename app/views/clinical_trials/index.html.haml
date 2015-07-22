@@ -1,0 +1,97 @@
+.ui.top.attached.tabular.menu
+  %a.active.item{ "data-tab" => 'all-trials' }
+    All Trials
+  %a.item{ "data-tab" => 'randomized-trials' }
+    Randomized Trials
+  %a.item{ "data-tab" => 'control-group-trials' }
+    Control Group Trials
+  %a.item{ "data-tab" => 'unused-trials' }
+    Unused Trials
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'all-trials'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th.single.line
+          ID
+        %th
+          NCT ID
+        %th.single.line
+          PI Name
+        %th.single.line
+          Title
+        %th.single.line
+          URL
+    %tbody
+      - @clinical_trials.each do |clinical_trial|
+        %tr
+          %td= clinical_trial.id.to_s
+          %td= clinical_trial.nct_id
+          %td= clinical_trial.pi_name
+          %td= clinical_trial.title
+          %td= clinical_trial.url
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'randomized-trials'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th.single.line
+          ID
+        %th
+          NCT ID
+        %th.single.line
+          PI Name
+        %th.single.line
+          Title
+        %th.single.line
+          URL
+    %tbody
+      - @clinical_trials.each do |clinical_trial|
+        %tr
+          %td= clinical_trial.id.to_s
+          %td= clinical_trial.nct_id
+          %td= clinical_trial.pi_name
+          %td= clinical_trial.title
+          %td= clinical_trial.url
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'control-group-trials'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th.single.line
+          ID
+        %th
+          NCT ID
+        %th.single.line
+          PI Name
+        %th.single.line
+          Title
+        %th.single.line
+          URL
+    %tbody
+      - @clinical_trials.each do |clinical_trial|
+        %tr
+          %td= clinical_trial.id.to_s
+          %td= clinical_trial.nct_id
+          %td= clinical_trial.pi_name
+          %td= clinical_trial.title
+          %td= clinical_trial.url
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'unused-trials'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th.single.line
+          ID
+        %th
+          NCT ID
+        %th.single.line
+          PI Name
+        %th.single.line
+          Title
+        %th.single.line
+          URL
+    %tbody
+      - @clinical_trials.each do |clinical_trial|
+        %tr
+          %td= clinical_trial.id.to_s
+          %td= clinical_trial.nct_id
+          %td= clinical_trial.pi_name
+          %td= clinical_trial.title
+          %td= clinical_trial.url
