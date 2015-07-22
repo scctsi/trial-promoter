@@ -1,12 +1,20 @@
 .ui.top.attached.tabular.menu
   %a.active.item{ "data-tab" => 'all-trials' }
     All Trials
+    %span.ui.black.label
+      #{ @clinical_trials.count.to_s }
   %a.item{ "data-tab" => 'randomized-trials' }
     Randomized Trials
+    %span.ui.green.label
+      46
   %a.item{ "data-tab" => 'control-group-trials' }
     Control Group Trials
+    %span.ui.blue.label
+      46
   %a.item{ "data-tab" => 'unused-trials' }
     Unused Trials
+    %span.ui.grey.label
+      7
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'all-trials'}
   %table.ui.celled.padded.table
     %thead
