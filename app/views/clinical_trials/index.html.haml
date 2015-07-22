@@ -2,19 +2,19 @@
   %a.active.item{ "data-tab" => 'all-trials' }
     All Trials
     %span.ui.black.label
-      #{ @clinical_trials.count.to_s }
+      #{ @all_trials.count.to_s }
   %a.item{ "data-tab" => 'randomized-trials' }
     Randomized Trials
     %span.ui.green.label
-      46
+      #{ @selected_trials.count.to_s }
   %a.item{ "data-tab" => 'control-group-trials' }
     Control Group Trials
     %span.ui.blue.label
-      46
+      #{ @control_trials.count.to_s }
   %a.item{ "data-tab" => 'unused-trials' }
     Unused Trials
     %span.ui.grey.label
-      7
+      #{ @unused_trials.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'all-trials'}
   %table.ui.celled.padded.table
     %thead
@@ -30,7 +30,7 @@
         %th.single.line
           URL
     %tbody
-      - @clinical_trials.each do |clinical_trial|
+      - @all_trials.each do |clinical_trial|
         %tr
           %td= clinical_trial.id.to_s
           %td= clinical_trial.nct_id
@@ -52,7 +52,7 @@
         %th.single.line
           URL
     %tbody
-      - @clinical_trials.each do |clinical_trial|
+      - @selected_trials.each do |clinical_trial|
         %tr
           %td= clinical_trial.id.to_s
           %td= clinical_trial.nct_id
@@ -74,7 +74,7 @@
         %th.single.line
           URL
     %tbody
-      - @clinical_trials.each do |clinical_trial|
+      - @control_trials.each do |clinical_trial|
         %tr
           %td= clinical_trial.id.to_s
           %td= clinical_trial.nct_id
@@ -96,7 +96,7 @@
         %th.single.line
           URL
     %tbody
-      - @clinical_trials.each do |clinical_trial|
+      - @unused_trials.each do |clinical_trial|
         %tr
           %td= clinical_trial.id.to_s
           %td= clinical_trial.nct_id
