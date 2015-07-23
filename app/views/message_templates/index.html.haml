@@ -13,37 +13,37 @@
   %table.ui.celled.padded.table
     %thead
       %tr
-        %th.single.line
+        %th
           Database ID
         %th
           ID (Assigned by Katja)
-        %th.single.line
+        %th
           Type
-        %th.single.line
+        %th
           Content
     %tbody
-      - @twitter_message_templates.each do |clinical_trial|
+      - @twitter_message_templates.each do |twitter_message_template|
         %tr
-          %td= clinical_trial.id.to_s
-          %td= clinical_trial.initial_id
-          %td= clinical_trial.message_type
-          %td= clinical_trial.content
+          %td= twitter_message_template.id.to_s
+          %td= twitter_message_template.initial_id
+          %td= twitter_message_template.message_type
+          %td= twitter_message_template.content
 .ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-message-templates'}
   %table.ui.celled.padded.table
     %thead
       %tr
-        %th.single.line
+        %th
           Database ID
         %th
           ID (Assigned by Katja)
-        %th.single.line
+        %th
           Type
-        %th.single.line
+        %th
           Content
     %tbody
-      - @facebook_message_templates.each do |clinical_trial|
+      - @facebook_message_templates.each do |facebook_message_template|
         %tr
-          %td= clinical_trial.id.to_s
-          %td= clinical_trial.initial_id
-          %td= clinical_trial.message_type
-          %td= clinical_trial.content
+          %td= facebook_message_template.id.to_s
+          %td= facebook_message_template.initial_id
+          %td= facebook_message_template.message_type
+          %td= facebook_message_template.content

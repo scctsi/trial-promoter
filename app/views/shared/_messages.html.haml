@@ -1,0 +1,26 @@
+%table.ui.celled.padded.table
+  %thead
+    %tr
+      %th
+        Database ID
+      %th
+        Content
+      %th
+        Message Type
+      %th
+        Clinical Trial
+      %th
+        Published At
+      %th
+        Length
+  %tbody
+    - messages.each do |message|
+      %tr
+        %td= message.id.to_s
+        %td= message.content
+        %td= message.message_template.message_type
+        %td
+          %a{ :href => message.clinical_trial.url, :target => "_blank"}
+            View Trial
+        %td= message.published_at.strftime('%b %e, %Y')
+        %td= message.content.length
