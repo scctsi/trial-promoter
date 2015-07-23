@@ -21,7 +21,7 @@ class Message < ActiveRecord::Base
     end
     url_shortener = UrlShortener.new
 
-    if Rails.env != 'production' || Rails.env != 'staging'
+    if Rails.env != 'production' && Rails.env != 'staging'
       WebMock.allow_net_connect!
     end
 
@@ -64,7 +64,7 @@ class Message < ActiveRecord::Base
       start_date = start_date + 1
     end
 
-    if Rails.env != 'production' || Rails.env != 'staging'
+    if Rails.env != 'production' && Rails.env != 'staging'
       WebMock.disable_net_connect!
     end
   end
