@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   # Clinical Trials
   get 'clinical_trials' => 'clinical_trials#index'
 
+  # Message Templates
+  get 'message_templates' => 'message_templates#index'
+
+  # Messages
+  get 'messages' => 'messages#index'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

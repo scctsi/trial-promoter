@@ -1,10 +1,10 @@
 # DO NOT MODIFY THIS FILE, it was auto-generated.
 #
-# Date: 2015-07-22 19:19:05 +0000
+# Date: 2015-07-23 12:29:16 -0700
 # Seeding ClinicalTrial
 # Written with the command:
 #
-#   create_seed_file.rb 
+#   create_seed_files.rb 
 #
 ClinicalTrial.seed(:nct_id,
   {:initial_database_id=>"336", :nct_id=>"NCT01935934", :pi_name=>"Neesha Dhani", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/336", :title=>"A Phase 2 Study of XL184 (Cabozantinib) in Recurrent or Metastatic Endometrial Cancer"},

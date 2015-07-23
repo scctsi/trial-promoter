@@ -1,0 +1,49 @@
+%h1.ui.block.header
+  Messages
+.ui.top.attached.tabular.menu
+  %a.active.item{ "data-tab" => 'twitter-message-templates' }
+    Twitter Message Templates
+    %span.ui.black.label
+      #{ @twitter_message_templates.count.to_s }
+  %a.item{ "data-tab" => 'facebook-message-templates' }
+    Facebook Message Templates
+    %span.ui.black.label
+      #{ @facebook_message_templates.count.to_s }
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-message-templates'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th.single.line
+          Database ID
+        %th
+          ID (Assigned by Katja)
+        %th.single.line
+          Type
+        %th.single.line
+          Content
+    %tbody
+      - @twitter_message_templates.each do |clinical_trial|
+        %tr
+          %td= clinical_trial.id.to_s
+          %td= clinical_trial.initial_id
+          %td= clinical_trial.message_type
+          %td= clinical_trial.content
+.ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-message-templates'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th.single.line
+          Database ID
+        %th
+          ID (Assigned by Katja)
+        %th.single.line
+          Type
+        %th.single.line
+          Content
+    %tbody
+      - @facebook_message_templates.each do |clinical_trial|
+        %tr
+          %td= clinical_trial.id.to_s
+          %td= clinical_trial.initial_id
+          %td= clinical_trial.message_type
+          %td= clinical_trial.content

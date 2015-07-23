@@ -1,7 +1,6 @@
 class MessageTemplate < ActiveRecord::Base
-  acts_as_taggable_on :categories, :platforms
-
+  validates :initial_message_id, presence: true
   validates :content, presence: true
-
-  belongs_to :platform
+  validates :platform, presence: true
+  validates :message_type, presence: true
 end
