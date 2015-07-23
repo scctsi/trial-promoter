@@ -6,6 +6,8 @@ RSpec.describe MessageTemplate do
   it { is_expected.to validate_presence_of :platform }
   it { is_expected.to validate_presence_of :message_type }
 
+  it { is_expected.to have_many :messages }
+
   # it { is_expected.to validate_presence_of :content }
   # it { is_expected.to belong_to :platform }
   # it { is_expected.to validate_presence_of}

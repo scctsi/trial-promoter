@@ -6,4 +6,6 @@ describe ClinicalTrial do
   it { is_expected.to validate_presence_of(:url) }
   it { is_expected.to validate_presence_of(:nct_id) }
   it { is_expected.to validate_presence_of(:initial_database_id) }
+
+  it { is_expected.to have_many :messages }
 end

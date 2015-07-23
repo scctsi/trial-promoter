@@ -3,4 +3,6 @@ class MessageTemplate < ActiveRecord::Base
   validates :content, presence: true
   validates :platform, presence: true
   validates :message_type, presence: true
+
+  has_many :messages
 end

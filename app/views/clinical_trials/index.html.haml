@@ -18,90 +18,10 @@
     %span.ui.grey.label
       #{ @unused_trials.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'all-trials'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th.single.line
-          ID
-        %th
-          NCT ID
-        %th.single.line
-          PI Name
-        %th.single.line
-          Title
-        %th.single.line
-          URL
-    %tbody
-      - @all_trials.each do |clinical_trial|
-        %tr
-          %td= clinical_trial.id.to_s
-          %td= clinical_trial.nct_id
-          %td= clinical_trial.pi_name
-          %td= clinical_trial.title
-          %td= clinical_trial.url
+  = render :partial => 'shared/clinical_trials', :locals => { :clinical_trials => @all_trials }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'randomized-trials'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th.single.line
-          ID
-        %th
-          NCT ID
-        %th.single.line
-          PI Name
-        %th.single.line
-          Title
-        %th.single.line
-          URL
-    %tbody
-      - @selected_trials.each do |clinical_trial|
-        %tr
-          %td= clinical_trial.id.to_s
-          %td= clinical_trial.nct_id
-          %td= clinical_trial.pi_name
-          %td= clinical_trial.title
-          %td= clinical_trial.url
+  = render :partial => 'shared/clinical_trials', :locals => { :clinical_trials => @selected_trials }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'control-group-trials'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th.single.line
-          ID
-        %th
-          NCT ID
-        %th.single.line
-          PI Name
-        %th.single.line
-          Title
-        %th.single.line
-          URL
-    %tbody
-      - @control_trials.each do |clinical_trial|
-        %tr
-          %td= clinical_trial.id.to_s
-          %td= clinical_trial.nct_id
-          %td= clinical_trial.pi_name
-          %td= clinical_trial.title
-          %td= clinical_trial.url
+  = render :partial => 'shared/clinical_trials', :locals => { :clinical_trials => @control_trials }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'unused-trials'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th.single.line
-          ID
-        %th
-          NCT ID
-        %th.single.line
-          PI Name
-        %th.single.line
-          Title
-        %th.single.line
-          URL
-    %tbody
-      - @unused_trials.each do |clinical_trial|
-        %tr
-          %td= clinical_trial.id.to_s
-          %td= clinical_trial.nct_id
-          %td= clinical_trial.pi_name
-          %td= clinical_trial.title
-          %td= clinical_trial.url
+  = render :partial => 'shared/clinical_trials', :locals => { :clinical_trials => @unused_trials }

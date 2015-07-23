@@ -5,6 +5,8 @@ class ClinicalTrial < ActiveRecord::Base
   validates :title, :presence => true
   validates :url, :presence => true
 
+  has_many :messages
+
   def ==(other_trial)
     # TODO: Unit test
     self.nct_id == other_trial.nct_id
