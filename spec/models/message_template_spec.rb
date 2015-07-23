@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe MessageTemplate do
-  it { is_expected_to validate_presence_of :initial_id }
-  it { is_expected_to validate_presence_of :content }
-  it { is_expected_to validate_presence_of :platform }
-  it { is_expected_to validate_presence_of :message_type }
+  it { is_expected.to validate_presence_of :initial_id }
+  it { is_expected.to validate_presence_of :content }
+  it { is_expected.to validate_presence_of :platform }
+  it { is_expected.to validate_presence_of :message_type }
 
   # it { is_expected.to validate_presence_of :content }
   # it { is_expected.to belong_to :platform }
