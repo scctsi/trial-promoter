@@ -21,7 +21,9 @@ class Message < ActiveRecord::Base
     end
     url_shortener = UrlShortener.new
 
-    WebMock.allow_net_connect!
+    if Rails.env != 'production' || Rails.env != 'staging'
+      WebMock.allow_net_connect!
+    end
 
     clinical_trials.each do |clinical_trial|
       # Organic message + image + awareness message template
@@ -62,6 +64,8 @@ class Message < ActiveRecord::Base
       start_date = start_date + 1
     end
 
-    WebMock.disable_net_connect!
+    if Rails.env != 'production' || Rails.env != 'staging'
+      WebMock.disable_net_connect!
+    end
   end
 end
