@@ -10,7 +10,7 @@
       %th
         Clinical Trial
       %th
-        Published At
+        Scheduled At
       %th
         Length
   %tbody
@@ -22,5 +22,5 @@
         %td
           %a{ :href => message.clinical_trial.url, :target => "_blank"}
             View Trial
-        %td= message.published_at.strftime('%b %e, %Y')
+        %td= message.scheduled_at.strftime('%b %e, %Y')
         %td= message.content.length

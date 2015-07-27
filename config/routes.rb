@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'message_templates' => 'message_templates#index'
 
   # Messages
-  get 'messages' => 'messages#index'
+  get 'organic_messages' => 'organic_messages#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

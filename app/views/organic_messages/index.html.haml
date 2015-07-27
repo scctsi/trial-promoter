@@ -1,16 +1,16 @@
 %h1.ui.block.header
-  OrganicMessages
+  Organic Messages
 .ui.top.attached.tabular.menu
-  %a.active.item{ "data-tab" => 'twitter-organic-messages' }
+  %a.active.item{ "data-tab" => 'twitter-organic-organic_messages' }
     Twitter Organic Messages
     %span.ui.black.label
       #{ @twitter_organic_messages.count.to_s }
-  %a.item{ "data-tab" => 'facebook-organic-messages' }
+  %a.item{ "data-tab" => 'facebook-organic-organic_messages' }
     Facebook Organic Messages
     %span.ui.black.label
       #{ @facebook_organic_messages.count.to_s }
-.ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-organic-messages'}
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-organic-organic_messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @twitter_organic_messages }
-.ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-organic-messages'}
+.ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-organic-organic_messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @facebook_organic_messages }
 

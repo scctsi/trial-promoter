@@ -556,7 +556,7 @@ $.fn.form = function(parameters) {
             }
           },
           errors: function(errors) {
-            module.debug('Adding form error messages', errors);
+            module.debug('Adding form error organic_messages', errors);
             $message
               .html( settings.templates.error(errors) )
             ;

@@ -3311,7 +3311,7 @@ $.fn.dropdown.settings.templates = {
   },
 
 
-  // generates messages like "No results"
+  // generates organic_messages like "No results"
   message: function(message) {
     return message;
   },

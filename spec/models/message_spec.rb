@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe Message do
   it { is_expected.to validate_presence_of(:content) }
+  it { is_expected.to validate_presence_of(:campaign) }
+  it { is_expected.to validate_presence_of(:medium) }
 
   # Source - Platform
   # Medium - Ad, Organic
