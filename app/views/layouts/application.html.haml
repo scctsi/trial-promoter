@@ -10,7 +10,7 @@
   %body
     .ui.inverted.menu.main
       .header.item
-        Campaign: ENV['CAMPAIGN']
+        Campaign: #{ENV['CAMPAIGN']}
       %a.item{ :href => clinical_trials_path }
         Clinical Trials
       %a.item{ :href => message_templates_path }
