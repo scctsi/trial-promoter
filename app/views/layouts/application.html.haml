@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="semantic/dist/semantic.min.js"></script>
   %body
-    .ui.inverted.menu
+    .ui.inverted.menu.main
       .header.item
         Trial Promoter: #{Rails.env.titlecase}
       %a.item{ :href => clinical_trials_path }
@@ -17,7 +17,7 @@
         Message Templates
       %a.item{ :href => organic_messages_path }
         Organic Messages
-      %a.item
+      %a.item{ :href => paid_messages_path }
         Paid Messages
       %a.item
         Collected Data

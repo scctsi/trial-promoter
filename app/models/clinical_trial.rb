@@ -1,4 +1,6 @@
 class ClinicalTrial < ActiveRecord::Base
+  serialize :hashtags
+
   validates :initial_database_id, :presence => true
   validates :nct_id, :presence => true
   validates :pi_name, :presence => true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724204655) do
+ActiveRecord::Schema.define(version: 20150727190415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150724204655) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "randomization_status"
+    t.text     "hashtags"
   end
 
   create_table "message_templates", force: :cascade do |t|

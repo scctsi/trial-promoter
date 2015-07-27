@@ -8,9 +8,14 @@ class Message < ActiveRecord::Base
 
   def self.generate(start_date)
     # TODO: Unit test
-
-
     Message.destroy_all
+
+    Bitly.use_api_version_3
+    Bitly.configure do |config|
+      config.api_version = 3
+      config.access_token = '21c4a40d1746ea7d0815aa33a9a3137c50c389e8'
+    end
+
     scheduled_at = start_date
     clinical_trials = ClinicalTrial.where(:randomization_status => 'Selected')
     twitter_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'twitter').to_a
@@ -18,12 +23,6 @@ class Message < ActiveRecord::Base
     facebook_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'facebook').to_a
     facebook_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'facebook').to_a
     random = Random.new
-    Bitly.use_api_version_3
-    Bitly.configure do |config|
-      config.api_version = 3
-      config.access_token = '21c4a40d1746ea7d0815aa33a9a3137c50c389e8'
-    end
-    url_shortener = UrlShortener.new
 
     if Rails.env != 'production' && Rails.env != 'staging'
       WebMock.allow_net_connect!
@@ -64,6 +63,9 @@ class Message < ActiveRecord::Base
       create_message(clinical_trial, facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
       start_date = start_date + 1
+
+      # Sleep so that the system does not hit Bitly's API limits
+      sleep 2.5
     end
 
     if Rails.env != 'production' && Rails.env != 'staging'
@@ -71,12 +73,14 @@ class Message < ActiveRecord::Base
     end
   end
 
-  def create_message(clinical_trial, message_template, scheduled_at, medium )
+  def self.create_message(clinical_trial, message_template, scheduled_at, medium )
+    url_shortener = UrlShortener.new
+
     campaign = 'trial-promoter-development'
-    if Rails.env == 'staging'
+    if Rails.env.staging?
       campaign = 'trial-promoter-staging'
     end
-    if Rails.env == 'production'
+    if Rails.env.production?
       campaign = 'trial-promoter'
     end
 
@@ -88,7 +92,8 @@ class Message < ActiveRecord::Base
     message.campaign = campaign
     tracking_url = TrackingUrl.new(message).value(medium, campaign)
     message.tracking_url = tracking_url
-    message.content = message.message_template.content.gsub('<%= message[:url] %>', url_shortener.shorten(tracking_url))
+    message_template_content = message.message_template.content
+    message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(tracking_url)).gsub('<%= message[:disease_hashtag] %>', clinical_trial.hashtags[0])
     message.save
   end
 end
