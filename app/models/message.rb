@@ -24,7 +24,7 @@ class Message < ActiveRecord::Base
     facebook_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'facebook').to_a
     random = Random.new
 
-    if Rails.env != 'production' && Rails.env != 'staging'
+    if !Rails.env.production?
       WebMock.allow_net_connect!
     end
 
@@ -62,13 +62,13 @@ class Message < ActiveRecord::Base
       # Recruiting
       create_message(clinical_trial, facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
-      start_date = start_date + 1
+      scheduled_at = scheduled_at + 1
 
       # Sleep so that the system does not hit Bitly's API limits
       sleep 2.5
     end
 
-    if Rails.env != 'production' && Rails.env != 'staging'
+    if !Rails.env.production?
       WebMock.disable_net_connect!
     end
   end
@@ -77,11 +77,8 @@ class Message < ActiveRecord::Base
     url_shortener = UrlShortener.new
 
     campaign = 'trial-promoter-development'
-    if Rails.env.staging?
-      campaign = 'trial-promoter-staging'
-    end
-    if Rails.env.production?
-      campaign = 'trial-promoter'
+    if !ENV['CAMPAIGN'].blank?
+      campaign = ENV['CAMPAIGN']
     end
 
     message = Message.new

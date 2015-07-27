@@ -10,7 +10,7 @@
   %body
     .ui.inverted.menu.main
       .header.item
-        Trial Promoter: #{Rails.env.titlecase}
+        Campaign: ENV['CAMPAIGN']
       %a.item{ :href => clinical_trials_path }
         Clinical Trials
       %a.item{ :href => message_templates_path }
@@ -22,3 +22,5 @@
       %a.item
         Collected Data
     = yield
+
+
