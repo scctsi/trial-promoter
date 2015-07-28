@@ -65,7 +65,7 @@ class Message < ActiveRecord::Base
       scheduled_at = scheduled_at + 1
 
       # Sleep so that the system does not hit Bitly's API limits
-      sleep 2.5
+      sleep 10
     end
 
     if !Rails.env.production?
@@ -91,6 +91,11 @@ class Message < ActiveRecord::Base
     message.tracking_url = tracking_url
     message_template_content = message.message_template.content
     message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(tracking_url)).gsub('<%= message[:disease_hashtag] %>', clinical_trial.hashtags[0])
-    message.save
+    if message.message_template.platform == 'twitter' && message.content.length > 140
+      return false
+    else
+      message.save
+      return true
+    end
   end
 end

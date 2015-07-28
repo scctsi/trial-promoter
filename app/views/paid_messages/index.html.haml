@@ -1,14 +1,20 @@
 %h1.ui.block.header
-  Organic Messages
+  Paid Messages
 .ui.top.attached.tabular.menu
   %a.active.item{ "data-tab" => 'twitter-paid-messages' }
-    Twitter Organic Messages
-    %span.ui.black.label
-      #{ @twitter_paid_messages.count.to_s }
+    %h3.ui.header
+      %i.blue.twitter.square.icon
+      .content
+        Twitter Paid Messages
+        %span.ui.black.label
+          #{ @twitter_paid_messages.count.to_s }
   %a.item{ "data-tab" => 'facebook-paid-messages' }
-    Facebook Organic Messages
-    %span.ui.black.label
-      #{ @facebook_paid_messages.count.to_s }
+    %h3.ui.header
+      %i.blue.facebook.square.icon
+      .content
+        Facebook Paid Messages
+        %span.ui.black.label
+          #{ @facebook_paid_messages.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-paid-messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @twitter_paid_messages }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-paid-messages'}
