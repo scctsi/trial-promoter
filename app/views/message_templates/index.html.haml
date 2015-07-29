@@ -2,13 +2,26 @@
   Message Templates
 .ui.top.attached.tabular.menu
   %a.active.item{ "data-tab" => 'twitter-message-templates' }
-    Twitter Message Templates
-    %span.ui.black.label
-      #{ @twitter_message_templates.count.to_s }
+    %h3.ui.header
+      %i.blue.twitter.square.icon
+      .content
+        Twitter
+        %span.ui.black.label
+          #{ @twitter_message_templates.count.to_s }
   %a.item{ "data-tab" => 'facebook-message-templates' }
-    Facebook Message Templates
-    %span.ui.black.label
-      #{ @facebook_message_templates.count.to_s }
+    %h3.ui.header
+      %i.blue.facebook.square.icon
+      .content
+        Facebook
+        %span.ui.black.label
+          #{ @facebook_message_templates.count.to_s }
+  %a.item{ "data-tab" => 'google-message-templates' }
+    %h3.ui.header
+      %i.red.google.square.icon
+      .content
+        Google
+        %span.ui.black.label
+          #{ @google_message_templates.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-message-templates'}
   %table.ui.celled.padded.table
     %thead
@@ -47,3 +60,27 @@
           %td= facebook_message_template.initial_id
           %td= facebook_message_template.message_type
           %td= facebook_message_template.content
+.ui.bottom.attached.tab.segment{ "data-tab" => 'google-message-templates'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th
+          Database ID
+        %th
+          ID (Assigned by Katja)
+        %th
+          Type
+        %th
+          Content
+    %tbody
+      - @google_message_templates.each do |google_message_template|
+        %tr
+          %td= google_message_template.id.to_s
+          %td= google_message_template.initial_id
+          %td= google_message_template.message_type
+          %td
+            %ul
+              %li= google_message_template.content[0]
+              %li http://clinicaltrials.keckmedicine.org/
+              %li= google_message_template.content[1]
+              %li= google_message_template.content[2]

@@ -4,7 +4,7 @@ require 'csv'
 SeedFu::Writer.write('../db/fixtures/clinical_trials.rb', :class_name => 'ClinicalTrial', :constraints => [:nct_id]) do |writer|
   CSV.foreach("clinical_trials.csv", { :headers=>:first_row }) do |row|
     hashtags = row[21].split(",").collect{|x| x.strip}
-    writer.add(:initial_database_id => row[0], :nct_id => row[1], :pi_name => "#{row[6]} #{row[7]}", :url => "http://clinicaltrials.keckmedicine.org/clinicaltrials/#{row[0]}", :title => row[9], :hashtags => hashtags)
+    writer.add(:initial_database_id => row[0], :nct_id => row[1], :pi_name => "#{row[6]} #{row[7]}", :url => "http://clinicaltrials.keckmedicine.org/clinicaltrials/#{row[0]}", :title => row[9], :hashtags => hashtags, :disease => row[22])
   end
 end
 
@@ -21,10 +21,8 @@ SeedFu::Writer.write('../db/fixtures/twitter_text_templates.rb', :class_name => 
   end
 end
 
-index = 0
 SeedFu::Writer.write('../db/fixtures/facebook_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
   CSV.foreach("facebook_text_templates.csv", { :headers=>:first_row }) do |row|
-    p "Index: #{index}"
     message_type = 'awareness' if row[0].to_i <= 30
     message_type = 'recruiting' if row[0].to_i > 30
 
@@ -33,6 +31,17 @@ SeedFu::Writer.write('../db/fixtures/facebook_text_templates.rb', :class_name =>
     content.gsub! "http://bit.ly/1234567", "<%= message[:url] %>"
 
     writer.add(:initial_id => row[0], :platform => row[1].downcase, :message_type => message_type, :content => content)
-    index += 1
+  end
+end
+
+SeedFu::Writer.write('../db/fixtures/google_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
+  CSV.foreach("google_text_templates.csv", { :headers=>:first_row }) do |row|
+    message_type = 'awareness' if row[0].to_i <= 30
+    message_type = 'recruiting' if row[0].to_i > 30
+
+    content = [row[1], row[2], row[3]]
+    content.each {|content_line| content_line.gsub! /disease/i, "<%= message[:disease] %>"}
+
+    writer.add(:initial_id => row[0], :platform => 'google', :message_type => message_type, :content => content)
   end
 end

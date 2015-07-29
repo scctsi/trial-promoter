@@ -1,4 +1,4 @@
-id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name,pi_email,official_title,detailed_description,irb_number,study_contact_first_name,study_contact_last_name,study_contact_email,study_type,study_phase,criteria,layman_terms,recruiting_status,user_defined_layman_terms,hashtags
+id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name,pi_email,official_title,detailed_description,irb_number,study_contact_first_name,study_contact_last_name,study_contact_email,study_type,study_phase,criteria,layman_terms,recruiting_status,user_defined_layman_terms,hashtags,disease
 336,NCT01935934,,,,"Adenocarcinoma
                     Adenocarcinoma, Clear Cell
                     Carcinoma
@@ -291,7 +291,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
              the mother is treated with XL184
 
           -  Known human immunodeficiency virus (HIV)-positive patients on combination
-             antiretroviral therapy are ineligible","Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers",Recruiting,,#GynCSM
+             antiretroviral therapy are ineligible","Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers",Recruiting,,#GynCSM,Endometrial Cancer
 76,NCT01545076,,,,"Polyneuropathies
                     Polyradiculoneuropathy
                     Polyradiculoneuropathy, Chronic Inflammatory Demyelinating
@@ -338,7 +338,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
           -  History of thrombotic episodes within the 2 years prior to enrolment
 
           -  Known allergic or other severe reactions to blood products including intolerability
-             to previous IVIG",,Recruiting,"{""Chronic Inflammatory Demyelinating Polyneuropathy (CIDP)""}",#CIDP
+             to previous IVIG",,Recruiting,"{""Chronic Inflammatory Demyelinating Polyneuropathy (CIDP)""}",#CIDP,CIDP
 34,NCT01729286,,,,"Diabetic Foot
                     Foot Ulcer
                     Ulcer
@@ -372,7 +372,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
 
           -  Suspected or confirmed signs/symptoms of wound infection
 
-          -  Hypersensitivity to bovine collagen","Diabetes,Diabetes,Diabetes,Diabetes,Diabetes",Recruiting,,#Diabetes
+          -  Hypersensitivity to bovine collagen","Diabetes,Diabetes,Diabetes,Diabetes,Diabetes",Recruiting,,#Diabetes,Diabetes
 310,NCT01575548,,,,"Carcinoma
                     Carcinoma, Renal Cell
                     Adenocarcinoma
@@ -572,7 +572,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
           -  Patients must not have any history of other cancer within 3 years from time of
              randomization with the exception of basal cell skin cancer, squamous cell skin
              cancer, in situ cervical cancer, ductal or lobular carcinoma in situ of the breast,
-             or resected non-invasive (Ta) urothelial carcinoma","Kidney Cancer,Kidney Cancer,Bladder Cancer",Recruiting,,"#KidneyCancer, #KidneyDisease, #kcsm"
+             or resected non-invasive (Ta) urothelial carcinoma","Kidney Cancer,Kidney Cancer,Bladder Cancer",Recruiting,,"#KidneyCancer, #KidneyDisease, #kcsm",Kidney Cancer
 23,NCT00695214,,,"Obstructive Sleep Apnea
                     Propofol
                     Sleep Endoscopy","Apnea
@@ -614,7 +614,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
           -  Allergy to propofol, soybean oil, egg lecithin or glycerol
 
           -  Other contraindication to use of propofol (decision of anesthesiologist or
-             otolaryngologist.)","Sleep Apnea,Sleep Apnea,Sleep Apnea",Recruiting,,"#SleepApnea, #SleepDisorder, #SleepHealth, #Narcolepsy "
+             otolaryngologist.)","Sleep Apnea,Sleep Apnea,Sleep Apnea",Recruiting,,"#SleepApnea, #SleepDisorder, #SleepHealth, #Narcolepsy ",Sleep Apnea
 190,NCT01196390,,,,"Adenocarcinoma
                     Esophageal Neoplasms
                     Carcinoma
@@ -843,7 +843,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
                   patients
 
           -  Pregnant or nursing women or women of childbearing potential and men who are sexually
-             active and not willing/able to use medically acceptable forms of contraception",Head and Neck Cancers,Recruiting,,"#HNCsm, #HeadNeckCancer"
+             active and not willing/able to use medically acceptable forms of contraception",Head and Neck Cancers,Recruiting,,"#HNCsm, #HeadNeckCancer",Throat Cancer
 304,NCT02057991,,,,"Anxiety Disorders
                     Colorectal Neoplasms
                     Depression
@@ -913,7 +913,7 @@ id,nct_id,sponsor,overall_contact,keywords,mesh_terms,pi_first_name,pi_last_name
 
           -  Deaf participants
 
-          -  Participants that do not read speak or understand either Spanish or English",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome"
+          -  Participants that do not read speak or understand either Spanish or English",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome",Colon Cancer
 277,NCT02300987,,,"Teratoma,
                     Germ Cell tumor,
                     incurable teratoma,
@@ -971,7 +971,7 @@ Primary endpoint will be progression free survival.",HS-14-00711,Poornima,Murali
              CYP3A inhibitors, strong CYP3A inducers, CYP3A substrates with a narrow therapeutic
              index, and medications with strong risk of QT prolongation
 
-        Other protocol-defined inclusion/exclusion criteria may apply.",,Recruiting,,#Teratoma
+        Other protocol-defined inclusion/exclusion criteria may apply.",,Recruiting,,#Teratoma,Teratoma
 107,NCT02150733,,,,"Liver Diseases
                     Digestive System Diseases",Anthony,El-Khoueiry,elkhouei@usc.edu,"0C-14-1 A Phase 1, Open-Label Study Assessing the Impact of Hepatic Impairment on the Pharmacokinetics of  Tivantinib in Subjects with Advanced Solid Tumors","Tivantinib is a targeted agent that has been shown to have anti-cancer activity when used alone or in combination with chemotherapy. Tivantinib is metabolized mostly through the liver and the FDA recommends that a pharmacokinetic (PK) study be conducted in patients with impaired liver function if the drug is eliminated through the liver. PK studies look at what the body does to the drug in terms of how it is absorbed, distributed, metabolized, and excreted. This open-label, Phase 1 study is being done with a primary objective to evaluate the impact of liver impairment on the PK of tivantinib in subjects with advanced solid tumors as compared to those with normal liver function. There will be 4 groups of liver function evaluated (Group 1  Control: normal, Group 2: mild impairment, Group 3: moderate impairment, and Group 4: severe impairment).
 
@@ -1065,7 +1065,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
          15. Administration or possibility of initiating or continuing any treatment with any
              known Cytochrome P450 3A4 (CYP3A4) and CYP2C19 enzyme and P-glycoprotein altering
              drugs (inducer or inhibitor) or non drug agents within 14 days prior to dosing and
-             during the primary objective phase",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer
+             during the primary objective phase",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer,Cancer
 120,NCT01804829,,,HCV Liver Transplant Immunoglobulin PCR SVR,"Carcinoma, Hepatocellular
                     Hepatitis
                     Hepatitis A
@@ -1144,7 +1144,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Active drug and/or alcohol abuse.
 
-          -  Inability or lacking motivation to participate in the study.","Liver Cancer,Chronic Liver Disease / Cirrhosis,Liver Cancer",Recruiting,,"#LiverDisease, #Transplant"
+          -  Inability or lacking motivation to participate in the study.","Liver Cancer,Chronic Liver Disease / Cirrhosis,Liver Cancer",Recruiting,,"#LiverDisease, #Transplant",Liver Disease
 148,NCT01756729,,,"Brain tumor
                     Treatment
                     Minimal toxicity
@@ -1300,7 +1300,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
          11. Unable to comply with the study follow-up schedule
 
-         12. Any serious co-morbidity which is expected to affect survival more adversely than GBM","Brain Cancer,Brain Cancer,Brain Cancer",Recruiting,,"#BrainCancer, #BrainTumor"
+         12. Any serious co-morbidity which is expected to affect survival more adversely than GBM","Brain Cancer,Brain Cancer,Brain Cancer",Recruiting,,"#BrainCancer, #BrainTumor",Brain Cancer
 29,NCT01576406,,,"crizotinib
                     xalkori
                     PF-02341066
@@ -1438,7 +1438,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
              study entry.
 
           -  Patients who had prior major gastrointestinal surgery removing part of
-             gastrointestinal tract and/or gall bladder.",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer
+             gastrointestinal tract and/or gall bladder.",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer,Cancer
 31,NCT01586910,,,,"Aortic Valve Stenosis
                     Cardiovascular Diseases
                     Heart Diseases
@@ -1577,7 +1577,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
           -  Marfan syndrome or other known connective tissue disease that would necessitate
              aortic root replacement/intervention;
 
-        Note: Additional anatomical and vascular exclusion criteria may apply.","Aortic Stenosis,Heart Valve Diseases",Recruiting,,"#HeartDisease, #HeartFailure, #HeartHealth, #CongestiveHeartFailure, #SCADheart"
+        Note: Additional anatomical and vascular exclusion criteria may apply.","Aortic Stenosis,Heart Valve Diseases",Recruiting,,"#HeartDisease, #HeartFailure, #HeartHealth, #CongestiveHeartFailure, #SCADheart",Heart Disease
 157,NCT01038778,,,,"Carcinoma, Renal Cell
                     Adenocarcinoma
                     Carcinoma
@@ -1716,7 +1716,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Anticipation of need for major surgical procedures during the course of the study
 
-          -  Left ventricular ejection function < 45%","AIDS / HIV,Kidney Cancer,Kidney Cancer,Bladder Cancer",Recruiting,,"#KidneyCancer, #KidneyDisease, #kcsm"
+          -  Left ventricular ejection function < 45%","AIDS / HIV,Kidney Cancer,Kidney Cancer,Bladder Cancer",Recruiting,,"#KidneyCancer, #KidneyDisease, #kcsm",Kidney Cancer
 65,NCT01719380,,,Open-label dose escalation; BRAF inhibitor; LGX818; PI3K inhibitor; BYL719; EGFR; cetuximab; metastatic colorectal cancer; KRAS; BRAF; V600,"Colorectal Neoplasms
                     Colonic Diseases
                     Digestive System Diseases
@@ -1756,7 +1756,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Clinically significant cardiac disease
 
-        Other protocol-defined inclusion/exclusion criteria may apply.",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome"
+        Other protocol-defined inclusion/exclusion criteria may apply.",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome",Colon Cancer
 100,NCT01986218,,,,,Anthony,El-Khoueiry,elkhouei@usc.edu,"0C-14-3: Phase I Ascending Multiple-Dose Study to Evaluate the Safety, Pharmacokinetics and Pharmacodynamics of BMS-986115 in Subjects with Advanced Solid Tumors",,HS-14-00324,,,,Drug,"Phase 1 - a new treatment that has not been tested, and researchers are looking for the best way to administer the treatment and how much can be given safely. Phase I trials are usually offered only to patients with advanced disease who would not be helped by other known treatments. Some patients are helped by these treatments, although in this early stage physicians don’t really know if the treatment will be effective.","For more information regarding BMS clinical trial participation, please visit
         www.BMSStudyConnect.com.
 
@@ -1816,7 +1816,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
           -  Inadequate renal function (Blood creatinine > 1.5 times the institutional ULN)
 
           -  Positive blood screen for hepatitis C antibody, hepatitis B surface antigen, or Human
-             Immunodeficiency Virus (HIV) -1, -2 antibody",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer
+             Immunodeficiency Virus (HIV) -1, -2 antibody",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer,Cancer
 124,NCT02122146,,,"ADC
                     PF-06664178
                     solid tumors
@@ -1847,7 +1847,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
           -  Major surgery, radiation therapy, or systemic anti-cancer therapy within 4 weeks of
              study treatment start (6 weeks for mitomycin C or nitrosoureas)
 
-          -  Active and clinically significant bacterial, fungal, or viral infection",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer
+          -  Active and clinically significant bacterial, fungal, or viral infection",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer,Cancer
 330,NCT01935947,,,,"Carcinoma, Non-Small-Cell Lung
                     Lung Neoplasms
                     Bronchial Neoplasms
@@ -1981,7 +1981,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
              the mother is treated on this protocol
 
           -  Human immunodeficiency virus (HIV)-positive patients on combination antiretroviral
-             therapy are ineligible","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
+             therapy are ineligible","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 312,NCT01658878,,,,"Carcinoma
                     Carcinoma, Hepatocellular
                     Adenocarcinoma
@@ -2031,7 +2031,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Active coinfection with both hepatitis B and C
 
-          -  Hepatitis D infection in subjects with hepatitis B","Liver Cancer,Liver Cancer",Recruiting,,"#LiverCancer, #LiverDisease"
+          -  Hepatitis D infection in subjects with hepatitis B","Liver Cancer,Liver Cancer",Recruiting,,"#LiverCancer, #LiverDisease",Liver Cancer
 126,NCT02217709,,,,"Adenocarcinoma
                     Prostatic Neoplasms
                     Carcinoma
@@ -2156,7 +2156,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
           -  Uncontrolled intercurrent illness including, but not limited to, ongoing or active
              infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac
              arrhythmia, or psychiatric illness/social situations that would limit compliance with
-             study requirements",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM"
+             study requirements",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM",Prostate Cancer
 27,NCT01959139,,,,"Adenocarcinoma
                     Carcinoma
                     Neoplasms
@@ -2187,7 +2187,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
              cytologically documented pancreatic adenocarcinoma; patients must not have known
              history of brain metastases
 
-          -  Patients must have measurabl",,Recruiting,"{""Pancreatic Cancer""}","#PancreaticCancer, #pancsm"
+          -  Patients must have measurabl",,Recruiting,"{""Pancreatic Cancer""}","#PancreaticCancer, #pancsm",Pancreatic Cancer
 246,NCT01416688,,,"therapy-related toxicity
                     dermatologic complications
                     stage I colon cancer
@@ -2290,7 +2290,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
           -  Patients must not be planning to receive concurrent external-beam radiation therapy,
              including prophylactic cranial radiation
 
-          -  Patients may concurrently participate in other therapeutic clinical trials","Colon / Rectal Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome"
+          -  Patients may concurrently participate in other therapeutic clinical trials","Colon / Rectal Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome",Colon Cancer
 311,NCT01564784,,,,"Leukemia
                     Leukemia, Lymphoid
                     Precursor Cell Lymphoblastic Leukemia-Lymphoma
@@ -2332,7 +2332,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Isolated extramedullary disease
 
-          -  Active Central Nervous System [CNS] disease","Leukemia,Leukemia,Lymphoma",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV"
+          -  Active Central Nervous System [CNS] disease","Leukemia,Leukemia,Lymphoma",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV",Leukemia
 325,NCT01208051,,,,"Adenocarcinoma, Follicular
                     Carcinoma
                     Carcinoma, Papillary
@@ -2560,7 +2560,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
              the mother is treated with cediranib with or without lenalidomide
 
           -  Human immunodeficiency virus (HIV)-positive patients on combination antiretroviral
-             therapy are ineligible",Head and Neck Cancers,Recruiting,,"#ThyroidCancer, #thycsm, #thyroidawareness"
+             therapy are ineligible",Head and Neck Cancers,Recruiting,,"#ThyroidCancer, #thycsm, #thyroidawareness",Thyroid Cancer
 296,NCT01873326,,,"newly diagnosed GCT
                     Intermediate
                     Poor-Risk
@@ -2720,7 +2720,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
           -  Inability to comply with the treatment protocol or to undergo prespecified follow-up
              tests for safety or effectiveness.
 
-          -  Pregnant patients are ineligible",,Recruiting,,#Cancer
+          -  Pregnant patients are ineligible",,Recruiting,,#Cancer,Cancer
 301,NCT01535066,,,"estrogen receptor-positive breast cancer
                     progesterone receptor-positive breast cancer
                     stage IA breast cancer
@@ -2909,7 +2909,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Patients must not have received or implemented any other medical therapy, alternative
              therapy, or physical therapy for the treatment of joint pain/stiffness within 28 days
-             prior to registration; therapeutic massage is allowed",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             prior to registration; therapeutic massage is allowed",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 291,NCT01621295,,,,"Brain Neoplasms
                     Breast Neoplasms
                     Digestive System Neoplasms
@@ -2951,7 +2951,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Provide written informed consent
 
-        Exclusion Criteria:","Brain Cancer,Breast Cancer,Head and Neck Cancers,Lung Cancer,Brain Cancer,Lung Cancer,Lung Cancer",Recruiting,,#Cancer
+        Exclusion Criteria:","Brain Cancer,Breast Cancer,Head and Neck Cancers,Lung Cancer,Brain Cancer,Lung Cancer,Lung Cancer",Recruiting,,#Cancer,Cancer
 221,NCT01543620,,,"kidney safety
                     biomarkers
                     serum creatinine
@@ -3035,7 +3035,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
              trimethoprim, cimetidine).
 
           3. Hospitalized for treatment of an acute pulmonary exacerbation or received intravenous
-             aminoglycoside antibiotics within 3-months of study entry.",Cystic Fibrosis,Recruiting,,"#CysticFibrosis, #curecf, #cfaware "
+             aminoglycoside antibiotics within 3-months of study entry.",Cystic Fibrosis,Recruiting,,"#CysticFibrosis, #curecf, #cfaware ",Cystic Fibrosis
 210,NCT01730170,,,"Epilepsy
                     Pregnancy","Anticonvulsants
                     Central Nervous System Agents
@@ -3142,7 +3142,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Any medical, psychiatric, or other condition that, in the judgment of the
              investigator, is a contraindication to protocol participation or impairs ability to
-             give informed consent.",,Recruiting,,"#Epilepsy, #Seizures"
+             give informed consent.",,Recruiting,,"#Epilepsy, #Seizures",Epilepsy
 211,NCT01534598,,,"DNA Methylation
                     Advanced Cancer
                     Methyltransferase Inhibitor
@@ -3155,7 +3155,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Patients must have histologically documented solid tumors whose disease has
              progressed on standard therapy that is known to be associated with a survival
-             advantage or have disease for which th",,Recruiting,,#Cancer
+             advantage or have disease for which th",,Recruiting,,#Cancer,Cancer
 79,NCT02110901,,,"radiocephalic
                     arteriovenous fistula
                     AVF
@@ -3217,7 +3217,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           4. Treatment with any investigational drug within the previous 30 days or
              investigational antibody therapy within the previous 90 days prior to signing
-             informed consent.",,Recruiting,,#KidneyDisease
+             informed consent.",,Recruiting,,#KidneyDisease,Kidney Disease
 62,NCT01701362,,,post-traumatic peripheral neuropathic pain,"Neuralgia
                     Nervous System Diseases
                     Neurologic Manifestations
@@ -3286,7 +3286,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
           -  Subjects considered at risk of suicide or self-harm based on investigator judgment
              and/or details of a risk assessment.
 
-          -  Use of prohibited medications in the absence of appropriate washout periods.",Neuralgia,Recruiting,,"#TrigeminalNeuralgia, #FacialPain"
+          -  Use of prohibited medications in the absence of appropriate washout periods.",Neuralgia,Recruiting,,"#TrigeminalNeuralgia, #FacialPain",Neuralgia
 45,NCT01349881,,,Eflornithine/sulindac prevention trial,"Colorectal Neoplasms
                     Colonic Diseases
                     Digestive System Diseases
@@ -3389,7 +3389,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
              disease-free for > 5 years
 
           -  Pregnant or nursing women. Women/men of reproductive potential must agree to use
-             effective contraception",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome"
+             effective contraception",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome",Colon Cancer
 244,NCT01801046,,,,"Leukemia
                     Leukemia, Erythroblastic, Acute
                     Leukemia, Megakaryoblastic, Acute
@@ -3556,7 +3556,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
 
           -  DONOR: History of autoimmune disease
 
-          -  DONOR: History of coronary disease","Leukemia,Leukemia",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV"
+          -  DONOR: History of coronary disease","Leukemia,Leukemia",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV",Leukemia
 186,NCT01872975,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -3779,7 +3779,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
              study treatment or would prevent required follow-up
 
           -  Psychiatric or addictive disorders or other conditions that, in the opinion of the
-             investigator, would preclude the patient from meeting the study requirements",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             investigator, would preclude the patient from meeting the study requirements",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 196,NCT02067884,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -3813,7 +3813,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
           -  Women with known cardiac shunt, pulmonary hypertension or hypersensitivity to
              perflutren agent
 
-          -  Women who cannot consent for themselves",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          -  Women who cannot consent for themselves",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 300,NCT01272037,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -4043,7 +4043,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
           -  Patients randomized to either arm may also co-enroll in Phase III trials that compare
              local therapies, or compare systemic therapies (not including chemotherapy); patients
              randomized to chemotherapy may also co-enroll in Phase III trials that compare
-             chemotherapies (including S1207)",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             chemotherapies (including S1207)",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 267,NCT02273336,,,,"Carcinoma, Non-Small-Cell Lung
                     Lung Neoplasms
                     Small Cell Lung Carcinoma
@@ -4094,7 +4094,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
 
         Exclusion Criteria:
 
-          -  Compromise of patient diagnosis or staging if tissue is used for research","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
+          -  Compromise of patient diagnosis or staging if tissue is used for research","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 284,NCT01227967,,,"Adaptive Design
                     At Risk
                     H1N1
@@ -4178,7 +4178,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
 
           2. Age greater than or equal to 18 years of age
 
-          3. Presence of an underlying medical condition(s",,Recruiting,,#Influenza
+          3. Presence of an underlying medical condition(s",,Recruiting,,#Influenza,Influenza
 4,NCT01587040,,,,Neoplasms,Agustin,Garcia,Agustin.Garcia@med.usc.edu,"1B-12-5-International, Multicenter, Open-Label, Treatment-Extension Study for Subjects who Completed a Phase 1 or Phase 2 Parental Study to Continue Receiving Treatment with SAR245408 or SAR245409 as a Monotherapy or as a Combination Regimen","The duration of the study for an individual subject will include:
 
         1. Baseline assessments: within 7 days prior to the first dose of IMP.
@@ -4274,7 +4274,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
         E 08. The subject is pregnant or breastfeeding
 
         The above information is not intended to contain all considerations relevant to a
-        patient's potential participation in a clinical trial.",,Recruiting,,#Cancer
+        patient's potential participation in a clinical trial.",,Recruiting,,#Cancer,Cancer
 144,NCT01526928,,,"cancer
                     metastatic
                     locally advanced
@@ -4402,7 +4402,7 @@ SUBJECTS WITH POST-TRAUMATIC PERIPHERAL NEUROPATHIC PAIN","Post traumatic periph
              the clinical study
 
          13. Any other reason the investigator considers the patient should not participate in the
-             study","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
+             study","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 145,NCT02034552,,,,"Prostatic Neoplasms
                     Genital Diseases, Male
                     Genital Neoplasms, Male
@@ -4474,7 +4474,7 @@ timepoint",HS-14-00511,Anayansi,Miloud,Anayansi.miloud@med.usc.edu,Drug,"Phase 2
           -  History of seizures (taking/not taking anticonvulsants), arteriovenous malformation
              in the brain, head trauma with loss of consciousness
 
-          -  Central nervous system (CNS) metastases",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM"
+          -  Central nervous system (CNS) metastases",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM",Prostate Cancer
 64,NCT02050178,,,"Pancreatic Cancer
                     Stage IV Pancreatic Cancer","Pancreatic Neoplasms
                     Digestive System Diseases
@@ -4589,7 +4589,7 @@ timepoint",HS-14-00511,Anayansi,Miloud,Anayansi.miloud@med.usc.edu,Drug,"Phase 2
 
           -  Fasting β-CTX of >1000 pg/mL
 
-          -  Metabolic bone disease, such as hyperparathyroidism, Paget's disease or osteomalacia",Pancreatic Cancer,Recruiting,,"#PancreaticCancer, #pancsm"
+          -  Metabolic bone disease, such as hyperparathyroidism, Paget's disease or osteomalacia",Pancreatic Cancer,Recruiting,,"#PancreaticCancer, #pancsm",Pancreatic Cancer
 141,NCT02032277,,,"Oncology
                     Triple negative breast cancer
                     Austrian Breast and Colorectal Cancer Study Group - ABCSG 44
@@ -4679,7 +4679,7 @@ Pathological Complete Response (pCR) will be the primary endpoint and is defined
 
           4. A history of seizure within 12 months prior to study entry.
 
-          5. Pre-existing neuropathy from any cause in excess of Grade 1.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          5. Pre-existing neuropathy from any cause in excess of Grade 1.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 159,NCT01064648,,,,"Lung Neoplasms
                     Mesothelioma
                     Adenoma
@@ -4786,7 +4786,7 @@ Pathological Complete Response (pCR) will be the primary endpoint and is defined
 
           -  No concurrent drugs or biologics with proarrhythmic potential
 
-          -  No concurrent major surgery","Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
+          -  No concurrent major surgery","Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 138,NCT02091960,,,"Breast cancer
                     Enzalutamide
                     Xtandi
@@ -4871,7 +4871,7 @@ Pathological Complete Response (pCR) will be the primary endpoint and is defined
              anticancer therapy, with the exception of anti-HER2 therapy (e.g., trastuzumab),
              within 14 days prior to the Day 1 visit.
 
-          -  The subject received pertuzumab in the most recent line of therapy.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          -  The subject received pertuzumab in the most recent line of therapy.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 218,NCT01805076,,,,"Breast Neoplasms
                     Triple Negative Breast Neoplasms
                     Breast Diseases
@@ -4884,7 +4884,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
               is insufficient to provide a statistical basis for assessment of effects in this
              subpopulation of people with breast cancer.
 
-          -  ",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          -  ",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 248,NCT01846663,,,"Hepatic Encephalopathy
                     Liver Failure
                     Hepatic Insufficiency
@@ -4943,7 +4943,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
 
           -  Current GI bleeding or has had a GI hemorrhage within past 3 months
 
-          -  Anemia",,Recruiting,,#LiverDisease
+          -  Anemia",,Recruiting,,#LiverDisease,Liver Disease
 172,NCT02207127,,,"obstructive sleep apnea
                     sleep apnea","Apnea
                     Sleep Apnea Syndromes
@@ -4973,7 +4973,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
 
           -  co-existing sleep disorder other than OSA
 
-          -  other contraindication to DISE or MRI such as propofol allergy.","Sleep Apnea,Sleep Apnea,Sleep Apnea",Recruiting,,"#SleepApnea, #SleepDisorder, #SleepHealth, #Narcolepsy "
+          -  other contraindication to DISE or MRI such as propofol allergy.","Sleep Apnea,Sleep Apnea,Sleep Apnea",Recruiting,,"#SleepApnea, #SleepDisorder, #SleepHealth, #Narcolepsy ",Sleep Apnea
 288,NCT01593254,,,,"Leukemia
                     Leukemia, Myelogenous, Chronic, BCR-ABL Positive
                     Leukemia, Myeloid
@@ -5029,7 +5029,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
 
           -  Prior Chronic Myeloid Leukemia (CML) treatment other than Imatinib
 
-          -  Serious, uncontrolled Medical condition","Leukemia,Leukemia,Leukemia",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV"
+          -  Serious, uncontrolled Medical condition","Leukemia,Leukemia,Leukemia",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV",Leukemia
 20,NCT01450696,,,,"Capecitabine
                     Trastuzumab
                     Antimetabolites
@@ -5092,7 +5092,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
 
           -  Pregnant women
 
-          -  Active infection with HIV, hepatitis B, hepatitis C, or HIV-positive",,Recruiting,,"#StomachCancer, #stcsm"
+          -  Active infection with HIV, hepatitis B, hepatitis C, or HIV-positive",,Recruiting,,"#StomachCancer, #stcsm",Stomach Cancer
 11,NCT01836029,,,"SCCHN
                     HNSCC","Carcinoma
                     Carcinoma, Squamous Cell
@@ -5176,7 +5176,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
              therapy administered for 3 years prior to randomization, with the exception of
              adjuvant hormonal therapy for breast cancer
 
-          -  Other conditions or circumstances that could interfere with the study",Head and Neck Cancers,Recruiting,,"#HNCsm, #HeadNeckCancer"
+          -  Other conditions or circumstances that could interfere with the study",Head and Neck Cancers,Recruiting,,"#HNCsm, #HeadNeckCancer",Head Cancer
 247,NCT01764477,,,,"Adenocarcinoma
                     Pancreatic Neoplasms
                     Carcinoma
@@ -5329,7 +5329,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
              studies
 
          16. Patients with the inability, in the opinion of the Investigator, to comply with the
-             protocol requirements",Pancreatic Cancer,Recruiting,,"#PancreaticCancer, #pancsm"
+             protocol requirements",Pancreatic Cancer,Recruiting,,"#PancreaticCancer, #pancsm",Pancreatic Cancer
 286,NCT02079181,,,,"Neoplasms
                     Fluorides
                     Cariostatic Agents
@@ -5366,7 +5366,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
           -  Women of childbearing potential, unless they have had a negative urine beta human
              chorionic gonadotropin (betaHCG) within the previous 24 hours of the procedure
 
-          -  Patients who have had surgery at the site of the suspected lesion within 1 month",,Recruiting,,#Cancer
+          -  Patients who have had surgery at the site of the suspected lesion within 1 month",,Recruiting,,#Cancer,Cancer
 317,NCT00719303,,,,"Adenocarcinoma
                     Brenner Tumor
                     Carcinoma, Endometrioid
@@ -5552,7 +5552,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
           -  Patients who have participated in a marathon, triathlon, or other endurance-related
              physical activity within the previous 24 months
 
-          -  Patients who have had surgery for weight loss","Stomach Cancer,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Bladder Cancer",Recruiting,,#Cancer
+          -  Patients who have had surgery for weight loss","Stomach Cancer,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Bladder Cancer",Recruiting,,#Cancer,Cancer
 289,NCT01325441,,,BBI608,"Paclitaxel
                     Antimitotic Agents
                     Antineoplastic Agents
@@ -5679,7 +5679,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
 
           9. Abnormal ECGs (ie, QT prolongation - QTc > 480 msec, signs of cardiac enlargement or
              hypertrophy, bundle branch block, signs of ischemia or necrosis and Wolff Parkinson
-             White patterns)",,Recruiting,,#Cancer
+             White patterns)",,Recruiting,,#Cancer,Cancer
 112,NCT01997333,,,"Metastatic Breast Cancer
                     Locally advanced breast cancer
                     Breast cancer
@@ -5747,7 +5747,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
           3. Known brain metastases, unless previously treated and asymptomatic for 2 months and
              not progressive in size or number for 2 months.
 
-          4. Significant cardiovascular disease.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          4. Significant cardiovascular disease.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 178,NCT02221622,,,"Alzheimer's disease
                     Mild Cognitive Impairment
                     Dementia
@@ -5812,7 +5812,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
              malformations, subdural hematoma, or space occupying lesions
 
           -  Any condition that would contraindicate an MRI such as the presence of metallic
-             objects in the eyes, skin, heart, or body","Alzheimer's Disease,Dementia,Dementia,Alzheimer's Disease",Recruiting,,"#Alzheimer, #Alzheimers, #dementia, #AlzFacts, #GlobalDementia"
+             objects in the eyes, skin, heart, or body","Alzheimer's Disease,Dementia,Dementia,Alzheimer's Disease",Recruiting,,"#Alzheimer, #Alzheimers, #dementia, #AlzFacts, #GlobalDementia",Alzheimer
 334,NCT01909440,,,,"Prostatic Neoplasms
                     Genital Diseases, Male
                     Genital Neoplasms, Male
@@ -5903,7 +5903,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
              training program (e.g. bone metastases that may pose a high risk of pathologic
              fracture)
 
-          -  Subjects currently participating in a RT program",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM"
+          -  Subjects currently participating in a RT program",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM",Prostate Cancer
 127,NCT02060188,,,,"Colorectal Neoplasms
                     Colonic Diseases
                     Digestive System Diseases
@@ -5958,7 +5958,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Subjects with active, known or suspected autoimmune disease
 
           -  Subjects with a condition requiring systemic treatment with either corticosteroids or
-             other immunosuppressive medications within 14 days of study drug administration",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome"
+             other immunosuppressive medications within 14 days of study drug administration",Colon / Rectal Cancer,Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome",Colon Cancer
 114,NCT02008357,,,"Cognition
                     Prevention","Cognition Disorders
                     Delirium, Dementia, Amnestic, Cognitive Disorders
@@ -6017,7 +6017,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
              Mental Disorders (DSM)
 
           -  Has a history within the past 5 years of chronic alcohol or drug abuse/dependence as
-             defined by the most current version of the DSM",Dementia,Recruiting,"{""Alzheimer's Disease""}","#Alzheimer, #Alzheimers, #dementia, #AlzFacts, #GlobalDementia"
+             defined by the most current version of the DSM",Dementia,Recruiting,"{""Alzheimer's Disease""}","#Alzheimer, #Alzheimers, #dementia, #AlzFacts, #GlobalDementia",Alzheimer
 106,NCT01679132,,,"Hypertension
                     High Blood Pressure
                     Blood Pressure
@@ -6057,7 +6057,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Hypertension secondary to an identifiable and treatable cause other than sleep apnea.
 
           -  Prior surgery, radiation, or endovascular stent placement in the carotid sinus
-             region.",High Blood Pressure / Hypertension,Recruiting,,"#Hypertension, #HighBloodPressure"
+             region.",High Blood Pressure / Hypertension,Recruiting,,"#Hypertension, #HighBloodPressure",Hypertension
 293,NCT01642342,,,,Neoplasms,Anthony,El-Khoueiry,,A First-In-Human Phase I Study of sEphB4-HSA in Patients With Advanced Solid Tumors With Expansion at the Maximum Tolerated Dose (MTD) or Recommended Phase II Dose (RP2D).,"PRIMARY OBJECTIVES:
 
       I. To establish the maximum tolerated dose (MTD) and recommended phase 2 dose (RP2D) of
@@ -6259,7 +6259,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
                -  Variceal bleeding within last 6 months
 
                -  Patients with evidence of portal hypertension must have had an EGD within last
-                  year with appropriate treatment of esophageal varices as per standard of care",,Recruiting,,#Cancer
+                  year with appropriate treatment of esophageal varices as per standard of care",,Recruiting,,#Cancer,Cancer
 143,NCT01871571,,,,"Adenocarcinoma
                     Adenocarcinoma, Mucinous
                     Cystadenocarcinoma
@@ -6406,7 +6406,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
              abscess within 6 months of randomization
 
           -  Known hypersensitivity to bevacizumab or any of its excipients or any other study
-             drug","Colon / Rectal Cancer,Gynecologic Cancers",Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome"
+             drug","Colon / Rectal Cancer,Gynecologic Cancers",Recruiting,,"#ColonCancer, #RectalCancer, #BowelCancer, #CRCSM, #LynchSyndrome",Colon Cancer
 259,NCT01841736,,,,"Apudoma
                     Carcinoid Tumor
                     Carcinoma
@@ -6615,7 +6615,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Urine protein to creatinine (UPC) ratio < 1, or, 24-hour urine protein < 1 g; if UPC
              >= 1, then a 24-hour urine protein must be assessed; patients must have a 24-hour
              urine protein value < 1 g to be eligible; use of urine dipstick for renal function
-             assessment is not acceptable","Head and Neck Cancers,Neuroendocrine Tumors",Recruiting,,"#HNCsm, #HeadNeckCancer"
+             assessment is not acceptable","Head and Neck Cancers,Neuroendocrine Tumors",Recruiting,,"#HNCsm, #HeadNeckCancer",Head Cancer
 290,NCT01670877,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -6739,7 +6739,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Symptomatic intrinsic lung disease or extensive tumor involvement of the lungs
              resulting in dyspnea at rest.
 
-          -  Experiencing grade 2 or greater diarrhea.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          -  Experiencing grade 2 or greater diarrhea.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 316,NCT00936390,,,"adenocarcinoma of the prostate
                     stage IIB prostate cancer
                     stage IIA prostate cancer","Prostatic Neoplasms
@@ -6947,7 +6947,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
                   within the past 60 days of registration, and no history of prior transurethral
                   resection of the prostate (TURP)
 
-               -  TURP allowed for patients who receive external-beam radiation therapy only",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM"
+               -  TURP allowed for patients who receive external-beam radiation therapy only",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM",Prostate Cancer
 47,NCT01820572,,,,"Cyclosporine
                     Cyclosporins
                     Tacrolimus
@@ -6992,7 +6992,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  Positive T-cell lymphocytotoxic cross match
 
-          -  Proteinuria >1 g/day or >0.5 g/day if diabetic",,Recruiting,"{""Kidney Transplant""}","#KidneyDisease, #Transplant"
+          -  Proteinuria >1 g/day or >0.5 g/day if diabetic",,Recruiting,"{""Kidney Transplant""}","#KidneyDisease, #Transplant",Kidney Disease
 213,NCT01101451,,,,"Adenocarcinoma
                     Carcinoma
                     Carcinoma, Adenosquamous
@@ -7135,7 +7135,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Patients with a history of other invasive malignancies, with the exception of
              non-melanoma skin cancer, are excluded if there is any evidence of other malignancy
              being present within the last five years; patients are also excluded if their
-             previous cancer treatment contraindicates this protocol therapy","Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers",Recruiting,,"#CervicalCancer, #GynCSM"
+             previous cancer treatment contraindicates this protocol therapy","Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers",Recruiting,,"#CervicalCancer, #GynCSM",Cervical Cancer
 176,NCT00956007,,,"stage III squamous cell carcinoma of the larynx
                     stage III verrucous carcinoma of the larynx
                     stage IV squamous cell carcinoma of the larynx
@@ -7358,7 +7358,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  No concurrent amifostine as a radioprotector
 
-          -  No concurrent granulocyte colony-stimulating factor or erythropoietin",Head and Neck Cancers,Recruiting,,"#HNCsm, #HeadNeckCancer"
+          -  No concurrent granulocyte colony-stimulating factor or erythropoietin",Head and Neck Cancers,Recruiting,,"#HNCsm, #HeadNeckCancer",Head Cancer
 270,NCT02099942,,,"Balloon Aortic Valvuloplasty
                     Valvuloplasty
                     Transcatheter Aortic Valve Replacement
@@ -7400,7 +7400,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Any illness or condition which, in the Investigator's judgment, will compromise
              patient safety, or interfere with the interpretation of the treatment results
 
-          -  Echocardiographic evidence of intracardiac mass, thrombus or vegetation.","Aortic Stenosis,Heart Valve Diseases",Recruiting,,"#HeartDisease, #HeartFailure, #HeartHealth, #CongestiveHeartFailure, #SCADheart"
+          -  Echocardiographic evidence of intracardiac mass, thrombus or vegetation.","Aortic Stenosis,Heart Valve Diseases",Recruiting,,"#HeartDisease, #HeartFailure, #HeartHealth, #CongestiveHeartFailure, #SCADheart",Heart Disease
 36,NCT01336634,,,"trametinib
                     GSK1120212
                     GSK2118436
@@ -7573,7 +7573,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  History of interstitial lung disease or pneumonitis
 
-          -  A history or current evidence of retinal vein occlusion (RVO).","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
+          -  A history or current evidence of retinal vein occlusion (RVO).","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 95,NCT01794663,,,"Early kidney graft dysfunction
                     renal transplantation","Delayed Graft Function
                     Pathologic Processes",Linda,Sher,lsher@health.usc.edu,"A Three-Part, Multi-Centre, Randomised, Double-Blind, Placebo-Controlled, Parallel-Group, Sequential Adaptive, Phase II Study to Evaluate the Safety, Tolerability and Efficacy of OPN305, a Humanised Monoclonal Antibody that Blocks Toll-Like Receptor 2, in Renal Transplant Patients at High Risk of Delayed Graft Function",,HS-13-00104,,,,Drug,"Phase 2 - takes the treatment one step further, assessing the activity of a particular therapy in a disease, often building upon leads from the Phase I trial. While patients are generally required to be previously untreated, participation in a Phase II trial doesn't usually preclude the patient from getting the standard treatment after they've received the investigational agent. At best they are allowed to get a new drug they wouldn't be able to get otherwise that may turn out to be better for their disease.","Inclusion criteria
@@ -7672,7 +7672,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  HLA or ABO incompatible kidney as defined by a negative cytotoxic crossmatch
 
-          -  Donor institutionalized by administrative or court order",,Recruiting,"{""Kidney Transplant""}","#KidneyDisease, #Transplant"
+          -  Donor institutionalized by administrative or court order",,Recruiting,"{""Kidney Transplant""}","#KidneyDisease, #Transplant",Kidney Disease
 287,NCT01873833,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -7829,7 +7829,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
              study
 
           -  Unable or unwilling to abide by the study protocol or cooperate fully with the
-             investigator or designee",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             investigator or designee",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 230,NCT01649258,,,,"Breast Neoplasms
                     Nausea
                     Vomiting
@@ -7907,7 +7907,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  Gastrointestinal obstruction or an active peptic ulcer
 
           -  Patients who are pregnant or breast feeding because aprepitant may be harmful to the
-             developing fetus and newborn",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             developing fetus and newborn",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 195,NCT01729806,,,,"Lymphoma
                     Lymphoma, B-Cell
                     Lymphoma, Non-Hodgkin
@@ -8024,7 +8024,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  HIV-positive patients on combination antiretroviral therapy are ineligible
 
-          -  Rituximab within six weeks","Lymphoma,Lymphoma,Lymphoma",Recruiting,,"#Lymphoma, #BloodCancer"
+          -  Rituximab within six weeks","Lymphoma,Lymphoma,Lymphoma",Recruiting,,"#Lymphoma, #BloodCancer",Lymphoma
 193,NCT01664182,,,,"Carcinoma, Renal Cell
                     Adenocarcinoma
                     Carcinoma
@@ -8216,7 +8216,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
              ineligible (the pills cannot be crushed or broken)
 
           -  Any condition which in the investigator's opinion makes the subject unsuitable for
-             study participation","Kidney Cancer,Kidney Cancer,Bladder Cancer",Recruiting,,"#KidneyCancer, #KidneyDisease, #kcsm"
+             study participation","Kidney Cancer,Kidney Cancer,Bladder Cancer",Recruiting,,"#KidneyCancer, #KidneyDisease, #kcsm",Kidney Caner
 332,NCT01903811,,,"carfilzomib
                     relapsed, refractory, multiple myeloma","Multiple Myeloma
                     Neoplasms, Plasma Cell
@@ -8295,7 +8295,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  Patients must have a confirmed diagnosis of symptomatic multiple myeloma and must be
              relapsed or refractory; all tests for establishing disease status must be completed
-             ",Blood Cancer,Recruiting,,"#Myeloma, #MMSM"
+             ",Blood Cancer,Recruiting,,"#Myeloma, #MMSM",Myeloma
 302,NCT01674140,,,"estrogen receptor-positive breast cancer
                     HER2-negative breast cancer
                     stage IA breast cancer
@@ -8573,7 +8573,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  Patients must not have taken within 14 days prior to registration, be taking, nor
              plan to take while on protocol treatment, strong cytochrome P450 3A4 (CYP3A4)
-             inhibitors and/or CYP3A4 inducers",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             inhibitors and/or CYP3A4 inducers",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 232,NCT01901094,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -8771,7 +8771,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
                -  For those patients who also undergo contralateral breast surgery, if invasive
                   disease is found in the contralateral breast, the patient is not eligible for
-                  registration/randomization.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+                  registration/randomization.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 318,NCT01809691,,,"Prostate cancer
                     TAK-700
                     Bicalutamide
@@ -8886,7 +8886,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
           -  No other prior malignancy is allowed except for the following: adequately treated
              basal cell or squamous cell skin cancer, adequately treated Stage I or II cancer from
              which the patient is currently in complete remission, or any other cancer from which
-             the patient has been disease-free for 5 years.",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM"
+             the patient has been disease-free for 5 years.",Prostate Cancer,Recruiting,,"#ProstateCancer, #PCSM",Prostate Cancer
 75,NCT00940602,,,"TELESTO
                     MDS Study
                     Myelodysplastic Syndromes
@@ -8976,7 +8976,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 
           -  History of drug or alcohol abuse within the 12 months prior to enrollment.
 
-          -  Other protocol-defined inclusion/exclusion criteria may apply",Myelodysplastic Syndromes (MDS),Recruiting,,#MDS
+          -  Other protocol-defined inclusion/exclusion criteria may apply",Myelodysplastic Syndromes (MDS),Recruiting,,#MDS,MDS
 63,NCT01757665,,,"Aortic valve replacement
                     Mitral valve replacement","Aortic Valve Insufficiency
                     Mitral Valve Insufficiency
@@ -9067,7 +9067,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
          22. Documented history of substance (drug or alcohol) abuse within the last 5 years prior
              to implant
 
-         23. Requires concomitant left ventricular assist device (LVAD) placement","Aortic Stenosis,Heart Valve Diseases",Recruiting,,"#HeartDisease, #HeartFailure, #HeartHealth, #CongestiveHeartFailure, #SCADheart"
+         23. Requires concomitant left ventricular assist device (LVAD) placement","Aortic Stenosis,Heart Valve Diseases",Recruiting,,"#HeartDisease, #HeartFailure, #HeartHealth, #CongestiveHeartFailure, #SCADheart",Heart Disease
 183,NCT02250378,,,,"Carcinoma, Non-Small-Cell Lung
                     Lung Neoplasms
                     Bronchial Neoplasms
@@ -9170,86 +9170,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
           -  Patients with central tumors within the proximal tree or touching the mediastinal
              pleura
 
-          -  Patients with evidence of distant metastatic disease","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
-295,NCT01849874,,,,"Fallopian Tube Neoplasms
-                    Ovarian Neoplasms
-                    Peritoneal Neoplasms
-                    Abdominal Neoplasms
-                    Adnexal Diseases
-                    Digestive System Diseases
-                    Digestive System Neoplasms
-                    Endocrine Gland Neoplasms
-                    Endocrine System Diseases
-                  
-                
-                    Fallopian Tube Diseases
-                    Genital Diseases, Female
-                    Genital Neoplasms, Female
-                    Gonadal Disorders
-                    Neoplasms
-                    Neoplasms by Site
-                    Ovarian Diseases
-                    Peritoneal Diseases
-                    Urogenital Neoplasms",,,,,,,,,,,,"Key Inclusion Criteria:
-
-          -  Diagnosis of LGS carcinoma of the ovary, fallopian tube or primary peritoneum
-             (invasive micropapillary serous carcinoma or invasive grade 1 serous carcinoma),
-             confirmed histologically and verified by central pathology review.
-
-          -  Recurrent or persistent measurable disease that has progressed (defined as
-             radiological and/or clinical progression; an increase in cancer antigen [CA]-125
-             alone is not sufficient) on or after last therapy (i.e., chemotherapy, hormonal
-             therapy, surgery) and is not amenable to potentially curative intent surgery, as
-             determined by the patient's treating physician.
-
-          -  Must have received at least 1 prior platinum-based chemotherapy regimen but have
-             received no more than 3 lines of prior chemotherapy regimens, with no limit to the
-             number of lines of prior hormonal therapy. Front-line therapy may include neoadjuvant
-             and adjuvant therapy and will be counted as 1 prior systemic regimen. Biological
-             therapy (e.g. bevacizumab) administered as a single agent is considered a prior
-             systemic regimen and not a prior chemotherapy regimen. Maintenance therapy is not
-             considered its own regimen but should be included with the regimen that it follows.
-
-          -  Available archival tumor sample (excisional or core biopsy) for confirmation of LGS
-             carcinoma diagnosis. If adequate archival tumor sample is not available, willingness
-             to consent to tissue biopsy.
-
-          -  Suitable for treatment with at least one of the physician's choice chemotherapy
-             options (liposomal doxorubicin, paclitaxel or topotecan) as determined by the
-             Investigator.
-
-          -  Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0 or 1.
-
-          -  Additional criteria exist.
-
-        Key Exclusion Criteria:
-
-          -  History or current evidence of retinal vein occlusion (RVO) or current risk factors
-             for RVO (e.g., uncontrolled glaucoma or ocular hypertension, history of
-             hyperviscosity or hypercoagulability syndromes).
-
-          -  Prior therapy with a MEK or BRAF inhibitor.
-
-          -  History of Gilbert's syndrome.
-
-          -  Impaired cardiovascular function or clinically significant cardiovascular diseases.
-
-          -  Uncontrolled or symptomatic brain metastases that are not stable or require steroids,
-             are potentially life-threatening or have required radiation within 28 days prior to
-             first dose of study treatment.
-
-          -  Concomitant malignancies or previous malignancies with less than a 5-year
-             disease-free interval at the time of first dose of study treatment; patients with
-             adequately resected basal or squamous cell carcinoma of the skin, carcinoma in situ
-             of the cervix or ductal carcinoma in situ may be enrolled irrespective of the time of
-             diagnosis.
-
-          -  Known positive serology for the human immunodeficiency virus (HIV), active hepatitis
-             B and/or active hepatitis C.
-
-          -  Prior randomization into this clinical study.
-
-          -  Additional criteria exist.","Stomach Cancer,Gynecologic Cancers,Gynecologic Cancers,Gynecologic Cancers,Bladder Cancer",Recruiting,,#Cancer
+          -  Patients with evidence of distant metastatic disease","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 231,NCT01940185,,,,"Gastroesophageal Reflux
                     Deglutition Disorders
                     Digestive System Diseases
@@ -9278,7 +9199,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
              ferrous materials.
 
           -  Known circumstances that would make it unlikely for the patient to complete follow-up
-             through 60 months.",,Recruiting,,"#Heartburn, #GERD"
+             through 60 months.",,Recruiting,,"#Heartburn, #GERD",Heartburn
 321,NCT01712815,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -9331,7 +9252,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
           -  Women of childbearing potential, unless they have had a negative urine human
              chorionic gonadotropin (HCG) within the previous 24 hours of the procedure
 
-          -  Patients who have had surgery at the site of the suspected lesion within 1 month",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          -  Patients who have had surgery at the site of the suspected lesion within 1 month",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 197,NCT01567709,,,,"Burkitt Lymphoma
                     Hodgkin Disease
                     Immunoblastic Lymphadenopathy
@@ -9490,7 +9411,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
              phenobarbital, or rifampin, rifabutin, rifapentine, or St. John's wort within 14 days
              prior to the first dose of MLN8237 and during the study
 
-          -  Patients with New York Heart Association (NYHA) class II-IV heart failure","Lymphoma,Leukemia,Leukemia,Leukemia,Lymphoma,Lymphoma,Lymphoma,Lymphoma,Lymphoma,Lymphoma",Recruiting,,"#Lymphoma, #BloodCancer"
+          -  Patients with New York Heart Association (NYHA) class II-IV heart failure","Lymphoma,Leukemia,Leukemia,Leukemia,Lymphoma,Lymphoma,Lymphoma,Lymphoma,Lymphoma,Lymphoma",Recruiting,,"#Lymphoma, #BloodCancer",Lymphoma
 25,NCT01457118,,,Open Label multicenter extension study advanced solid tumors,Neoplasms,Anthony,El-Khoueiry,elkhouei@usc.edu,"0C-12-4-An Open-Label, Multicenter, Extension Study of NKTR-102 in Subjects Previously Enrolled In NKTR-102 Studies","Research participants who participate in NKTR-102 studies may be eligible to take part in this research study.  Tests were done on these research participants and they have shown that their cancer either has become smaller or has not grown since being treated with NKTR-102 they are eligible to continue treatment.   During the study, the research participants  will continue to receive the study drug in the same way that they received the study drug when they were part of the previous NKTR-102 study drug trial.  The purpose of this study is to test whether NKTR-102, is safe and effective in treating research participants with cancer.  This study will also look at how this type of cancer responds to the study drug, and it will look at the side effects of the study drug.  It will also observe disease progression and survival status.NKTR-102 is an experimental drug.  It slowly releases irinotecan (or Camptosar); this allows irinotecan to stay in the body much longer.  Irinotecan is approved in multiple countries worldwide for treatment of colorectal cancer and has been used for many years.   This is a multicenter, open-label, Phase 2 study of NKTR-102 in subjects with refractory solid tumors with ongoing clinical benefit (CR, PR, or SD) to previous treatment with NKTR-102.The study period is approximately 5 years.  Depending on the dose and schedule used at the conclusion of the original protocol, NKTR-102 will be administered as an intravenous (IV) infusion over approximately 60-90 min on Day 1 of each treatment cycle.Duration of Treatment: Subjects will continue to receive study drug treatment until progression of disease, unacceptable toxicity, death, withdrawal by the subject, Principal Investigator decision, lost to follow-up, or study terminated by Sponsor.The endpoints are:  incidence and duration of toxicities, with severity grading according to NCI-CTCAE.  The primary objective will be measured by capturing AEs and SAEs via Case Report Forms (CRFs).The primary endpoint of this study is to assess the incidence and duration of toxicities, with severity grading according to NCI-CTCAE. The incidence and duration of AEs will be tabulated by MedDRA preferred term, system organ class, severity grading by NCI-CTCAE criteria and relationship to study drug. The maximum intensity and frequency of AEs will be summarized by treatment, and dose schedule.",HS-12-00416,Anayansi,Miloud,Anayansi.miloud@med.usc.edu,Drug,"Phase 2 - takes the treatment one step further, assessing the activity of a particular therapy in a disease, often building upon leads from the Phase I trial. While patients are generally required to be previously untreated, participation in a Phase II trial doesn't usually preclude the patient from getting the standard treatment after they've received the investigational agent. At best they are allowed to get a new drug they wouldn't be able to get otherwise that may turn out to be better for their disease.","Inclusion:
 
           1. Received prior treatment with NKTR-102
@@ -9512,7 +9433,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
           2. A toxicity that requires a 3rd dose reduction after taking NKTR-102 or are scheduled
              to receive a dose < 70 mg/m2 upon entry into this study
 
-          3. Pregnancy or lactation",,Recruiting,,#Cancer
+          3. Pregnancy or lactation",,Recruiting,,#Cancer,Cancer
 257,NCT01404949,,,"Tretinoin
                     all-trans retinoic acid
                     ATRA
@@ -9607,7 +9528,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
              including chronic arrhythmias, or pulmonary disease.
 
           -  Other serious or life-threatening conditions deemed unacceptable by the principal
-             investigator.","Leukemia,Leukemia",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV"
+             investigator.","Leukemia,Leukemia",Recruiting,,"#Leukemia, #leusm, #neutropenia, #XMRV",Leukemia
 142,NCT02048059,,,"ANG1005
                     GRN1005
                     LRP-1
@@ -9673,7 +9594,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
           6. CNS disease requiring immediate neurosurgery intervention (e.g., resection, shunt
              placement, etc.)
 
-          7. Known allergy to paclitaxel or any of its components","Brain Cancer,Breast Cancer,Brain Cancer",Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          7. Known allergy to paclitaxel or any of its components","Brain Cancer,Breast Cancer,Brain Cancer",Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 299,NCT01111825,,,"HKI-272 (NERATINIB)
                     TEMSIROLIMUS (CCI-779)
                     HER2-Amplified
@@ -9884,7 +9805,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
           -  Unwillingness to give written informed consent, unwillingness to participate, or
              inability to comply with the protocol for the duration of the study. Willingness and
              ability to comply with scheduled visits, treatment plan, laboratory tests and other
-             study procedures are necessary to participation in this clinical trial.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+             study procedures are necessary to participation in this clinical trial.",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 26,NCT01653470,,,,"Carboplatin
                     Irinotecan
                     Paclitaxel
@@ -9931,7 +9852,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
 
           -  Uncontrolled or significant cardiovascular disease
 
-          -  Subjects taking medications known to increase risk of Torsades de Pointes",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer
+          -  Subjects taking medications known to increase risk of Torsades de Pointes",,Recruiting,"{""Any Cancer Condition or Solid Tumor""}",#Cancer,Cancer
 153,NCT01755208,,,,"Breast Neoplasms
                     Breast Diseases
                     Neoplasms
@@ -9957,7 +9878,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
 
           -  Females unable to provide informed consent
 
-          -  Females s/p treatment for breast cancer",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020"
+          -  Females s/p treatment for breast cancer",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 74,NCT01389206,,,,"Hypertension
                     Cardiovascular Diseases
                     Vascular Diseases",Sivagini,Ganesh,sivagini.ganesh@med.usc.edu,Pulmonary Arterial Hypertension (PAH) Quality Enhancement Research Initiative (QuERI) Extension Program,"This is a prospective, U.S.-based, multi-center, knowledge translation program tracking patient management until approximately early 2018.  To improve the management of PAH patients through an evidence-based approach aimed at achieving optimal WHO functional class (FC). The goal of the optimal functional class is to improve WHO functional class III and IV patients to functional class I or II, and to improve all functional class II patients to functional class I, or at least to maintain functional class I/II in patients presenting in that functional class. Endpoints:1. Proportion of patients achieving guideline-recommended treatment at each documented visit.2. Proportion of patients achieving optimal functional class using an evidence-based reatment algorithm.3. Proportion of patients on various therapies in relation to their WHO functional class.4. PAH management (use of therapies) by physicians across patient risk strata based on FC.5. Association between treatment and physician and patient adherence with recommended treatment.6. Utilization of Knowledge Translation Program system reminders, and response by the physicians when asked for reasons evidence based therapy was not utilized.7. Survival by FC (baseline and change), etiology, prevalent vs incident, academic vs community, adherence and reminders.Descriptive analysis of demographic variables, physical exam, medical history and treatment profile will be performed as appropriate. Confidence Intervals (95%) will be calculated for descriptive and comparative purposes.",HS-11-00134,Tammie,Possemato,tpossema@usc.edu,Registry Study,,"Inclusion Criteria:
@@ -9986,7 +9907,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
              optimal participation in the study;
 
           -  Prior participation in this program; c. Patients with pulmonary hypertension
-             classified as group 2 - 5 Dana Point, 2008 updated clinical classification.",High Blood Pressure / Hypertension,Recruiting,,"#Hypertension, #HighBloodPressure"
+             classified as group 2 - 5 Dana Point, 2008 updated clinical classification.",High Blood Pressure / Hypertension,Recruiting,,"#Hypertension, #HighBloodPressure",Hypertension
 269,NCT02150967,,,"cholangiocarcinoma,
                     FGFR2 gene fusion,
                     FGFR genetic alteration","Cholangiocarcinoma
@@ -10045,7 +9966,7 @@ Participants may continue treatment with BGJ398 until they experience unacceptab
 
                -  Inorganic phosphorus outside of normal limits
 
-               -  Total and ionized serum calcium outside of normal limits",,Recruiting,,#Cancer
+               -  Total and ionized serum calcium outside of normal limits",,Recruiting,,#Cancer,Cancer
 260,NCT02154490,,,,"Carcinoma, Non-Small-Cell Lung
                     Lung Neoplasms
                     Bronchial Neoplasms
@@ -10470,7 +10391,7 @@ Participants may continue treatment with BGJ398 until they experience unacceptab
           -  Patients must not have a history of hypersensitivity to active or inactive excipients
              of AZD4547 or drugs with a similar chemical structure or class to AZD4547
 
-          -  Patients","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay"
+          -  Patients","Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer,Lung Cancer",Recruiting,,"#LungCancer, #WhipLungCancer, #WorldLungCancerDay",Lung Cancer
 292,NCT02131025,,,"Fixed-dose combination
                     Trii
                     Abacavir/dolutegravir/lamivudine
@@ -10645,7 +10566,7 @@ Participants may continue treatment with BGJ398 until they experience unacceptab
 
           -  Eligibility of subjects for study participation will be decided by the investigators
              after taking into consideration various country specific guidelines, and
-             notwithstanding the above mentioned minimum inclusion and exclusion criteria.","AIDS / HIV,AIDS / HIV,AIDS / HIV",Recruiting,,"#HIV, #AIDS"
+             notwithstanding the above mentioned minimum inclusion and exclusion criteria.","AIDS / HIV,AIDS / HIV,AIDS / HIV",Recruiting,,"#HIV, #AIDS",HIV
 109,NCT01908426,,,"cabozantinib
                     XL184
                     liver cancer
@@ -10724,4 +10645,4 @@ Participants may continue treatment with BGJ398 until they experience unacceptab
          11. Pregnant or lactating females.
 
          12. Diagnosis of another malignancy within 2 years before randomization, except for
-             superficial skin cancers, or localized, low-grade tumors.","Liver Cancer,Liver Cancer",Recruiting,,"#LiverCancer, #LiverDisease"
+             superficial skin cancers, or localized, low-grade tumors.","Liver Cancer,Liver Cancer",Recruiting,,"#LiverCancer, #LiverDisease",Liver Cancer

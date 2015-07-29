@@ -17,7 +17,15 @@
     - messages.each do |message|
       %tr
         %td= message.id.to_s
-        %td= message.content
+        - if message.message_template.platform == 'google'
+          %td
+            %ul
+              %li= message.content[0]
+              %li= message.content[1]
+              %li= message.content[2]
+              %li= message.content[3]
+        - else
+          %td= message.content
         %td= message.message_template.message_type
         %td
           %a{ :href => message.clinical_trial.url, :target => "_blank"}

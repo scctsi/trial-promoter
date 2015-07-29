@@ -5,18 +5,27 @@
     %h3.ui.header
       %i.blue.twitter.square.icon
       .content
-        Twitter Paid Messages
+        Twitter
         %span.ui.black.label
           #{ @twitter_paid_messages.count.to_s }
   %a.item{ "data-tab" => 'facebook-paid-messages' }
     %h3.ui.header
       %i.blue.facebook.square.icon
       .content
-        Facebook Paid Messages
+        Facebook
         %span.ui.black.label
           #{ @facebook_paid_messages.count.to_s }
+  %a.item{ "data-tab" => 'google-paid-messages' }
+    %h3.ui.header
+      %i.red.google.square.icon
+      .content
+        Google
+        %span.ui.black.label
+          #{ @google_paid_messages.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-paid-messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @twitter_paid_messages }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-paid-messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @facebook_paid_messages }
+.ui.bottom.attached.tab.segment{ "data-tab" => 'google-paid-messages'}
+  = render :partial => 'shared/messages', :locals => { :messages => @google_paid_messages }
 
