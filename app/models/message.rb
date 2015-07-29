@@ -26,6 +26,8 @@ class Message < ActiveRecord::Base
     facebook_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'facebook').to_a
     google_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'google').to_a
     google_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'google').to_a
+    youtube_search_results_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'youtube_search_results').to_a
+    youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
     random = Random.new
 
     if !Rails.env.production?
@@ -83,6 +85,15 @@ class Message < ActiveRecord::Base
       # Recruiting
       create_message(clinical_trial, google_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
+      # --------
+      # YouTube
+      # --------
+      # Paid
+      # Awareness
+      create_message(clinical_trial, youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      # Recruiting
+      create_message(clinical_trial, youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+
       scheduled_at = scheduled_at + 1
 
       # Sleep so that the system does not hit Bitly's API limits
@@ -123,7 +134,7 @@ class Message < ActiveRecord::Base
     url_shortener = UrlShortener.new
 
     message_template_content = message.message_template.content
-    if message.message_template.platform == 'google'
+    if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
       message.content = []
       message.content[0] = message.message_template.content[0].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
       message.content[1] = url_shortener.shorten(message.tracking_url)
@@ -140,7 +151,7 @@ class Message < ActiveRecord::Base
       return false
     end
 
-    if message.message_template.platform == 'google'
+    if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
       return false if message.content[0].length > 25 || message.content[1].length > 35 || message.content[2].length > 35
     end
 

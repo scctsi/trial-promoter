@@ -1,0 +1,26 @@
+%table.ui.celled.padded.table
+  %thead
+    %tr
+      %th
+        Database ID
+      %th
+        ID (Assigned by Katja)
+      %th
+        Type
+      %th
+        Content
+  %tbody
+    - message_templates.each do |message_template|
+      %tr
+        %td= message_template.id.to_s
+        %td= message_template.initial_id
+        %td= message_template.message_type
+        - if message_template.platform == 'twitter' || message_template.platform == 'facebook'
+          %td= message_template.content
+        - else
+          %td
+            %ul
+              %li= message_template.content[0]
+              %li http://clinicaltrials.keckmedicine.org/
+              %li= message_template.content[1]
+              %li= message_template.content[2]

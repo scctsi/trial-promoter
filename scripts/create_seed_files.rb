@@ -45,3 +45,15 @@ SeedFu::Writer.write('../db/fixtures/google_text_templates.rb', :class_name => '
     writer.add(:initial_id => row[0], :platform => 'google', :message_type => message_type, :content => content)
   end
 end
+
+SeedFu::Writer.write('../db/fixtures/youtube_search_results_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
+  CSV.foreach("google_text_templates.csv", { :headers=>:first_row }) do |row|
+    message_type = 'awareness' if row[0].to_i <= 30
+    message_type = 'recruiting' if row[0].to_i > 30
+
+    content = [row[1], row[2], row[3]]
+    content.each {|content_line| content_line.gsub! /disease/i, "<%= message[:disease] %>"}
+
+    writer.add(:initial_id => row[0], :platform => 'youtube_search_results', :message_type => message_type, :content => content)
+  end
+end

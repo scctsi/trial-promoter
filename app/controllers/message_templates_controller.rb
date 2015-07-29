@@ -3,5 +3,6 @@ class MessageTemplatesController < ApplicationController
     @twitter_message_templates = MessageTemplate.where(:platform => 'twitter').order(:initial_id)
     @facebook_message_templates = MessageTemplate.where(:platform => 'facebook').order(:initial_id)
     @google_message_templates = MessageTemplate.where(:platform => 'google').order(:initial_id)
+    @youtube_search_results_message_templates = MessageTemplate.where(:platform => 'youtube_search_results').order(:initial_id)
   end
 end

@@ -22,65 +22,18 @@
         Google
         %span.ui.black.label
           #{ @google_message_templates.count.to_s }
+  %a.item{ "data-tab" => 'youtube-search-results-message-templates' }
+    %h3.ui.header
+      %i.red.youtube.square.icon
+      .content
+        YouTube
+        %span.ui.black.label
+          #{ @youtube_search_results_message_templates.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-message-templates'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th
-          Database ID
-        %th
-          ID (Assigned by Katja)
-        %th
-          Type
-        %th
-          Content
-    %tbody
-      - @twitter_message_templates.each do |twitter_message_template|
-        %tr
-          %td= twitter_message_template.id.to_s
-          %td= twitter_message_template.initial_id
-          %td= twitter_message_template.message_type
-          %td= twitter_message_template.content
+  = render :partial => 'shared/message_templates', :locals => { :message_templates => @twitter_message_templates }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-message-templates'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th
-          Database ID
-        %th
-          ID (Assigned by Katja)
-        %th
-          Type
-        %th
-          Content
-    %tbody
-      - @facebook_message_templates.each do |facebook_message_template|
-        %tr
-          %td= facebook_message_template.id.to_s
-          %td= facebook_message_template.initial_id
-          %td= facebook_message_template.message_type
-          %td= facebook_message_template.content
+  = render :partial => 'shared/message_templates', :locals => { :message_templates => @facebook_message_templates }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'google-message-templates'}
-  %table.ui.celled.padded.table
-    %thead
-      %tr
-        %th
-          Database ID
-        %th
-          ID (Assigned by Katja)
-        %th
-          Type
-        %th
-          Content
-    %tbody
-      - @google_message_templates.each do |google_message_template|
-        %tr
-          %td= google_message_template.id.to_s
-          %td= google_message_template.initial_id
-          %td= google_message_template.message_type
-          %td
-            %ul
-              %li= google_message_template.content[0]
-              %li http://clinicaltrials.keckmedicine.org/
-              %li= google_message_template.content[1]
-              %li= google_message_template.content[2]
+  = render :partial => 'shared/message_templates', :locals => { :message_templates => @google_message_templates }
+.ui.bottom.attached.tab.segment{ "data-tab" => 'youtube-search-results-message-templates'}
+  = render :partial => 'shared/message_templates', :locals => { :message_templates => @youtube_search_results_message_templates }

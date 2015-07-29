@@ -6,18 +6,18 @@
       %th
         Content
       %th
+        Length
+      %th
         Message Type
       %th
         Clinical Trial
       %th
         Scheduled At
-      %th
-        Length
   %tbody
     - messages.each do |message|
       %tr
         %td= message.id.to_s
-        - if message.message_template.platform == 'google'
+        - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
           %td
             %ul
               %li= message.content[0]
@@ -26,9 +26,17 @@
               %li= message.content[3]
         - else
           %td= message.content
+        - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
+          %td
+            %ul
+              %li= message.content[0].length
+              %li= message.content[1].length
+              %li= message.content[2].length
+              %li= message.content[3].length
+        - else
+          %td= message.content.length
         %td= message.message_template.message_type
         %td
           %a{ :href => message.clinical_trial.url, :target => "_blank"}
             View Trial
         %td= message.scheduled_at.strftime('%b %e, %Y')
-        %td= message.content.length
