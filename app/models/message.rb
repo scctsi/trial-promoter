@@ -19,7 +19,11 @@ class Message < ActiveRecord::Base
     end
 
     scheduled_at = start_date
-    clinical_trials = ClinicalTrial.where(:randomization_status => 'Selected')
+
+    clinical_trials_set_1 = nil
+    clinical_trials_set_2 = nil
+    randomize_clinical_trials(clinical_trials_set_1, clinical_trials_set_2)
+
     twitter_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'twitter').to_a
     twitter_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'twitter').to_a
     facebook_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'facebook').to_a
@@ -34,67 +38,81 @@ class Message < ActiveRecord::Base
       WebMock.allow_net_connect!
     end
 
-    clinical_trials.each do |clinical_trial|
+    (0..(clinical_trials_set_1.length - 1)).each do |i|
       # Organic message + image + awareness message template
       # Organic message + image + recruitment message template
-
-      message_created_successfully = false
 
       # -------
       # Twitter
       # -------
       # Organic
       # Awareness
-      begin
-      end until create_message(clinical_trial, twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
-
+      begin # From set 1 with no image
+      end until create_message(clinical_trials_set_1[i], twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      begin # From set 2 with no image
+      end until create_message(clinical_trials_set_2[i], twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
       # Recruiting
-      begin
-      end until create_message(clinical_trial, twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      begin # From set 1 with no image
+      end until create_message(clinical_trials_set_1[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      begin # From set 2 with no image
+      end until create_message(clinical_trials_set_2[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
 
-      # Paid
-      # Awareness
-      begin
-      end until create_message(clinical_trial, twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
-
-      # Recruiting
-      begin
-      end until create_message(clinical_trial, twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      # Twitter will not allow ads for clinical trials
+      # # Paid
+      # # Awareness
+      # begin
+      # end until create_message(clinical_trial, twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      #
+      # # Recruiting
+      # begin
+      # end until create_message(clinical_trial, twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
       # --------
       # Facebook
       # --------
       # Organic
       # Awareness
-      create_message(clinical_trial, facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      # From set 1 with no image
+      create_message(clinical_trials_set_1[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      # From set 2 with image
+      create_message(clinical_trials_set_2[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
       # Recruiting
-      create_message(clinical_trial, facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      # From set 1 with no image
+      create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
+      # From set 2 with image
+      create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
 
       # Paid
       # Awareness
-      create_message(clinical_trial, facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      # From set 1 with no image
+      create_message(clinical_trials_set_1[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      # From set 2 with image
+      create_message(clinical_trials_set_2[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid', true)
       # Recruiting
-      create_message(clinical_trial, facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      # From set 1 with no image
+      create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
+      # From set 2 with image
+      create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid', true)
 
       # --------
       # Google
       # --------
       # Paid
       # Awareness
-      create_message(clinical_trial, google_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      create_message(clinical_trials_set_1[i], google_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
       # Recruiting
-      create_message(clinical_trial, google_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      create_message(clinical_trials_set_1[i], google_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
 
       # --------
       # YouTube
       # --------
       # Paid
       # Awareness
-      create_message(clinical_trial, youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      create_message(clinical_trials_set_1[i], youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
       # Recruiting
-      create_message(clinical_trial, youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      create_message(clinical_trials_set_1[i], youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
 
-      scheduled_at = scheduled_at + 1
+      scheduled_at = scheduled_at + 2
 
       # Sleep so that the system does not hit Bitly's API limits
       sleep 10
@@ -105,7 +123,7 @@ class Message < ActiveRecord::Base
     end
   end
 
-  def self.create_message(clinical_trial, message_template, scheduled_at, medium )
+  def self.create_message(clinical_trial, message_template, scheduled_at, medium, image_required = false )
     campaign = 'trial-promoter-development'
     if !ENV['CAMPAIGN'].blank?
       campaign = ENV['CAMPAIGN']
@@ -119,6 +137,7 @@ class Message < ActiveRecord::Base
     message.campaign = campaign
     tracking_url = TrackingUrl.new(message).value(medium, campaign)
     message.tracking_url = tracking_url
+    message.image_required = image_required
 
     replace_parameters(message)
 
@@ -156,5 +175,22 @@ class Message < ActiveRecord::Base
     end
 
     return true
+  end
+
+  def self.randomize_clinical_trials(clinical_trials_set_1, clinical_trials_set_2)
+    clinical_trials_set_1 = ClinicalTrial.where(:randomization_status => 'Selected').to_a.shuffle
+
+    # Reshuffle while there is atleast one clinical trial that is in the same position as another clinical trial in both sets
+    reshuffle = false
+
+    loop do
+      clinical_trials_set_2 = clinical_trials_set_1.shuffle
+
+      [0..(clinical_trials_set_1.length - 1)].each_with_index do |clinical_trial, index|
+        reshuffle = true if clinical_trials_set_1[index] == clinical_trials_set_2[index]
+      end
+
+      break if reshuffle == false
+    end
   end
 end

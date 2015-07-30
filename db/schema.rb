@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728223232) do
+ActiveRecord::Schema.define(version: 20150730170817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20150728223232) do
     t.string   "tracking_url",        limit: 2000
     t.string   "campaign"
     t.string   "medium"
+    t.boolean  "image_required"
+    t.string   "image_url",           limit: 2000
   end
 
   create_table "platforms", force: :cascade do |t|
