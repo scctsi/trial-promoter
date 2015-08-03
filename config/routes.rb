@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # Organic Messages
   get 'organic_messages' => 'organic_messages#index'
+  match '/organic_messages/set_image_urls' => 'organic_messages#set_image_urls', :via => :post, :format => :js
 
   # Paid Messages
   get 'paid_messages' => 'paid_messages#index'

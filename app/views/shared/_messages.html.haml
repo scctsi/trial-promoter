@@ -8,6 +8,8 @@
       %th
         Length
       %th
+        Image
+      %th
         Message Type
       %th
         Clinical Trial
@@ -35,6 +37,14 @@
               %li= message.content[3].length
         - else
           %td= message.content.length
+        - if message.image_required
+          %td.dropbox{ :id => "message-#{message.id}" }
+            - if !message.thumbnail_url.blank?
+              %img{ :src => "#{message.thumbnail_url}" }
+            %a.choose-from-dropbox{:href => "#"}
+              Choose
+        - else
+          %td None
         %td= message.message_template.message_type
         %td
           %a{ :href => message.clinical_trial.url, :target => "_blank"}

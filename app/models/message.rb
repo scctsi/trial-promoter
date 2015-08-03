@@ -20,9 +20,9 @@ class Message < ActiveRecord::Base
 
     scheduled_at = start_date
 
-    clinical_trials_set_1 = nil
-    clinical_trials_set_2 = nil
-    randomize_clinical_trials(clinical_trials_set_1, clinical_trials_set_2)
+    clinical_trials_sets = randomize_clinical_trials
+    clinical_trials_set_1 = clinical_trials_sets[0]
+    clinical_trials_set_2 = clinical_trials_sets[1]
 
     twitter_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'twitter').to_a
     twitter_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'twitter').to_a
@@ -53,9 +53,9 @@ class Message < ActiveRecord::Base
       end until create_message(clinical_trials_set_2[i], twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
       # Recruiting
       begin # From set 1 with no image
-      end until create_message(clinical_trials_set_1[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      end until create_message(clinical_trials_set_1[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
       begin # From set 2 with no image
-      end until create_message(clinical_trials_set_2[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
+      end until create_message(clinical_trials_set_2[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
 
       # Twitter will not allow ads for clinical trials
       # # Paid
@@ -177,20 +177,23 @@ class Message < ActiveRecord::Base
     return true
   end
 
-  def self.randomize_clinical_trials(clinical_trials_set_1, clinical_trials_set_2)
+  def self.randomize_clinical_trials
     clinical_trials_set_1 = ClinicalTrial.where(:randomization_status => 'Selected').to_a.shuffle
 
     # Reshuffle while there is atleast one clinical trial that is in the same position as another clinical trial in both sets
     reshuffle = false
-
+    clinical_trials_set_2 = clinical_trials_set_1.shuffle
     loop do
-      clinical_trials_set_2 = clinical_trials_set_1.shuffle
-
       [0..(clinical_trials_set_1.length - 1)].each_with_index do |clinical_trial, index|
         reshuffle = true if clinical_trials_set_1[index] == clinical_trials_set_2[index]
       end
 
       break if reshuffle == false
+
+      reshuffle = false
+      clinical_trials_set_2 = clinical_trials_set_1.shuffle
     end
+
+    return [clinical_trials_set_1, clinical_trials_set_2]
   end
 end
