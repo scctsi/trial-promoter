@@ -12,11 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
-  $('.menu .item').tab();
+  $('.tabular .item').tab();
 
   var $imageTableCell;
 
@@ -67,6 +66,8 @@ $(document).ready(function() {
     };
 
     Dropbox.choose(options);
+
+    return false;
   });
 });
 
