@@ -75,7 +75,7 @@ class SocialMediaPoster
   end
 
   def publish_pending(platform, medium)
-    messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ?", platform, medium, Date.today)
+    messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ? and messages.sent_to_buffer_at is null", platform, medium, Date.today)
 
     messages.each do |message|
       publish(message)
