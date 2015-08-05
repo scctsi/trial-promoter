@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730225739) do
+ActiveRecord::Schema.define(version: 20150805193703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,24 @@ ActiveRecord::Schema.define(version: 20150730225739) do
     t.datetime "updated_at"
     t.string   "randomization_status"
     t.text     "hashtags"
+    t.string   "disease"
   end
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "message_templates", force: :cascade do |t|
     t.text     "content"
@@ -50,6 +67,8 @@ ActiveRecord::Schema.define(version: 20150730225739) do
     t.boolean  "image_required"
     t.string   "image_url",           limit: 2000
     t.string   "thumbnail_url",       limit: 2000
+    t.datetime "sent_to_buffer_at"
+    t.datetime "sent_from_buffer_at"
   end
 
   create_table "platforms", force: :cascade do |t|

@@ -1,7 +1,9 @@
 class OrganicMessagesController < ApplicationController
   def index
     @twitter_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ?", 'twitter', 'organic').order('scheduled_at')
+    @pending_twitter_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ?", 'twitter', 'organic', Time.now.utc.to_date)
     @facebook_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ?", 'facebook', 'organic').order('scheduled_at')
+    @pending_facebook_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ?", 'facebook', 'organic', Time.now.utc.to_date)
   end
 
   def set_image_urls
@@ -12,5 +14,17 @@ class OrganicMessagesController < ApplicationController
 
     render :json => {
     }
+  end
+
+  def publish
+    WebMock.allow_net_connect!
+
+    social_media_poster = SocialMediaPoster.new
+    messages_published_count = social_media_poster.publish_pending(params[:platform], params[:medium])
+
+    WebMock.disable_net_connect!
+
+    flash[:message] = "#{messages_published_count} #{params[:medium].titlecase} #{params[:platform].titlecase} message(s) were sent to Buffer. Please check Buffer!"
+    redirect_to(:controller => 'organic_messages', :action => 'index')
   end
 end

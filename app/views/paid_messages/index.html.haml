@@ -23,10 +23,10 @@
         %span.ui.black.label
           #{ @youtube_search_results_paid_messages.count.to_s }
 .ui.bottom.attached.tab.active.segment{ "data-tab" => 'facebook-paid-messages'}
-  = render :partial => 'shared/messages', :locals => { :messages => @facebook_paid_messages }
+  = render :partial => 'shared/messages', :locals => { :messages => @facebook_paid_messages, :platform => 'facebook', :medium => 'paid' }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'google-paid-messages'}
-  = render :partial => 'shared/messages', :locals => { :messages => @google_paid_messages }
+  = render :partial => 'shared/messages', :locals => { :messages => @google_paid_messages, :platform => 'google', :medium => 'paid' }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'youtube-search-results-paid-messages'}
-  = render :partial => 'shared/messages', :locals => { :messages => @youtube_search_results_paid_messages }
+  = render :partial => 'shared/messages', :locals => { :messages => @youtube_search_results_paid_messages, :platform => 'youtube', :medium => 'paid' }
 
 
