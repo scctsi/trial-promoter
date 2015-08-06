@@ -24,3 +24,5 @@
               %li http://clinicaltrials.keckmedicine.org/
               %li= message_template.content[1]
               %li= message_template.content[2]
+              - if message_template.platform == 'youtube_search_results'
+                %li= message_template.content[3]

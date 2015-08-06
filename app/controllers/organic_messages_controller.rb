@@ -1,9 +1,9 @@
 class OrganicMessagesController < ApplicationController
   def index
-    @twitter_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ?", 'twitter', 'organic').order('scheduled_at')
-    @pending_twitter_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ?", 'twitter', 'organic', Time.now.utc.to_date)
-    @facebook_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ?", 'facebook', 'organic').order('scheduled_at')
-    @pending_facebook_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ?", 'facebook', 'organic', Time.now.utc.to_date)
+    @twitter_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ?", 'twitter', 'organic').order('scheduled_at, message_type')
+    @pending_twitter_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and DATE(messages.scheduled_at) <= ?", 'twitter', 'organic', Time.now.utc.to_date)
+    @facebook_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ?", 'facebook', 'organic').order('scheduled_at, message_type')
+    @pending_facebook_organic_messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and DATE(messages.scheduled_at) <= ?", 'facebook', 'organic', Time.now.utc.to_date)
   end
 
   def set_image_urls

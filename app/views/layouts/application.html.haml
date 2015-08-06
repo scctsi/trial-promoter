@@ -3,6 +3,8 @@
   %head
     - if ENV['CAMPAIGN'] == 'trial-promoter-staging'
       %title Trial Promoter: Staging
+    - elsif ENV['CAMPAIGN'].blank?
+      %title Trial Promoter: Development
     - else
       %title Trial Promoter: Production
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true

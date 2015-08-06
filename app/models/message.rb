@@ -159,6 +159,9 @@ class Message < ActiveRecord::Base
       message.content[1] = url_shortener.shorten(message.tracking_url)
       message.content[2] = message.message_template.content[1].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
       message.content[3] = message.message_template.content[2].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
+      if message.message_template.platform == 'youtube_search_results'
+        message.content[4] = message.message_template.content[3].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
+      end
     else
       message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(message.tracking_url))
       message.content = message.content.gsub('<%= message[:disease_hashtag] %>', message.clinical_trial.hashtags[0])

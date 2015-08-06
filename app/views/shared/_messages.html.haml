@@ -39,9 +39,11 @@
           %td
             %ul
               %li= message.content[0]
-              %li= message.content[1]
+              %li= message.tracking_url
               %li= message.content[2]
               %li= message.content[3]
+              -#- if message.message_template.platform == 'youtube_search_results'
+              -#  %li= message.content[4]
         - else
           %td= message.content
         - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
@@ -51,6 +53,8 @@
               %li= message.content[1].length
               %li= message.content[2].length
               %li= message.content[3].length
+              -#- if message.message_template.platform == 'youtube_search_results'
+              -#  %li= message.content[4].length
         - else
           %td= message.content.length
         - if message.image_required
