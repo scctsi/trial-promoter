@@ -30,9 +30,9 @@
     - messages.each do |message|
       - row_class = ""
       - if (!@pending_twitter_organic_messages.nil? and @pending_twitter_organic_messages.include?(message)) || (!@pending_facebook_organic_messages.nil? and @pending_facebook_organic_messages.include?(message))
-        - row_class = "warning"
+        - row_class = "active"
       - if (!message.sent_to_buffer_at.blank?)
-        - row_class = 'positive'
+        - row_class = 'disabled'
       %tr{ :class => row_class }
         %td= message.id.to_s
         - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
