@@ -99,6 +99,7 @@ class Message < ActiveRecord::Base
       # --------
       # Paid
       # Awareness
+      # From set 1 with no image
       create_message(clinical_trials_set_1[i], google_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
       # Recruiting
       create_message(clinical_trials_set_1[i], google_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
@@ -160,6 +161,7 @@ class Message < ActiveRecord::Base
       message.content[2] = message.message_template.content[1].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
       message.content[3] = message.message_template.content[2].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
       if message.message_template.platform == 'youtube_search_results'
+        p message.message_template.content
         message.content[4] = message.message_template.content[3].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
       end
     else
