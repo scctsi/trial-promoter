@@ -45,7 +45,33 @@
               - if message.message_template.platform == 'youtube_search_results'
                 %li= message.content[4]
         - else
-          %td= message.content
+          %td
+            #{message.content}
+            .ui.horizontal.segments
+              .ui.segment
+                .ui.mini.horizontal.statistic
+                  .value
+                    0
+                  .label
+                    Retweets
+              .ui.segment
+                .ui.mini.horizontal.statistic
+                  .value
+                    0
+                  .label
+                    Favorites
+              .ui.segment
+                .ui.mini.horizontal.statistic
+                  .value
+                    0
+                  .label
+                    Mentions
+              .ui.segment
+                .ui.mini.horizontal.statistic
+                  .value
+                    0
+                  .label
+                    Clicks
         - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
           %td
             %ul

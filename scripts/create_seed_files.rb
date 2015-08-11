@@ -58,3 +58,14 @@ SeedFu::Writer.write('../db/fixtures/youtube_search_results_text_templates.rb', 
     writer.add(:initial_id => row[0], :platform => 'youtube_search_results', :message_type => message_type, :content => content)
   end
 end
+
+SeedFu::Writer.write('../db/fixtures/twitter_uscprofiles_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
+  CSV.foreach("twitter_uscprofiles_text_templates.csv", { :headers=>:first_row }) do |row|
+    message_type = 'awareness'
+
+    content = row[2]
+    content.gsub! "http://bit.ly/1234567", "<%= message[:url] %>"
+
+    writer.add(:initial_id => row[0], :platform => 'twitter_uscprofiles', :message_type => message_type, :content => content)
+  end
+end
