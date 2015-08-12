@@ -1,4 +1,4 @@
-- if message.message_platform == 'twitter_uscprofiles' || message.message_platform == 'twitter'
+- if message.message_template.platform == 'twitter_uscprofiles' || message.message_template.platform == 'twitter'
   .ui.horizontal.segments
     .ui.segment
       .ui.mini.horizontal.statistic
@@ -24,7 +24,7 @@
           0
         .label
           Clicks
-- elsif message.message_platform == 'facebook'
+- elsif message.message_template.platform == 'facebook'
   .ui.horizontal.segments
     .ui.segment
       .ui.mini.horizontal.statistic
