@@ -15,7 +15,7 @@
         %td= message_template.id.to_s
         %td= message_template.initial_id
         %td= message_template.message_type
-        - if message_template.platform == 'twitter' || message_template.platform == 'twitter_uscprofiles' || message_template.platform == 'facebook'
+        - if message_template.platform.start_with?('twitter') || message_template.platform.start_with?('facebook')
           %td= message_template.content
         - else
           %td
@@ -24,5 +24,5 @@
               %li http://clinicaltrials.keckmedicine.org/
               %li= message_template.content[1]
               %li= message_template.content[2]
-              - if message_template.platform == 'youtube_search_results'
+              - if message_template.platform.start_with?('youtube')
                 %li= message_template.content[3]

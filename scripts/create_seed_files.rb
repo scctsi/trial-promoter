@@ -69,3 +69,37 @@ SeedFu::Writer.write('../db/fixtures/twitter_uscprofiles_text_templates.rb', :cl
     writer.add(:initial_id => row[0], :platform => 'twitter_uscprofiles', :message_type => message_type, :content => content)
   end
 end
+
+SeedFu::Writer.write('../db/fixtures/facebook_uscprofiles_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
+  CSV.foreach("facebook_uscprofiles_text_templates.csv", { :headers=>:first_row }) do |row|
+    message_type = 'awareness'
+
+    content = row[2]
+    content.gsub! "http://bit.ly/1234567", "<%= message[:url] %>"
+
+    writer.add(:initial_id => row[0], :platform => 'facebook_uscprofiles', :message_type => message_type, :content => content)
+  end
+end
+
+SeedFu::Writer.write('../db/fixtures/google_uscprofiles_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
+  CSV.foreach("google_uscprofiles_text_templates.csv", { :headers=>:first_row }) do |row|
+    message_type = 'awareness'
+
+    content = [row[1], row[2], row[3]]
+    content.each {|content_line| content_line.gsub! /disease/i, "<%= message[:disease] %>"}
+
+    writer.add(:initial_id => row[0], :platform => 'google_uscprofiles', :message_type => message_type, :content => content)
+  end
+end
+
+SeedFu::Writer.write('../db/fixtures/youtube_uscprofiles_text_templates.rb', :class_name => 'MessageTemplate', :constraints => [:initial_id, :platform]) do |writer|
+  CSV.foreach("youtube_uscprofiles_text_templates.csv", { :headers=>:first_row }) do |row|
+    message_type = 'awareness'
+
+    content = [row[1], row[2], row[3], row[4]]
+    content.each {|content_line| content_line.gsub! /disease/i, "<%= message[:disease] %>"}
+    content.each {|content_line| content_line.gsub! /"/i, ""}
+
+    writer.add(:initial_id => row[0], :platform => 'youtube_uscprofiles', :message_type => message_type, :content => content)
+  end
+end
