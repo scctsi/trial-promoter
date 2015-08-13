@@ -29,7 +29,7 @@
   %tbody
     - messages.each do |message|
       - row_class = ""
-      - if (!@pending_twitter_organic_messages.nil? and @pending_twitter_organic_messages.include?(message)) || (!@pending_facebook_organic_messages.nil? and @pending_facebook_organic_messages.include?(message))
+      - if (!@pending_twitter_organic_messages.nil? and @pending_twitter_organic_messages.include?(message)) || (!@pending_facebook_organic_messages.nil? and @pending_facebook_organic_messages.include?(message)) || (!@pending_twitter_uscprofiles_organic_messages.nil? and @pending_twitter_uscprofiles_organic_messages.include?(message)) || (!@pending_facebook_uscprofiles_organic_messages.nil? and @pending_facebook_uscprofiles_organic_messages.include?(message))
         - row_class = "active"
       - if (!message.sent_to_buffer_at.blank?)
         - row_class = 'disabled'
@@ -69,8 +69,9 @@
           %td None
         %td= message.message_template.message_type
         %td
-          %a{ :href => message.clinical_trial.url, :target => "_blank"}
-            View Trial
+          - if !(message.clinical_trial.blank?)
+            %a{ :href => message.clinical_trial.url, :target => "_blank"}
+              View Trial
         %td
           %ul{:style => 'margin-left: -40px; list-style-type: none;'}
             - if !message.scheduled_at.nil?

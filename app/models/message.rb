@@ -26,12 +26,18 @@ class Message < ActiveRecord::Base
 
     twitter_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'twitter').to_a
     twitter_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'twitter').to_a
+    twitter_uscprofiles_message_templates = MessageTemplate.where(:platform => 'twitter_uscprofiles').to_a
     facebook_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'facebook').to_a
     facebook_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'facebook').to_a
+    facebook_uscprofiles_message_templates = MessageTemplate.where(:platform => 'facebook_uscprofiles').to_a
     google_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'google').to_a
     google_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'google').to_a
+    google_uscprofiles_message_templates = MessageTemplate.where(:platform => 'google_uscprofiles').to_a
     youtube_search_results_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'youtube_search_results').to_a
     youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
+    youtube_uscprofiles_message_templates = MessageTemplate.where(:platform => 'youtube_uscprofiles').to_a
+    # diseases = clinical_trials_set_1.collect { |clinical_trial| clinical_trial.disease }
+
     random = Random.new
 
     if !Rails.env.production?
@@ -56,6 +62,9 @@ class Message < ActiveRecord::Base
       end until create_message(clinical_trials_set_1[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
       begin # From set 2 with no image
       end until create_message(clinical_trials_set_2[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
+      # Profiles Promotion
+      begin # No image
+      end until create_message(nil, twitter_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
 
       # Twitter will not allow ads for clinical trials
       # # Paid
@@ -81,6 +90,8 @@ class Message < ActiveRecord::Base
       create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
       # From set 2 with image
       create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
+      # Profiles Promotion
+      create_message(nil, facebook_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
 
       # Paid
       # Awareness
@@ -93,6 +104,8 @@ class Message < ActiveRecord::Base
       create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
       # From set 2 with image
       create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid', true)
+      # Profiles Promotion
+      create_message(nil, facebook_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
       # --------
       # Google
@@ -100,23 +113,33 @@ class Message < ActiveRecord::Base
       # Paid
       # Awareness
       # From set 1 with no image
-      create_message(clinical_trials_set_1[i], google_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      begin
+      end until create_message(clinical_trials_set_1[i], google_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
       # Recruiting
-      create_message(clinical_trials_set_1[i], google_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
+      begin
+      end until create_message(clinical_trials_set_1[i], google_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
+      # Profiles Promotion
+      begin
+      end until create_message(nil, google_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
       # --------
       # YouTube
       # --------
       # Paid
       # Awareness
-      create_message(clinical_trials_set_1[i], youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      begin
+      end until create_message(clinical_trials_set_1[i], youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
       # Recruiting
-      create_message(clinical_trials_set_1[i], youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
+      begin
+      end until create_message(clinical_trials_set_1[i], youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
+      # Profiles Promotion
+      begin
+      end until create_message(nil, youtube_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
       scheduled_at = scheduled_at + 2
 
       # Sleep so that the system does not hit Bitly's API limits
-      sleep 10
+      sleep 15
     end
 
     if !Rails.env.production?
@@ -125,18 +148,13 @@ class Message < ActiveRecord::Base
   end
 
   def self.create_message(clinical_trial, message_template, scheduled_at, medium, image_required = false )
-    campaign = 'trial-promoter-development'
-    if !ENV['CAMPAIGN'].blank?
-      campaign = ENV['CAMPAIGN']
-    end
-
     message = Message.new
     message.clinical_trial = clinical_trial
     message.message_template = message_template
     message.scheduled_at = scheduled_at
     message.medium = medium
-    message.campaign = campaign
-    tracking_url = TrackingUrl.new(message).value(medium, campaign)
+    message.campaign = self.campaign_value
+    tracking_url = TrackingUrl.new(message).value(medium, self.campaign_value)
     message.tracking_url = tracking_url
     message.image_required = image_required
 
@@ -151,43 +169,62 @@ class Message < ActiveRecord::Base
   end
 
   def self.replace_parameters(message)
+    if !(message.clinical_trial.blank?)
+      disease = message.clinical_trial.disease
+    else
+      disease = ''
+    end
     url_shortener = UrlShortener.new
 
     message_template_content = message.message_template.content
-    if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
+    if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')
       message.content = []
-      message.content[0] = message.message_template.content[0].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
+      message.content[0] = message.message_template.content[0].gsub('<%= message[:disease] %>', disease)
       message.content[1] = url_shortener.shorten(message.tracking_url)
-      message.content[2] = message.message_template.content[1].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
-      message.content[3] = message.message_template.content[2].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
-      if message.message_template.platform == 'youtube_search_results'
-        message.content[4] = message.message_template.content[3].gsub('<%= message[:disease] %>', message.clinical_trial.disease)
+      message.content[2] = message.message_template.content[1].gsub('<%= message[:disease] %>', disease)
+      message.content[3] = message.message_template.content[2].gsub('<%= message[:disease] %>', disease)
+      if message.message_template.platform.start_with?('youtube')
+        message.content[4] = message.message_template.content[3].gsub('<%= message[:disease] %>', disease)
       end
     else
       message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(message.tracking_url))
-      message.content = message.content.gsub('<%= message[:disease_hashtag] %>', message.clinical_trial.hashtags[0])
-      if !message.clinical_trial.hashtags[1].blank?
-        # Always add a secondary hashtag for Facebook messages
-        if message.message_template.platform == 'facebook'
-            message.content += " #{message.clinical_trial.hashtags[1]}"
-        end
+      tag(message) if !(message.clinical_trial.blank?)
+    end
+  end
 
-        # Add a secondary hashtag for Twitter if possible
-        if message.message_template.platform == 'twitter'
-          current_message_content = message.content
-          message.content += " #{message.clinical_trial.hashtags[1]}"
-          message.content = current_message_content if message.content.length > 140
-        end
+  def self.tag(message)
+    message.content = message.content.gsub('<%= message[:disease_hashtag] %>', message.clinical_trial.hashtags[0])
+    if !message.clinical_trial.hashtags[1].blank?
+      # Always add a secondary hashtag for Facebook messages
+      if message.message_template.platform == 'facebook'
+        message.content += " #{message.clinical_trial.hashtags[1]}"
+      end
+
+      # Add a secondary hashtag for Twitter if possible
+      if message.message_template.platform == 'twitter'
+        current_message_content = message.content
+        message.content += " #{message.clinical_trial.hashtags[1]}"
+        message.content = current_message_content if message.content.length > 140
       end
     end
   end
 
+  def self.campaign_value
+    return_value = 'trial-promoter-development'
+
+    if !ENV['CAMPAIGN'].blank?
+      return_value  = ENV['CAMPAIGN']
+    end
+
+    return(return_value)
+  end
+
   def self.is_valid?(message)
-    if message.message_template.platform == 'twitter' && message.content.length > 140
+    if message.message_template.platform.start_with?('twitter') && message.content.length > 140
       return false
     end
 
-    if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
+    if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')
       return false if message.content[0].length > 25 || message.content[1].length > 35 || message.content[2].length > 35
     end
 

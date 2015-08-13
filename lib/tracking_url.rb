@@ -10,6 +10,10 @@ class TrackingUrl
   end
 
   def value(medium, campaign)
-    "#{message.clinical_trial.url}/?#{tracking_fragment(message.message_template.platform, medium, campaign)}"
+    if (!message.clinical_trial.blank?)
+      return "#{message.clinical_trial.url}/?#{tracking_fragment(message.message_template.platform, medium, campaign)}"
+    else
+      return "http://profiles.sc-ctsi.org/search/?#{tracking_fragment(message.message_template.platform, medium, campaign)}"
+    end
   end
 end
