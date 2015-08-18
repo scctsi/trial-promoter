@@ -8,6 +8,13 @@
         Facebook
         %span.ui.black.label
           #{ @facebook_paid_messages.count.to_s }
+  %a.active.item{ "data-tab" => 'facebook-uscprofiles-paid-messages' }
+    %h3.ui.header
+      %i.blue.facebook.square.icon
+      .content
+        Facebook
+        %span.ui.black.label
+          #{ @facebook_uscprofiles_paid_messages.count.to_s }
   %a.item{ "data-tab" => 'google-paid-messages' }
     %h3.ui.header
       %i.red.google.square.icon
@@ -15,6 +22,13 @@
         Google
         %span.ui.black.label
           #{ @google_paid_messages.count.to_s }
+  %a.item{ "data-tab" => 'google-uscprofiles-paid-messages' }
+    %h3.ui.header
+      %i.red.google.square.icon
+      .content
+        Google
+        %span.ui.black.label
+          #{ @google_uscprofiles_paid_messages.count.to_s }
   %a.item{ "data-tab" => 'youtube-search-results-paid-messages' }
     %h3.ui.header
       %i.red.youtube.square.icon
@@ -22,6 +36,13 @@
         YouTube
         %span.ui.black.label
           #{ @youtube_search_results_paid_messages.count.to_s }
+  %a.item{ "data-tab" => 'youtube-uscprofiles-paid-messages' }
+    %h3.ui.header
+      %i.red.youtube.square.icon
+      .content
+        YouTube
+        %span.ui.black.label
+          #{ @youtube_uscprofiles_paid_messages.count.to_s }
 .ui.bottom.attached.tab.active.segment{ "data-tab" => 'facebook-paid-messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @facebook_paid_messages, :platform => 'facebook', :medium => 'paid' }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'google-paid-messages'}

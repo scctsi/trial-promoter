@@ -15,14 +15,14 @@
         Clinical Trial
       %th
         Publishing Date
-    - if ((platform == 'twitter' and medium == 'organic') or (platform == 'facebook' and medium == 'organic') or (platform == 'facebook' and medium == 'paid'))
+    - if ((platform.start_with?('twitter') and medium == 'organic') or (platform.start_with?('facebook')))
       %tr
         %th{ :colspan => '7' }
-          - if platform == 'twitter'
+          - if platform.start_with?('twitter')
             %a.ui.twitter.button{:href => "/organic_messages/publish/?platform=#{platform}&medium=#{medium}" }
               %i.twitter.icon
               Publish #{medium.titlecase} #{platform.titlecase} Messages
-          - if platform == 'facebook'
+          - if platform.start_with?( 'facebook')
             %a.ui.facebook.button{:href => "/organic_messages/publish/?platform=#{platform}&medium=#{medium}" }
               %i.facebook.icon
               Publish #{medium.titlecase} #{platform.titlecase} Messages
