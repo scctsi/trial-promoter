@@ -171,8 +171,10 @@ class Message < ActiveRecord::Base
   def self.replace_parameters(message)
     if !(message.clinical_trial.blank?)
       disease = message.clinical_trial.disease
+      pi_name = message.clinical_trial.pi_name
     else
       disease = ''
+      pi_name = ''
     end
     url_shortener = UrlShortener.new
 
@@ -188,6 +190,7 @@ class Message < ActiveRecord::Base
       end
     else
       message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(message.tracking_url))
+      message.content = message_template_content.gsub('<%= message[:pi] %>', pi_name)
       tag(message) if !(message.clinical_trial.blank?)
     end
   end

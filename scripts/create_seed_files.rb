@@ -16,6 +16,7 @@ SeedFu::Writer.write('../db/fixtures/twitter_text_templates.rb', :class_name => 
     content = row[4]
     content.gsub! "#disease", "<%= message[:disease_hashtag] %>"
     content.gsub! "http://bit.ly/1234567", "<%= message[:url] %>"
+    content.gsub! "Principal Investigator", "<%= message[:pi] %>"
 
     writer.add(:initial_id => row[0], :platform => row[1].downcase, :message_type => message_type, :content => content)
   end
@@ -29,6 +30,7 @@ SeedFu::Writer.write('../db/fixtures/facebook_text_templates.rb', :class_name =>
     content = row[2]
     content.gsub! "#disease", "<%= message[:disease_hashtag] %>"
     content.gsub! "http://bit.ly/1234567", "<%= message[:url] %>"
+    content.gsub! "Principal Investigator", "<%= message[:pi] %>"
 
     writer.add(:initial_id => row[0], :platform => row[1].downcase, :message_type => message_type, :content => content)
   end
