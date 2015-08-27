@@ -34,11 +34,11 @@ $(document).ready(function() {
         $.ajax({
           url: "/organic_messages/set_image_urls",
           type: 'POST',
-          data: {message_id: messageId, image_url: selectedFiles[0].link, thumbnail_url: selectedFiles[0].thumbnailLink.replace('75', '256')},
+          data: {message_id: messageId, image_url: selectedFiles[0].link, thumbnail_url: selectedFiles[0].thumbnailLink},
           dataType: 'json',
           async: false,
           success: function(retdata) {
-            $imageTableCell.prepend('<img src="' + selectedFiles[0].thumbnailLink.replace('75', '256') + '"/>');
+            $imageTableCell.prepend('<img src="' + selectedFiles[0].thumbnailLink + '"/>');
           }
         });
 

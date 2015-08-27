@@ -30,4 +30,15 @@ describe Message do
     expect(message.content).to eq(['Headline', 'Description Line 1', 'Description Line 2'])
   end
 
+  it 'gets the permanent_image_url from a thumbnail URL (hosted on Dropbox)' do
+    message = Message.new(:thumbnail_url => 'https://api-content.dropbox.com/r11/t/AAANnP_XPBxb28PEfpYSoSap92axlFNxaN4CT4G1i5SKNA/12/307720262/png/_/0/4/children_1.png/CMbg3ZIBIAEgAiADIAQgBSAGIAcoAigH/ps2uob5dswyejiz/AADF_c9_6efgbktZAVxuxLDia/children_1.png?bounding_box=256&mode=fit')
+
+    expect(message.permanent_image_url).to eq('http://sc-ctsi.org/trial_promoter/image_pool/children_1.png')
+  end
+
+  it 'returns the same permanent_image_url as the image_url if the image is hosted on SC CTSI' do
+    message = Message.new(:image_url => 'http://sc-ctsi.org/trial_promoter/image_pool/rope.png', :thumbnail_url => 'http://sc-ctsi.org/trial_promoter/image_pool/rope_thumbnail.png')
+
+    expect(message.permanent_image_url).to eq('http://sc-ctsi.org/trial_promoter/image_pool/rope.png')
+  end
 end

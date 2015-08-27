@@ -159,6 +159,7 @@ class Message < ActiveRecord::Base
     message.image_required = image_required
 
     replace_parameters(message)
+    assign_random_image(message) if message.image_required
 
     if is_valid?(message)
       message.save
@@ -212,6 +213,20 @@ class Message < ActiveRecord::Base
     end
   end
 
+  def self.assign_random_image(message)
+    image_names = %w(children_1.png cutout_man.png cutout_woman.png diabetes_magnifier.png faces.png faces_2.png healthy_man.png healthy_woman.png
+      healthy_woman_2.png heart.png hero_1.png hero_2.png hero_3.png hero_4.png hero_5.png mother_child.png
+      patient.png physician_1.png physician_2.png research.png rope.png stethoscope.png together.png together_2.png together_2b.png)
+
+    random = Random.new
+
+    image = image_names.sample(1, random: random)[0]
+
+    message.thumbnail_url = "http://sc-ctsi.org/trial_promoter/image_pool/#{image}".chomp('.png') + '_thumbnail.png'
+    message.image_url = "http://sc-ctsi.org/trial_promoter/image_pool/#{image}"
+    message.save(:validate => false)
+  end
+
   def self.campaign_value
     return_value = 'trial-promoter-development'
 
@@ -252,5 +267,12 @@ class Message < ActiveRecord::Base
     end
 
     return [clinical_trials_set_1, clinical_trials_set_2]
+  end
+
+  def permanent_image_url
+    # Dropbox thumbnail URLs are of this form: https://api-content.dropbox.com/r11/t/AAANnP_XPBxb28PEfpYSoSap92axlFNxaN4CT4G1i5SKNA/12/307720262/png/_/0/4/children_1.png/CMbg3ZIBIAEgAiADIAQgBSAGIAcoAigH/ps2uob5dswyejiz/AADF_c9_6efgbktZAVxuxLDia/children_1.png?bounding_box=75&mode=fit
+    # We pull images from a web location located at sc-ctsi.org/trial_promoter/image_pool
+    return "http://sc-ctsi.org/trial_promoter/image_pool/#{thumbnail_url[(thumbnail_url.rindex('/') + 1)..(thumbnail_url.rindex('?') - 1)]}" if !(thumbnail_url.start_with?('http://sc-ctsi.org'))
+    image_url
   end
 end

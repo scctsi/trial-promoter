@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20150805193703) do
     t.datetime "updated_at"
     t.string   "randomization_status"
     t.text     "hashtags"
-    t.string   "disease"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
