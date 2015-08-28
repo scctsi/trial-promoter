@@ -159,7 +159,7 @@ class Message < ActiveRecord::Base
     message.image_required = image_required
 
     replace_parameters(message)
-    assign_random_image(message) if message.image_required
+    # assign_random_image(message) if message.image_required
 
     if is_valid?(message)
       message.save
