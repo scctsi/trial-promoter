@@ -1,6 +1,6 @@
 # DO NOT MODIFY THIS FILE, it was auto-generated.
 #
-# Date: 2015-08-12 15:00:32 -0700
+# Date: 2015-08-31 15:49:33 -0700
 # Seeding MessageTemplate
 # Written with the command:
 #
@@ -36,7 +36,7 @@ MessageTemplate.seed(:initial_id, :platform,
   {:initial_id=>"27", :platform=>"twitter", :message_type=>"awareness", :content=>"Looking for #ClinicalTrials on <%= message[:disease_hashtag] %>? Here is a new study @KeckMedUSC for your consideration <%= message[:url] %>"},
   {:initial_id=>"28", :platform=>"twitter", :message_type=>"awareness", :content=>"#ClinicalTrials give hope to many patients. Help us find study participants for this <%= message[:disease_hashtag] %> study @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"29", :platform=>"twitter", :message_type=>"awareness", :content=>"Research for better #health: Pls help us find study participants <%= message[:disease_hashtag] %> #ClinicalTrial @KeckMedUSC <%= message[:url] %>"},
-  {:initial_id=>"30", :platform=>"twitter", :message_type=>"awareness", :content=>"Join researcher Principal Investigator's Name @KeckMedUSC in fighting <%= message[:disease_hashtag] %>. Share this #ClinicalTrial <%= message[:url] %>"},
+  {:initial_id=>"30", :platform=>"twitter", :message_type=>"awareness", :content=>"Join researcher <%= message[:pi] %>'s Name @KeckMedUSC in fighting <%= message[:disease_hashtag] %>. Share this #ClinicalTrial <%= message[:url] %>"},
   {:initial_id=>"31", :platform=>"twitter", :message_type=>"recruiting", :content=>"If you have been diagnosed with <%= message[:disease_hashtag] %>, you may qualify for this important #ClinicalTrial @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"32", :platform=>"twitter", :message_type=>"recruiting", :content=>"Are you the right match? #ClinicalTrial @KeckMedUSC on <%= message[:disease_hashtag] %> is looking for participants. <%= message[:url] %>"},
   {:initial_id=>"33", :platform=>"twitter", :message_type=>"recruiting", :content=>"You may be eligible to aid in this #ClinicalTrial on <%= message[:disease_hashtag] %> @KeckMedUSC. We'd appreciate your help <%= message[:url] %>"},
@@ -65,7 +65,7 @@ MessageTemplate.seed(:initial_id, :platform,
   {:initial_id=>"56", :platform=>"twitter", :message_type=>"recruiting", :content=>"It starts with you! Please participate in our #ClinicalTrial on <%= message[:disease_hashtag] %> @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"57", :platform=>"twitter", :message_type=>"recruiting", :content=>"You can make a difference in others' lives. Please participate in our #ClinicalTrial on <%= message[:disease_hashtag] %> @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"58", :platform=>"twitter", :message_type=>"recruiting", :content=>"Join us! Our #ClinicalTrial participants make it possible to fight <%= message[:disease_hashtag] %> in new ways @KeckMedUSC <%= message[:url] %>"},
-  {:initial_id=>"59", :platform=>"twitter", :message_type=>"recruiting", :content=>"Join Principal Investigator's Name in fighting <%= message[:disease_hashtag] %> by participating in this #ClinicalTrial @KeckMedUSC <%= message[:url] %>"},
+  {:initial_id=>"59", :platform=>"twitter", :message_type=>"recruiting", :content=>"Join <%= message[:pi] %>'s Name in fighting <%= message[:disease_hashtag] %> by participating in this #ClinicalTrial @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"60", :platform=>"twitter", :message_type=>"recruiting", :content=>"Diagnosed with <%= message[:disease_hashtag] %>? Leading researcher PI's Name @KeckMedUSC is looking for #ClinicalTrial participants <%= message[:url] %>"}
 )
 # End auto-generated file.
