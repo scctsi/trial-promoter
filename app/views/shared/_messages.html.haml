@@ -35,27 +35,27 @@
         - row_class = 'disabled'
       %tr{ :class => row_class }
         %td= message.id.to_s
-        - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
+        - if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')
           %td
             %ul
               %li= message.content[0]
               %li= message.tracking_url
               %li= message.content[2]
               %li= message.content[3]
-              - if message.message_template.platform == 'youtube_search_results'
+              - if message.message_template.platform.start_with?('youtube_search_results')
                 %li= message.content[4]
         - else
           %td
             #{message.content}
             = render :partial => 'shared/statistics', :locals => { :message => message }
-        - if message.message_template.platform == 'google' || message.message_template.platform == 'youtube_search_results'
+        - if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')
           %td
             %ul
               %li= message.content[0].length
-              %li= message.content[1].length
+              %li URL
               %li= message.content[2].length
               %li= message.content[3].length
-              - if message.message_template.platform == 'youtube_search_results'
+              - if message.message_template.platform.start_with?('youtube')
                 %li= message.content[4].length
         - else
           %td= message.content.length

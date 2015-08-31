@@ -243,7 +243,7 @@ class Message < ActiveRecord::Base
     end
 
     if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')
-      return false if message.content[0].length > 25 || message.content[1].length > 35 || message.content[2].length > 35
+      return false if message.content[0].length > 25 || message.content[2].length > 35 || message.content[3].length > 35
     end
 
     return true

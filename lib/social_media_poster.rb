@@ -68,7 +68,7 @@ class SocialMediaPoster
       :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f'
     }
 
-    self.class.post('https://api.bufferapp.com/1/updates/create.json', {:body => body})
+    http_parsed_response = self.class.post('https://api.bufferapp.com/1/updates/create.json', {:body => body}).parsed_response
 
     message.sent_to_buffer_at = Time.now
     message.save
