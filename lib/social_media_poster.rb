@@ -70,6 +70,7 @@ class SocialMediaPoster
 
     http_parsed_response = self.class.post('https://api.bufferapp.com/1/updates/create.json', {:body => body}).parsed_response
 
+    message.buffer_update_id = http_parsed_response['updates'][0]['id']
     message.sent_to_buffer_at = Time.now
     message.save
   end

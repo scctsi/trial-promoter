@@ -55,12 +55,12 @@ class Message < ActiveRecord::Base
       # Awareness
       begin # From set 1 with no image
       end until create_message(clinical_trials_set_1[i], twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
-      begin # From set 2 with no image
+      begin # From set 2 with image
       end until create_message(clinical_trials_set_2[i], twitter_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
       # Recruiting
       begin # From set 1 with no image
       end until create_message(clinical_trials_set_1[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
-      begin # From set 2 with no image
+      begin # From set 2 with image
       end until create_message(clinical_trials_set_2[i], twitter_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
       # Profiles Promotion
       begin # No image
@@ -82,30 +82,40 @@ class Message < ActiveRecord::Base
       # Organic
       # Awareness
       # From set 1 with no image
-      create_message(clinical_trials_set_1[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      begin
+      end until create_message(clinical_trials_set_1[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
       # From set 2 with image
-      create_message(clinical_trials_set_2[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
+      begin
+      end until create_message(clinical_trials_set_2[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'organic', true)
       # Recruiting
       # From set 1 with no image
-      create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
+      begin
+      end until create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic')
       # From set 2 with image
-      create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
+      begin
+      end until create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'organic', true)
       # Profiles Promotion
-      create_message(nil, facebook_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
+      begin
+      end until create_message(nil, facebook_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'organic')
 
       # Paid
       # Awareness
       # From set 1 with no image
-      create_message(clinical_trials_set_1[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      begin
+      end until create_message(clinical_trials_set_1[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
       # From set 2 with image
-      create_message(clinical_trials_set_2[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid', true)
+      begin
+      end until create_message(clinical_trials_set_2[i], facebook_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid', true)
       # Recruiting
       # From set 1 with no image
-      create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
+      begin
+      end until create_message(clinical_trials_set_1[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
       # From set 2 with image
-      create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid', true)
+      begin
+      end until create_message(clinical_trials_set_2[i], facebook_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid', true)
       # Profiles Promotion
-      create_message(nil, facebook_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
+      begin
+      end until create_message(nil, facebook_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
       # --------
       # Google
@@ -191,7 +201,7 @@ class Message < ActiveRecord::Base
       end
     else
       message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(message.tracking_url))
-      message.content = message_template_content.gsub('<%= message[:pi] %>', pi_name)
+      message.content = message.content.gsub('<%= message[:pi] %>', pi_name)
       tag(message) if !(message.clinical_trial.blank?)
     end
   end
@@ -238,6 +248,9 @@ class Message < ActiveRecord::Base
   end
 
   def self.is_valid?(message)
+    # Reject the smoker/smoking message templates as none of our lung cancer trials mention smoking.
+    return false if (message.index('smoker') != nil) || (message.index('smoking') != nil)
+
     if message.message_template.platform.start_with?('twitter') && message.content.length > 140
       return false
     end
