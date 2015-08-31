@@ -132,8 +132,6 @@ class Message < ActiveRecord::Base
       begin
       end until create_message(nil, google_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
 
-      # Small
-
       # --------
       # YouTube
       # --------
