@@ -1,6 +1,6 @@
 # DO NOT MODIFY THIS FILE, it was auto-generated.
 #
-# Date: 2015-08-31 15:49:33 -0700
+# Date: 2015-09-01 12:03:32 -0700
 # Seeding ClinicalTrial
 # Written with the command:
 #
@@ -8,7 +8,7 @@
 #
 ClinicalTrial.seed(:nct_id,
   {:initial_database_id=>"178", :nct_id=>"NCT02221622", :pi_name=>"Roberta Brinton", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/178", :title=>"Allopregnanolone Regenerative Therapeutic for MCI/AD: Dose Finding Phase I", :hashtags=>["#Alzheimer", "#Alzheimers", "#dementia", "#AlzFacts", "#GlobalDementia"], :disease=>"Alzheimer"},
-  {:initial_database_id=>"114", :nct_id=>"NCT02008357", :pi_name=>" ", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/114", :title=>"Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease (A4 Study)", :hashtags=>["#Alzheimer", "#Alzheimers", "#dementia", "#AlzFacts", "#GlobalDementia"], :disease=>"Alzheimer"},
+  {:initial_database_id=>"114", :nct_id=>"NCT02008357", :pi_name=>"Lon Schneider", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/114", :title=>"Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease (A4 Study)", :hashtags=>["#Alzheimer", "#Alzheimers", "#dementia", "#AlzFacts", "#GlobalDementia"], :disease=>"Alzheimer"},
   {:initial_database_id=>"148", :nct_id=>"NCT01756729", :pi_name=>"Thomas Chen", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/148", :title=>"6G-13-1-A Prospective, Non-Randomized, Concurrent Control, Open Label, Post-Approval Study Of NovoTTF-100A In Recurrent GBM Patients", :hashtags=>["#BrainCancer", "#BrainTumor"], :disease=>"Brain Cancer"},
   {:initial_database_id=>"301", :nct_id=>"NCT01535066", :pi_name=>"Dawn Hershman", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/301", :title=>"Randomized Blinded Sham- and Waitlist-Controlled Trial of Acupuncture for Joint Symptoms Related to Aromatase Inhibitors in Women With Early Stage Breast Cancer", :hashtags=>["#BreastCancer", "#BRCA", "#BRCA1", "#BRCA2", "#advancedBC", "#metastaticBC", "#malebreastcancer", "#BCKills", "#DontIgnoreStageIV", "#MBCAware", "#MetsMonday", "#BCD2020"], :disease=>"Breast Cancer"},
   {:initial_database_id=>"186", :nct_id=>"NCT01872975", :pi_name=>"Eugene Chung", :url=>"http://clinicaltrials.keckmedicine.org/clinicaltrials/186", :title=>"CTSU_NSABP-51/RTOG 1304 - A Randomized Phase III Clinical Trial Evaluating Post-Mastectomy Chestwall and  - Regional Nodal XRT and Post-Lumpectomy Regional Nodal XRT in Patients with Positive Axillary Nodes Before Neoadjuvant Chemotherapy who Convert to Pathologically Negative Axillary Nodes After Neoadjuvant Chemotherapy", :hashtags=>["#BreastCancer", "#BRCA", "#BRCA1", "#BRCA2", "#advancedBC", "#metastaticBC", "#malebreastcancer", "#BCKills", "#DontIgnoreStageIV", "#MBCAware", "#MetsMonday", "#BCD2020"], :disease=>"Breast Cancer"},

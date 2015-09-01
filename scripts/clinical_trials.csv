@@ -67,7 +67,7 @@ Endpoints: To determine the safety and tolerability of Allo, the trial will eval
 114,NCT02008357,,,"Cognition
                     Prevention","Cognition Disorders
                     Delirium, Dementia, Amnestic, Cognitive Disorders
-                    Mental Disorders",,,lschneid@usc.edu,Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease (A4 Study),"The A4 study is a clinical trial for older individuals who have evidence of amyloid plaque
+                    Mental Disorders",Lon,Schneider,lschneid@usc.edu,Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease (A4 Study),"The A4 study is a clinical trial for older individuals who have evidence of amyloid plaque
       build-up in their brains who may be at risk for memory loss and cognitive decline due to
       Alzheimer's disease.  The A4 study will test an anti-amyloid investigational drug in older
       individuals who do not yet show symptoms of Alzheimer's disease cognitive impairment or
@@ -1142,7 +1142,7 @@ Costs and Quality of Life of Women with Breast Cancer","This proposed randomized
               is insufficient to provide a statistical basis for assessment of effects in this
              subpopulation of people with breast cancer.
 
-          -  ",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
+         ",Breast Cancer,Recruiting,,"#BreastCancer, #BRCA, #BRCA1, #BRCA2, #advancedBC, #metastaticBC, #malebreastcancer, #BCKills, #DontIgnoreStageIV, #MBCAware, #MetsMonday, #BCD2020",Breast Cancer
 112,NCT01997333,,,"Metastatic Breast Cancer
                     Locally advanced breast cancer
                     Breast cancer
@@ -2939,7 +2939,7 @@ The PK and safety data will be summarized and analyzed by liver function group a
 
           -  Patients must have histologically documented solid tumors whose disease has
              progressed on standard therapy that is known to be associated with a survival
-             advantage or have disease for which th",,Recruiting,,"#Cancer, #Tumor",Tumor
+             advantage or have disease for whic",,Recruiting,,"#Cancer, #Tumor",Tumor
 4,NCT01587040,,,,Neoplasms,Agustin,Garcia,Agustin.Garcia@med.usc.edu,"1B-12-5-International, Multicenter, Open-Label, Treatment-Extension Study for Subjects who Completed a Phase 1 or Phase 2 Parental Study to Continue Receiving Treatment with SAR245408 or SAR245409 as a Monotherapy or as a Combination Regimen","The duration of the study for an individual subject will include:
 
         1. Baseline assessments: within 7 days prior to the first dose of IMP.
@@ -6315,7 +6315,7 @@ Participants may continue treatment with BGJ398 until they experience unacceptab
 
           2. Age greater than or equal to 18 years of age
 
-          3. Presence of an underlying medical condition(s",,Recruiting,,#Influenza,Influenza
+          3. Presence of an underlying medical con",,Recruiting,,#Influenza,Influenza
 310,NCT01575548,,,,"Carcinoma
                     Carcinoma, Renal Cell
                     Adenocarcinoma
@@ -9245,7 +9245,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
 
           -  Patients must have a confirmed diagnosis of symptomatic multiple myeloma and must be
              relapsed or refractory; all tests for establishing disease status must be completed
-             ",Blood Cancer,Recruiting,,"#Myeloma, #MMSM",Myeloma
+         ",Blood Cancer,Recruiting,,"#Myeloma, #MMSM",Myeloma
 27,NCT01959139,,,,"Adenocarcinoma
                     Carcinoma
                     Neoplasms
@@ -9276,7 +9276,7 @@ Demographic and clinical baseline data, total dose of radiation received, durati
              cytologically documented pancreatic adenocarcinoma; patients must not have known
              history of brain metastases
 
-          -  Patients must have measurabl",,Recruiting,"{""Pancreatic Cancer""}","#PancreaticCancer, #pancsm",Pancreatic Cancer
+          -  Patients must have measu",,Recruiting,"{""Pancreatic Cancer""}","#PancreaticCancer, #pancsm",Pancreatic Cancer
 64,NCT02050178,,,"Pancreatic Cancer
                     Stage IV Pancreatic Cancer","Pancreatic Neoplasms
                     Digestive System Diseases
