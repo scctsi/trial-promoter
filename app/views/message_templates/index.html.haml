@@ -26,7 +26,7 @@
       .content
         (P)
         %span.ui.black.label
-          #{ @facebook_message_templates.count.to_s }
+          #{ @facebook_uscprofiles_message_templates.count.to_s }
   %a.item{ "data-tab" => 'google-message-templates' }
     %h3.ui.header
       %i.red.google.square.icon
@@ -39,7 +39,7 @@
       .content
         (P)
         %span.ui.black.label
-          #{ @google_message_templates.count.to_s }
+          #{ @google_uscprofiles_message_templates.count.to_s }
   %a.item{ "data-tab" => 'youtube-search-results-message-templates' }
     %h3.ui.header
       %i.red.youtube.square.icon
@@ -52,7 +52,7 @@
       .content
         (P)
         %span.ui.black.label
-          #{ @youtube_search_results_message_templates.count.to_s }
+          #{ @youtube_uscprofiles_message_templates.count.to_s }
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-message-templates'}
   = render :partial => 'shared/message_templates', :locals => { :message_templates => @twitter_message_templates }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'twitter-uscprofiles-message-templates'}
