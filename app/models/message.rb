@@ -150,6 +150,7 @@ class Message < ActiveRecord::Base
 
       # Sleep so that the system does not hit Bitly's API limits
       sleep 30
+      
     end
 
     if !Rails.env.production?
