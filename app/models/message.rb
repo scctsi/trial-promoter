@@ -149,8 +149,8 @@ class Message < ActiveRecord::Base
       scheduled_at = scheduled_at + 2
 
       # Sleep so that the system does not hit Bitly's API limits
-      sleep 30
-      
+      sleep 90
+
     end
 
     if !Rails.env.production?
