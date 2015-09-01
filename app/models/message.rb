@@ -249,7 +249,7 @@ class Message < ActiveRecord::Base
 
   def self.is_valid?(message)
     # Reject the smoker/smoking message templates as none of our lung cancer trials mention smoking.
-    return false if (message.index('smoker') != nil) || (message.index('smoking') != nil)
+    return false if (message.content.index('smoker') != nil) || (message.content.index('smoking') != nil)
 
     if message.message_template.platform.start_with?('twitter') && message.content.length > 140
       return false
