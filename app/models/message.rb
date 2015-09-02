@@ -251,7 +251,11 @@ class Message < ActiveRecord::Base
     # Reject the smoker/smoking message templates as none of our lung cancer trials mention smoking.
     return false if (message.content.index('smoker') != nil) || (message.content.index('smoking') != nil)
 
-    if message.message_template.platform.start_with?('twitter') && message.content.length > 140
+    if message.message_template.platform.start_with?('twitter') and message.content.length > 140
+      return false
+    end
+
+    if message.message_template.platform.start_with?('twitter') and message.image_required and message.content.length > 140 - 24
       return false
     end
 
