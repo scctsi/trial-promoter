@@ -149,7 +149,8 @@ class Message < ActiveRecord::Base
       scheduled_at = scheduled_at + 2
 
       # Sleep so that the system does not hit Bitly's API limits
-      sleep 15
+      sleep 120
+
     end
 
     if !Rails.env.production?
@@ -193,7 +194,7 @@ class Message < ActiveRecord::Base
     if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')
       message.content = []
       message.content[0] = message.message_template.content[0].gsub('<%= message[:disease] %>', disease)
-      message.content[1] = url_shortener.shorten(message.tracking_url)
+      message.content[1] = 'URL' # We are not shortening the Google or Youtube URLs url_shortener.shorten(message.tracking_url)
       message.content[2] = message.message_template.content[1].gsub('<%= message[:disease] %>', disease)
       message.content[3] = message.message_template.content[2].gsub('<%= message[:disease] %>', disease)
       if message.message_template.platform.start_with?('youtube')
