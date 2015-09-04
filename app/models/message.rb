@@ -154,8 +154,11 @@ class Message < ActiveRecord::Base
       # Alternate use of image for profile images
       use_image_for_profile_message = !use_image_for_profile_message
 
-      # Sleep so that the system does not hit Bitly's API limits
-      # sleep 30
+      # Sleep outside it not in development environment so that the system does not hit Bitly's API limits
+      if Rails.env.development?
+      else
+        sleep 30
+      end
     end
 
     if !Rails.env.production?
@@ -206,8 +209,11 @@ class Message < ActiveRecord::Base
         message.content[4] = message.message_template.content[3].gsub('<%= message[:disease] %>', disease)
       end
     else
-      # message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(message.tracking_url))
-      message.content = message_template_content.gsub('<%= message[:url] %>', 'http://bit.ly/12345678')
+      if Rails.env.development?
+        message.content = message_template_content.gsub('<%= message[:url] %>', 'http://bit.ly/12345678')
+      else
+        message.content = message_template_content.gsub('<%= message[:url] %>', url_shortener.shorten(message.tracking_url))
+      end
       message.content = message.content.gsub('<%= message[:pi] %>', pi_name)
       message.content = message.content.gsub('@KeckMedUSC', '') if message.image_required # We need the extra 11 characters of space for Twitter messages with images (Twitter images take up 24 extra characters)
       tag(message) if !(message.clinical_trial.blank?)
