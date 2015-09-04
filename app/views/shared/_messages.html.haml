@@ -29,7 +29,7 @@
   %tbody
     - messages.each do |message|
       - row_class = ""
-      - if (!@pending_twitter_organic_messages.nil? and @pending_twitter_organic_messages.include?(message)) || (!@pending_facebook_organic_messages.nil? and @pending_facebook_organic_messages.include?(message)) || (!@pending_twitter_uscprofiles_organic_messages.nil? and @pending_twitter_uscprofiles_organic_messages.include?(message)) || (!@pending_facebook_uscprofiles_organic_messages.nil? and @pending_facebook_uscprofiles_organic_messages.include?(message))
+      - if (!@pending_twitter_organic_messages.nil? and @pending_twitter_organic_messages.include?(message)) || (!@pending_facebook_organic_messages.nil? and @pending_facebook_organic_messages.include?(message)) || (!@pending_twitter_uscprofiles_organic_messages.nil? and @pending_twitter_uscprofiles_organic_messages.include?(message)) || (!@pending_facebook_uscprofiles_organic_messages.nil? and @pending_facebook_uscprofiles_organic_messages.include?(message)) || (!@pending_facebook_paid_messages.nil? and @pending_facebook_paid_messages.include?(message)) || (!@pending_facebook_uscprofiles_paid_messages.nil? and @pending_facebook_uscprofiles_paid_messages.include?(message))
         - row_class = "active"
       - if (!message.sent_to_buffer_at.blank?)
         - row_class = 'disabled'
