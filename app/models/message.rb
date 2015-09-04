@@ -157,7 +157,7 @@ class Message < ActiveRecord::Base
       # Sleep outside it not in development environment so that the system does not hit Bitly's API limits
       if Rails.env.development?
       else
-        sleep 30
+        sleep 120
       end
     end
 
