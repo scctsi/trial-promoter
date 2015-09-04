@@ -13,6 +13,8 @@
         View Trial
       %th
         Hashtags
+      %th
+        Disease
   %tbody
     - clinical_trials.each do |clinical_trial|
       %tr
@@ -24,3 +26,4 @@
           %a{ :href => clinical_trial.url, :target => "_blank"}
             View Trial
         %td= clinical_trial.hashtags[0..2].join(", ")
+        %td= clinical_trial.disease
