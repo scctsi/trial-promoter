@@ -65,7 +65,8 @@ class SocialMediaPoster
     body = {
       :text => message.content,
       :profile_ids => profile_ids,
-      :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f'
+      :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f',
+      :media => { :photo => message.permanent_image_url, :thumbnail => message.thumbnail_url }
     }
 
     http_parsed_response = self.class.post('https://api.bufferapp.com/1/updates/create.json', {:body => body}).parsed_response
@@ -76,7 +77,7 @@ class SocialMediaPoster
   end
 
   def publish_pending(platform, medium)
-    messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and messages.scheduled_at <= ? and messages.sent_to_buffer_at is null", platform, medium, Date.today)
+    messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and DATE(messages.scheduled_at) <= ? and messages.sent_to_buffer_at is null", platform, medium, Time.now.utc.to_date)
 
     messages.each do |message|
       publish(message)

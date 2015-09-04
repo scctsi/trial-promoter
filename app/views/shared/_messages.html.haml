@@ -42,7 +42,7 @@
               %li= message.tracking_url
               %li= message.content[2]
               %li= message.content[3]
-              - if message.message_template.platform.start_with?('youtube_search_results')
+              - if message.message_template.platform.start_with?('youtube')
                 %li= message.content[4]
         - else
           %td
@@ -58,7 +58,10 @@
               - if message.message_template.platform.start_with?('youtube')
                 %li= message.content[4].length
         - else
-          %td= message.content.length
+          - if message.message_template.platform.start_with?('twitter') and message.image_required
+            %td= (message.content.length + 24).to_s
+          -else
+            %td= message.content.length
         - if message.image_required
           %td.dropbox{ :id => "message-#{message.id}" }
             - if !message.thumbnail_url.blank?

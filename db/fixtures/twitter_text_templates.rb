@@ -1,6 +1,6 @@
 # DO NOT MODIFY THIS FILE, it was auto-generated.
 #
-# Date: 2015-09-01 12:03:32 -0700
+# Date: 2015-09-04 13:35:11 -0700
 # Seeding MessageTemplate
 # Written with the command:
 #
@@ -66,6 +66,6 @@ MessageTemplate.seed(:initial_id, :platform,
   {:initial_id=>"57", :platform=>"twitter", :message_type=>"recruiting", :content=>"You can make a difference in others' lives. Please participate in our #ClinicalTrial on <%= message[:disease_hashtag] %> @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"58", :platform=>"twitter", :message_type=>"recruiting", :content=>"Join us! Our #ClinicalTrial participants make it possible to fight <%= message[:disease_hashtag] %> in new ways @KeckMedUSC <%= message[:url] %>"},
   {:initial_id=>"59", :platform=>"twitter", :message_type=>"recruiting", :content=>"Join <%= message[:pi] %>'s Name in fighting <%= message[:disease_hashtag] %> by participating in this #ClinicalTrial @KeckMedUSC <%= message[:url] %>"},
-  {:initial_id=>"60", :platform=>"twitter", :message_type=>"recruiting", :content=>"Diagnosed with <%= message[:disease_hashtag] %>? Leading researcher PI's Name @KeckMedUSC is looking for #ClinicalTrial participants <%= message[:url] %>"}
+  {:initial_id=>"60", :platform=>"twitter", :message_type=>"recruiting", :content=>"Diagnosed with <%= message[:disease_hashtag] %>? Leading researcher <%= message[:pi] %> @KeckMedUSC is looking for #ClinicalTrial participants <%= message[:url] %>"}
 )
 # End auto-generated file.
