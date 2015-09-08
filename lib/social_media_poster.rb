@@ -55,7 +55,7 @@ class SocialMediaPoster
         if message.medium == 'paid' # Paid
           profile_ids = [SOCIAL_MEDIA_BUFFER_PROFILE_IDS['Facebook: Boosted USC Clinical Trials']]
         else # Organic
-          profile_ids = SOCIAL_MEDIA_BUFFER_PROFILE_IDS['Facebook: USC Clinical Trials']
+          profile_ids = [SOCIAL_MEDIA_BUFFER_PROFILE_IDS['Facebook: USC Clinical Trials']]
         end
 
       end
@@ -94,7 +94,7 @@ class SocialMediaPoster
     http_parsed_response = self.class.post('https://api.bufferapp.com/1/updates/create.json', {:body => body}).parsed_response
 
     p http_parsed_response
-    
+
     message.buffer_update_id = http_parsed_response['updates'][0]['id']
     message.sent_to_buffer_at = Time.now
     message.save
