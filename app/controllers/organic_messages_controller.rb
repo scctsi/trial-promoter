@@ -21,12 +21,16 @@ class OrganicMessagesController < ApplicationController
   end
 
   def publish
-    WebMock.allow_net_connect!
+    if Rails.env.development?
+      WebMock.allow_net_connect!
+    end
 
     social_media_poster = SocialMediaPoster.new
     messages_published_count = social_media_poster.publish_pending(params[:platform], params[:medium])
 
-    WebMock.disable_net_connect!
+    if Rails.env.development?
+      WebMock.disable_net_connect!
+    end
 
     flash[:message] = "#{messages_published_count} #{params[:medium].titlecase} #{params[:platform].titlecase} message(s) were sent to Buffer. Please check Buffer!"
     redirect_to(:controller => 'organic_messages', :action => 'index')
