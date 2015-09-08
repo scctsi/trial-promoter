@@ -61,13 +61,34 @@ class SocialMediaPoster
 
     end
 
+    scheduled_date = message.scheduled_at
+
+    # Order is 7:35 AM for clinical trial without image, 8:00 AM for experts posts and 8:35 PM for clinical trial with image
+    if !(message.image_required) and (message.message_template.platform.index('uscprofiles') == nil)
+      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 7, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    elsif message.message_template.platform.index('uscprofiles') != nil
+      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 8, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    else
+      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 20, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    end
+
     # TODO: Unit test
-    body = {
-      :text => message.content,
-      :profile_ids => profile_ids,
-      :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f',
-      :media => { :photo => message.permanent_image_url, :thumbnail => message.thumbnail_url }
-    }
+    if (message.image_required) # Post with image
+      body = {
+          :text => message.content,
+          :profile_ids => profile_ids,
+          :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f',
+          :scheduled_at => scheduled_at,
+          :media => { :photo => message.permanent_image_url, :thumbnail => message.thumbnail_url }
+      }
+    else
+      body = {
+          :text => message.content,
+          :profile_ids => profile_ids,
+          :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f',
+          :scheduled_at => scheduled_at
+      }
+    end
 
     http_parsed_response = self.class.post('https://api.bufferapp.com/1/updates/create.json', {:body => body}).parsed_response
 
@@ -77,7 +98,7 @@ class SocialMediaPoster
   end
 
   def publish_pending(platform, medium)
-    messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and DATE(messages.scheduled_at) <= ? and messages.sent_to_buffer_at is null", platform, medium, Time.now.utc.to_date)
+    messages = Message.joins("inner join message_templates on messages.message_template_id = message_templates.id").where("message_templates.platform = ? and messages.medium = ? and DATE(messages.scheduled_at) <= ? and messages.sent_to_buffer_at is null", platform, medium, (Time.now + 7.days).utc.to_date)
 
     messages.each do |message|
       publish(message)

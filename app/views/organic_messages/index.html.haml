@@ -35,9 +35,9 @@
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'twitter-organic-messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @twitter_organic_messages, :platform => 'twitter', :medium => 'organic' }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'twitter-uscprofiles-organic-messages'}
-  = render :partial => 'shared/messages', :locals => { :messages => @twitter_uscprofiles_organic_messages, :platform => 'twitter', :medium => 'organic' }
+  = render :partial => 'shared/messages', :locals => { :messages => @twitter_uscprofiles_organic_messages, :platform => 'twitter_uscprofiles', :medium => 'organic' }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-organic-messages'}
   = render :partial => 'shared/messages', :locals => { :messages => @facebook_organic_messages, :platform => 'facebook', :medium => 'organic' }
 .ui.bottom.attached.tab.segment{ "data-tab" => 'facebook-uscprofiles-organic-messages'}
-  = render :partial => 'shared/messages', :locals => { :messages => @facebook_uscprofiles_organic_messages, :platform => 'facebook', :medium => 'organic' }
+  = render :partial => 'shared/messages', :locals => { :messages => @facebook_uscprofiles_organic_messages, :platform => 'facebook_uscprofiles', :medium => 'organic' }
 
