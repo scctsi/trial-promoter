@@ -31,7 +31,7 @@ class SocialMediaPoster
     profile_ids = []
 
     # Twitter
-    if message.message_template.platform == 'twitter'
+    if message.message_template.platform.start_with?('twitter')
       if message.campaign == 'trial-promoter-staging' || message.campaign == 'trial-promoter-development' # Staging
         profile_ids = [SOCIAL_MEDIA_BUFFER_PROFILE_IDS['Twitter: TP_Staging']]
       else # Production
@@ -40,7 +40,7 @@ class SocialMediaPoster
     end
 
     # Facebook
-    if message.message_template.platform == 'facebook'
+    if message.message_template.platform.start_with?('facebook')
 
       if message.campaign == 'trial-promoter-staging' || message.campaign == 'trial-promoter-development' # Staging
 
