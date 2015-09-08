@@ -61,11 +61,23 @@ class SocialMediaPoster
 
     end
 
+    scheduled_date = message.scheduled_at.in_time_zone("Pacific Time (US & Canada)").to_date
+
+    # Order is 7:35 AM for clinical trial without image, 8:00 AM for experts posts and 8:35 PM for clinical trial with image
+    if !(message.image_required) and (message.message_template.platform.index('uscprofiles') == nil)
+      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 7, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    elsif message.message_template.platform.index('uscprofiles') != nil
+      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 8, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    else
+      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 20, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    end
+
     # TODO: Unit test
     body = {
       :text => message.content,
       :profile_ids => profile_ids,
       :access_token => '1/2852dbc6f3e36697fed6177f806a2b2f',
+      :scheduled_at => scheduled_at,
       :media => { :photo => message.permanent_image_url, :thumbnail => message.thumbnail_url }
     }
 
