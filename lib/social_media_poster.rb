@@ -61,7 +61,7 @@ class SocialMediaPoster
 
     end
 
-    scheduled_date = message.scheduled_at.in_time_zone("Pacific Time (US & Canada)").to_date
+    scheduled_date = message.scheduled_at
 
     # Order is 7:35 AM for clinical trial without image, 8:00 AM for experts posts and 8:35 PM for clinical trial with image
     if !(message.image_required) and (message.message_template.platform.index('uscprofiles') == nil)
