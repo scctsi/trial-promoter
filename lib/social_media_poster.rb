@@ -26,6 +26,7 @@ class SocialMediaPoster
 
   def publish(message)
     # TODO: Unit test
+    return if message.image_required and message.permanent_image_url.blank? # Cannot publish a message that requires an image but where no image has been set yet.
 
     profile_ids = []
 
