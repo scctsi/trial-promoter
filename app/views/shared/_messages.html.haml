@@ -62,14 +62,20 @@
             %td= (message.content.length + 24).to_s
           -else
             %td= message.content.length
-        - if message.image_required
+        - if message.image_required and !message.message_template.platform.start_with?('youtube')
           %td.dropbox{ :id => "message-#{message.id}" }
             - if !message.thumbnail_url.blank?
               %img{ :src => "#{message.thumbnail_url}" }
             %a.choose-from-dropbox{:href => "#"}
               Choose
-        - else
+        - elsif !message.image_required and !message.message_template.platform.start_with?('youtube')
           %td None
+        - elsif message.image_required and platform == 'youtube'
+          %td <b>Image</b>
+        - elsif !message.image_required and platform == 'youtube'
+          %td <b>Text/Infographic</b>
+        - elsif message.message_template.platform == 'youtube_uscprofiles'
+          %td <b>Image</b>
         %td= message.message_template.message_type
         %td
           - if !(message.clinical_trial.blank?)
