@@ -306,4 +306,18 @@ class Message < ActiveRecord::Base
     return "http://sc-ctsi.org/trial_promoter/image_pool/#{thumbnail_url[(thumbnail_url.rindex('/') + 1)..(thumbnail_url.rindex('?') - 1)]}" if !(thumbnail_url.start_with?('http://sc-ctsi.org'))
     image_url
   end
+
+  def self.fix
+    # One time fixes to messages. Once the fixes are in place, make sure to comment out the FIX that was applied, but most fixes should be able to run multiple times
+    # without any side effect
+
+    # Fix 1: Replace http://bit.ly/123456 with the shortened URL
+    url_shortener = UrlShortener.new
+    Message.all.each do |message|
+      if message.content.index('http://bit.ly/123456') != nil
+        message.content = message.content.gsub('http://bit.ly/123456', url_shortener.shorten(message.tracking_url))
+        message.save
+      end
+    end
+  end
 end
