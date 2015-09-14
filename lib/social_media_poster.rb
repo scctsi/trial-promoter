@@ -64,13 +64,27 @@ class SocialMediaPoster
 
     scheduled_date = message.scheduled_at
 
-    # Order is 7:35 AM for clinical trial without image, 8:00 AM for experts posts and 8:35 PM for clinical trial with image
-    if !(message.image_required) and (message.message_template.platform.index('uscprofiles') == nil)
-      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 7, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
-    elsif message.message_template.platform.index('uscprofiles') != nil
-      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 8, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+    # Weekdays: Order is 7:35 AM for clinical trial without image, 8:00 AM for experts posts and 8:35 PM for clinical trial with image
+    # Weekends: Order is 9:30 AM for clinical trial without image, 10:00 AM for experts posts and 8:35 PM for clinical trial with image
+
+    if Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 9, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").saturday? or Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 9, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").sunday?
+      # Weekend
+      if !(message.image_required) and (message.message_template.platform.index('uscprofiles') == nil)
+        scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 9, 30, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      elsif message.message_template.platform.index('uscprofiles') != nil
+        scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 10, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      else
+        scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 20, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      end
     else
-      scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 20, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      # Weekday
+      if !(message.image_required) and (message.message_template.platform.index('uscprofiles') == nil)
+        scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 7, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      elsif message.message_template.platform.index('uscprofiles') != nil
+        scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 8, 00, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      else
+        scheduled_at = Time.new(scheduled_date.year, scheduled_date.month, scheduled_date.day, 20, 35, 00, '-07:00').in_time_zone("Pacific Time (US & Canada)").utc
+      end
     end
 
     # TODO: Unit test
