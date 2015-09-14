@@ -38,7 +38,8 @@ class Message < ActiveRecord::Base
     youtube_search_results_awareness_message_templates = MessageTemplate.where(:message_type => 'awareness', :platform => 'youtube_search_results').to_a
     youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
     youtube_uscprofiles_message_templates = MessageTemplate.where(:platform => 'youtube_uscprofiles').to_a
-    # diseases = clinical_trials_set_1.collect { |clinical_trial| clinical_trial.disease }
+    diseases = clinical_trials_set_1.collect { |clinical_trial| clinical_trial.disease }
+    disease_hashtags = clinical_trials_set_1.collect { |clinical_trial| clinical_trial.hashtags }
 
     random = Random.new
 
@@ -168,7 +169,7 @@ class Message < ActiveRecord::Base
     end
   end
 
-  def self.create_message(clinical_trial, message_template, scheduled_at, medium, image_required = false )
+  def self.create_message(clinical_trial, message_template, scheduled_at, medium, image_required = false)
     message = Message.new
     message.clinical_trial = clinical_trial
     message.message_template = message_template
@@ -317,19 +318,76 @@ class Message < ActiveRecord::Base
     # One time fixes to messages. Once the fixes are in place, make sure to comment out the FIX that was applied, but most fixes should be able to run multiple times
     # without any side effect
 
-    Bitly.use_api_version_3
-    Bitly.configure do |config|
-      config.api_version = 3
-      config.access_token = '21c4a40d1746ea7d0815aa33a9a3137c50c389e8'
+    # Bitly.use_api_version_3
+    # Bitly.configure do |config|
+    #   config.api_version = 3
+    #   config.access_token = '21c4a40d1746ea7d0815aa33a9a3137c50c389e8'
+    # end
+    #
+    # # Fix 1: Replace http://bit.ly/123456 with the shortened URL
+    # url_shortener = UrlShortener.new
+    # Message.all.each do |message|
+    #   if message.content.index('http://bit.ly/123456') != nil
+    #     message.content = message.content.gsub('http://bit.ly/123456', url_shortener.shorten(message.tracking_url))
+    #     message.save
+    #   end
+    # end
+
+    # Fix 2: Replace disease parameters for Profile messages
+    clinical_trials = ClinicalTrial.all
+    diseases = clinical_trials.collect { |clinical_trial| clinical_trial.disease }
+    disease_hashtags = clinical_trials.collect { |clinical_trial| clinical_trial.hashtags }
+    random = Random.new
+    Message.all.each do |message|
+      random_disease_hashtags = disease_hashtags.sample(1, random: random)[0]
+      random_disease = diseases.sample(1, random: random)[0]
+
+      # Twitter and Facebook profile message templates
+      if message.message_template.platform == 'twitter_uscprofiles' or message.message_template.platform == 'facebook_uscprofiles'
+        if message.content.index('#disease') != nil
+          message.content = message.content.gsub('#disease', random_disease_hashtags[0])
+          message.save
+        end
+        if message.content.index('#secondary disease hashtag') != nil and random_disease_hashtags.count > 1
+          message.content = message.content.gsub('#secondary disease hashtag', random_disease_hashtags[1])
+          message.save
+        end
+      end
+
+      # Google and YouTube profile message templates
+      if message.message_template.platform == 'google_uscprofiles' or message.message_template.platform == 'youtube_uscprofiles'
+        [0..3].each do |index|
+          if message.content[index].index('Search by <%= message[:disease] %>, name, etc.') != nil # Google and YouTube profile templates had an incorrect parameter
+            message.content[index] = message.content[index].gsub('Search by <%= message[:disease] %>, name, etc.', 'Search by disease, name, etc.')
+            message.save
+          end
+
+          if index == 0
+            # Length limit is 25 characters
+            if message.content[index].index('<%= message[:disease] %>') != nil
+              if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > 25
+                message.content[index].gsub('<%= message[:disease] %>', 'Clinical')
+              else
+                message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
+              end
+            end
+          end
+
+          if index != 0
+            # Length limit is 35 characters
+            if message.content[index].index('<%= message[:disease] %>') != nil
+              if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > 35
+                message.content[index].gsub('<%= message[:disease] %>', 'clinical')
+              else
+                message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
+              end
+            end
+          end
+
+        end
+      end
+
     end
 
-    # Fix 1: Replace http://bit.ly/123456 with the shortened URL
-    url_shortener = UrlShortener.new
-    Message.all.each do |message|
-      if message.content.index('http://bit.ly/123456') != nil
-        message.content = message.content.gsub('http://bit.ly/123456', url_shortener.shorten(message.tracking_url))
-        message.save
-      end
-    end
   end
 end
