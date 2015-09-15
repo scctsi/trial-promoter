@@ -196,7 +196,7 @@ class Message < ActiveRecord::Base
       disease = message.clinical_trial.disease
       pi_name = message.clinical_trial.pi_name
     else
-      disease = ''
+      disease = '<%= message[:disease] %>'
       pi_name = ''
     end
     url_shortener = UrlShortener.new
@@ -356,38 +356,43 @@ class Message < ActiveRecord::Base
 
       # Google and YouTube profile message templates
       if message.message_template.platform == 'google_uscprofiles' or message.message_template.platform == 'youtube_uscprofiles'
-        [0..3].each do |index|
+        (0..3).each do |index|
           if message.content[index].index('Search by <%= message[:disease] %>, name, etc.') != nil # Google and YouTube profile templates had an incorrect parameter
             message.content[index] = message.content[index].gsub('Search by <%= message[:disease] %>, name, etc.', 'Search by disease, name, etc.')
             message.save
           end
 
-          if index == 0
-            # Length limit is 25 characters
-            if message.content[index].index('<%= message[:disease] %>') != nil
-              if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > 25
-                message.content[index].gsub('<%= message[:disease] %>', 'Clinical')
-              else
-                message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
-              end
+          max_length = 35
+          max_length = 25 if index == 0 # Length limit is 25 characters for headline
+
+          if message.content[index].index('<%= message[:disease] %>') != nil
+            if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > max_length
+              message.content[index].gsub('<%= message[:disease] %>', 'Clinical')
+              message.save
+            else
+              message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
+              message.save
             end
           end
 
-          if index != 0
-            # Length limit is 35 characters
-            if message.content[index].index('<%= message[:disease] %>') != nil
-              if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > 35
-                message.content[index].gsub('<%= message[:disease] %>', 'clinical')
-              else
-                message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
-              end
+          if message.content[index].index('<%= message[:disease] %>') != nil
+            if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > max_length
+              message.content[index].gsub('<%= message[:disease] %>', 'clinical')
+              message.save
+            else
+              message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
+              message.save
             end
           end
 
         end
       end
 
-    end
+      if message.message_template.platform == 'youtube_uscprofiles'
+        message.content[4] = message.content[4].gsub('<%= message[:disease] %>', 'disease')
+        message.save
+      end
 
+    end
   end
 end
