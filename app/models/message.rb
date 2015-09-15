@@ -348,6 +348,10 @@ class Message < ActiveRecord::Base
           message.content = message.content.gsub('#disease', random_disease_hashtags[0])
           message.save
         end
+        if message.content.index('<%= message[:disease_hashtag] %>') != nil
+          message.content = message.content.gsub('<%= message[:disease_hashtag] %>', random_disease_hashtags[0])
+          message.save
+        end
         if message.content.index('#secondary disease hashtag') != nil and random_disease_hashtags.count > 1
           message.content = message.content.gsub('#secondary disease hashtag', random_disease_hashtags[1])
           message.save
