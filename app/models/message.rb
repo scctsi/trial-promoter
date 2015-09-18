@@ -139,7 +139,7 @@ class Message < ActiveRecord::Base
   #     # From set 1 with no image
   #     begin
   #     end until create_message(clinical_trials_set_1[i], youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
-  #     # From set 1 with image
+  #     # From set 2 with image
   #     begin
   #     end until create_message(clinical_trials_set_2[i], youtube_search_results_awareness_message_templates.sample(1, random: random)[0], scheduled_at, 'paid', true)
   #     # Recruiting
@@ -148,7 +148,7 @@ class Message < ActiveRecord::Base
   #     end until create_message(clinical_trials_set_1[i], youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid')
   #     # From set 2 with no image
   #     begin
-  #     end until create_message(clinical_trials_set_1[i], youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid', true)
+  #     end until create_message(clinical_trials_set_2[i], youtube_search_results_recruiting_message_templates.sample(1, random: random)[0], scheduled_at + 1, 'paid', true)
   #     # Profiles Promotion
   #     begin
   #     end until create_message(nil, youtube_uscprofiles_message_templates.sample(1, random: random)[0], scheduled_at, 'paid')
@@ -167,28 +167,28 @@ class Message < ActiveRecord::Base
   #   if !Rails.env.production?
   #     WebMock.disable_net_connect!
   #   end
-  # end
-  #
-  # def self.create_message(clinical_trial, message_template, scheduled_at, medium, image_required = false)
-  #   message = Message.new
-  #   message.clinical_trial = clinical_trial
-  #   message.message_template = message_template
-  #   message.scheduled_at = scheduled_at
-  #   message.medium = medium
-  #   message.campaign = self.campaign_value
-  #   tracking_url = TrackingUrl.new(message).value(medium, self.campaign_value)
-  #   message.tracking_url = tracking_url
-  #   message.image_required = image_required
-  #
-  #   replace_parameters(message)
-  #   # assign_random_image(message) if message.image_required
-  #
-  #   if is_valid?(message)
-  #     message.save
-  #     return true
-  #   else
-  #     return false
-  #   end
+  end
+
+  def self.create_message(clinical_trial, message_template, scheduled_at, medium, image_required = false)
+    message = Message.new
+    message.clinical_trial = clinical_trial
+    message.message_template = message_template
+    message.scheduled_at = scheduled_at
+    message.medium = medium
+    message.campaign = self.campaign_value
+    tracking_url = TrackingUrl.new(message).value(medium, self.campaign_value)
+    message.tracking_url = tracking_url
+    message.image_required = image_required
+
+    replace_parameters(message)
+    # assign_random_image(message) if message.image_required
+
+    if is_valid?(message)
+      message.save
+      return true
+    else
+      return false
+    end
   end
 
   def self.replace_parameters(message)
@@ -334,69 +334,95 @@ class Message < ActiveRecord::Base
     # end
 
     # Fix 2: Replace disease parameters for Profile messages
-    clinical_trials = ClinicalTrial.all
-    diseases = clinical_trials.collect { |clinical_trial| clinical_trial.disease }
-    disease_hashtags = clinical_trials.collect { |clinical_trial| clinical_trial.hashtags }
-    random = Random.new
+    # clinical_trials = ClinicalTrial.all
+    # diseases = clinical_trials.collect { |clinical_trial| clinical_trial.disease }
+    # disease_hashtags = clinical_trials.collect { |clinical_trial| clinical_trial.hashtags }
+    # random = Random.new
+    # Message.all.each do |message|
+    #   random_disease_hashtags = disease_hashtags.sample(1, random: random)[0]
+    #   random_disease = diseases.sample(1, random: random)[0]
+    #
+    #   # Twitter and Facebook profile message templates
+    #   if message.message_template.platform == 'twitter_uscprofiles' or message.message_template.platform == 'facebook_uscprofiles'
+    #     if message.content.index('#disease') != nil
+    #       message.content = message.content.gsub('#disease', random_disease_hashtags[0])
+    #       message.save
+    #     end
+    #     if message.content.index('<%= message[:disease_hashtag] %>') != nil
+    #       message.content = message.content.gsub('<%= message[:disease_hashtag] %>', random_disease_hashtags[0])
+    #       message.save
+    #     end
+    #     if message.content.index('#secondary disease hashtag') != nil and random_disease_hashtags.count > 1
+    #       message.content = message.content.gsub('#secondary disease hashtag', random_disease_hashtags[1])
+    #       message.save
+    #     end
+    #   end
+    #
+    #   # Google and YouTube profile message templates
+    #   if message.message_template.platform == 'google_uscprofiles' or message.message_template.platform == 'youtube_uscprofiles'
+    #     (0..3).each do |index|
+    #       if message.content[index].index('Search by <%= message[:disease] %>, name, etc.') != nil # Google and YouTube profile templates had an incorrect parameter
+    #         message.content[index] = message.content[index].gsub('Search by <%= message[:disease] %>, name, etc.', 'Search by disease, name, etc.')
+    #         message.save
+    #       end
+    #
+    #       max_length = 35
+    #       max_length = 25 if index == 0 # Length limit is 25 characters for headline
+    #
+    #       if message.content[index].index('<%= message[:disease] %>') != nil
+    #         if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > max_length
+    #           message.content[index].gsub('<%= message[:disease] %>', 'Clinical')
+    #           message.save
+    #         else
+    #           message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
+    #           message.save
+    #         end
+    #       end
+    #
+    #       if message.content[index].index('<%= message[:disease] %>') != nil
+    #         if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > max_length
+    #           message.content[index].gsub('<%= message[:disease] %>', 'clinical')
+    #           message.save
+    #         else
+    #           message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
+    #           message.save
+    #         end
+    #       end
+    #
+    #     end
+    #   end
+    #
+    #   if message.message_template.platform == 'youtube_uscprofiles'
+    #     message.content[4] = message.content[4].gsub('<%= message[:disease] %>', 'disease')
+    #     message.save
+    #   end
+    # end
+
+    # Fix 3: Fix recruiting, Image Youtube video messages
+    # First, identify the image and recruiting message. Then find the corresponding image and recruiting image ad
+    youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
+
     Message.all.each do |message|
-      random_disease_hashtags = disease_hashtags.sample(1, random: random)[0]
-      random_disease = diseases.sample(1, random: random)[0]
+      if message.message_template.platform == 'youtube_search_results' and message.message_template.message_type == 'recruiting' and message.image_required
+        message_id = message.id.to_i
+        message_to_use_for_fix_message_id = message_id - 2
+        message_to_use_for_fix = Message.find(message_to_use_for_fix_message_id)
 
-      # Twitter and Facebook profile message templates
-      if message.message_template.platform == 'twitter_uscprofiles' or message.message_template.platform == 'facebook_uscprofiles'
-        if message.content.index('#disease') != nil
-          message.content = message.content.gsub('#disease', random_disease_hashtags[0])
-          message.save
-        end
-        if message.content.index('<%= message[:disease_hashtag] %>') != nil
-          message.content = message.content.gsub('<%= message[:disease_hashtag] %>', random_disease_hashtags[0])
-          message.save
-        end
-        if message.content.index('#secondary disease hashtag') != nil and random_disease_hashtags.count > 1
-          message.content = message.content.gsub('#secondary disease hashtag', random_disease_hashtags[1])
-          message.save
-        end
-      end
+        begin
+          message.clinical_trial = message_to_use_for_fix.clinical_trial
+          message.message_template = youtube_search_results_recruiting_message_templates.sample(1, random: random)[0]
+          tracking_url = TrackingUrl.new(message).value(medium, self.campaign_value)
+          message.tracking_url = tracking_url
 
-      # Google and YouTube profile message templates
-      if message.message_template.platform == 'google_uscprofiles' or message.message_template.platform == 'youtube_uscprofiles'
-        (0..3).each do |index|
-          if message.content[index].index('Search by <%= message[:disease] %>, name, etc.') != nil # Google and YouTube profile templates had an incorrect parameter
-            message.content[index] = message.content[index].gsub('Search by <%= message[:disease] %>, name, etc.', 'Search by disease, name, etc.')
+          replace_parameters(message)
+          # assign_random_image(message) if message.image_required
+
+          if is_valid?(message)
             message.save
+            break
           end
-
-          max_length = 35
-          max_length = 25 if index == 0 # Length limit is 25 characters for headline
-
-          if message.content[index].index('<%= message[:disease] %>') != nil
-            if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > max_length
-              message.content[index].gsub('<%= message[:disease] %>', 'Clinical')
-              message.save
-            else
-              message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
-              message.save
-            end
-          end
-
-          if message.content[index].index('<%= message[:disease] %>') != nil
-            if message.content[index].gsub('<%= message[:disease] %>', random_disease).length > max_length
-              message.content[index].gsub('<%= message[:disease] %>', 'clinical')
-              message.save
-            else
-              message.content[index] = message.content[index].gsub('<%= message[:disease] %>', random_disease)
-              message.save
-            end
-          end
-
         end
       end
-
-      if message.message_template.platform == 'youtube_uscprofiles'
-        message.content[4] = message.content[4].gsub('<%= message[:disease] %>', 'disease')
-        message.save
-      end
-
     end
   end
 end
