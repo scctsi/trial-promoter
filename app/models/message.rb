@@ -401,7 +401,8 @@ class Message < ActiveRecord::Base
     # Fix 3: Fix recruiting, Image Youtube video messages
     # First, identify the image and recruiting message. Then find the corresponding image and recruiting image ad
     youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
-
+    random = Random.new
+    
     Message.all.each do |message|
       if message.message_template.platform == 'youtube_search_results' and message.message_template.message_type == 'recruiting' and message.image_required
         message_id = message.id.to_i
