@@ -412,7 +412,7 @@ class Message < ActiveRecord::Base
         begin
           message.clinical_trial = message_to_use_for_fix.clinical_trial
           message.message_template = youtube_search_results_recruiting_message_templates.sample(1, random: random)[0]
-          tracking_url = TrackingUrl.new(message).value(medium, self.campaign_value)
+          tracking_url = TrackingUrl.new(message).value('paid', self.campaign_value)
           message.tracking_url = tracking_url
 
           replace_parameters(message)
