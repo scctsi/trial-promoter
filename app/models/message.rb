@@ -400,33 +400,33 @@ class Message < ActiveRecord::Base
 
     # Fix 3: Fix recruiting, Image Youtube video messages
     # First, identify the image and recruiting message. Then find the corresponding image and recruiting image ad
-    youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
-    random = Random.new
-    fix_count = 0
-
-    Message.all.each do |message|
-      if message.message_template.platform == 'youtube_search_results' and message.message_template.message_type == 'recruiting' and message.image_required
-        message_id = message.id.to_i
-        message_to_use_for_fix_message_id = message_id - 2
-        message_to_use_for_fix = Message.find(message_to_use_for_fix_message_id)
-
-        begin
-          message.clinical_trial = message_to_use_for_fix.clinical_trial
-          message.message_template = youtube_search_results_recruiting_message_templates.sample(1, random: random)[0]
-          tracking_url = TrackingUrl.new(message).value('paid', self.campaign_value)
-          message.tracking_url = tracking_url
-
-          replace_parameters(message)
-          # assign_random_image(message) if message.image_required
-
-          if is_valid?(message)
-            fix_count = fix_count + 1
-            message.save
-          end
-        end until is_valid?(message)
-      end
-    end
-
-    p "Fixed: " + fix_count.to_s
+    # youtube_search_results_recruiting_message_templates = MessageTemplate.where(:message_type => 'recruiting', :platform => 'youtube_search_results').to_a
+    # random = Random.new
+    # fix_count = 0
+    #
+    # Message.all.each do |message|
+    #   if message.message_template.platform == 'youtube_search_results' and message.message_template.message_type == 'recruiting' and message.image_required
+    #     message_id = message.id.to_i
+    #     message_to_use_for_fix_message_id = message_id - 2
+    #     message_to_use_for_fix = Message.find(message_to_use_for_fix_message_id)
+    #
+    #     begin
+    #       message.clinical_trial = message_to_use_for_fix.clinical_trial
+    #       message.message_template = youtube_search_results_recruiting_message_templates.sample(1, random: random)[0]
+    #       tracking_url = TrackingUrl.new(message).value('paid', self.campaign_value)
+    #       message.tracking_url = tracking_url
+    #
+    #       replace_parameters(message)
+    #       # assign_random_image(message) if message.image_required
+    #
+    #       if is_valid?(message)
+    #         fix_count = fix_count + 1
+    #         message.save
+    #       end
+    #     end until is_valid?(message)
+    #   end
+    # end
+    #
+    # p "Fixed: " + fix_count.to_s
   end
 end

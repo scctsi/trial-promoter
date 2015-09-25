@@ -33,6 +33,8 @@
         - row_class = 'active'
       - if (!message.sent_to_buffer_at.blank?)
         - row_class = 'warning'
+      - if (message.scheduled_at - Time.now < 2.days and message.scheduled_at - Time.now > 1.day and (message.message_template.platform.start_with?('youtube') or message.message_template.platform.start_with?('google')))
+        - row_class = 'requires_posting'
       %tr{ :class => row_class }
         %td= message.id.to_s
         - if message.message_template.platform.start_with?('google') || message.message_template.platform.start_with?('youtube')

@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   # Paid Messages
   get 'paid_messages' => 'paid_messages#index'
 
+  # Dashboard
+  get 'dashboard' => 'dashboard#index'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
