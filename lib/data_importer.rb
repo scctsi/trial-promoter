@@ -2,7 +2,7 @@ class DataImporter
   include HTTParty
 
   def import_buffer_data
-    Message.all.each do |message|
+    Message.where('sent_to_buffer_at is not null').each do |message|
       if !message.buffer_update_id.blank?
         response = HTTParty.get("https://api.bufferapp.com/1/updates/#{message.buffer_update_id.to_s}.json?access_token=1/2852dbc6f3e36697fed6177f806a2b2f")
 
