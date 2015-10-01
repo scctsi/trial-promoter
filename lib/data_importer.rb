@@ -11,7 +11,7 @@ class DataImporter
         end
 
         if message.sent_from_buffer_at.blank? and response.has_key?('sent_at')
-          message.sent_from_buffer_at = DateTime.strptime(response['sent_at'], '%s')
+          message.sent_from_buffer_at = DateTime.strptime(response['sent_at'].to_s, '%s')
         end
 
         message.save
