@@ -1,52 +1,54 @@
 - if message.message_template.platform.start_with?('twitter')
-  .ui.horizontal.segments
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Retweets
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Favorites
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Mentions
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Clicks
+  - if !message.statistics.blank?
+    .ui.horizontal.segments
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['retweets']
+          .label
+            Retweets
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['favorites']
+          .label
+            Favorites
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['mantions']
+          .label
+            Mentions
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['clicks']
+          .label
+            Clicks
 - elsif message.message_template.platform.start_with?('facebook')
-  .ui.horizontal.segments
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Comments
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Likes
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Clicks
-    .ui.segment
-      .ui.mini.horizontal.statistic
-        .value
-          0
-        .label
-          Shares
+  - if !message.statistics.blank?
+    .ui.horizontal.segments
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['comments']
+          .label
+            Comments
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['likes']
+          .label
+            Likes
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['clicks']
+          .label
+            Clicks
+      .ui.segment
+        .ui.mini.horizontal.statistic
+          .value
+            = message.statistics['shares']
+          .label
+            Shares
