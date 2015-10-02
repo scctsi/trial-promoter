@@ -34,7 +34,7 @@
       - if (!message.sent_to_buffer_at.blank?)
         - row_class = 'warning'
       - if (!message.sent_from_buffer_at.blank?)
-        - row_class = 'positiive'
+        - row_class = 'positive'
       - if message.scheduled_at.in_time_zone("Pacific Time (US & Canada)").month == Time.now.in_time_zone("Pacific Time (US & Canada)").month and message.scheduled_at.in_time_zone("Pacific Time (US & Canada)").day == Time.now.in_time_zone("Pacific Time (US & Canada)").day + 1 and (message.message_template.platform.start_with?('youtube') or message.message_template.platform.start_with?('google'))
         - row_class = 'requires_posting'
       %tr{ :class => row_class }
