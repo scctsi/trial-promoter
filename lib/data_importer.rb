@@ -42,7 +42,7 @@ class DataImporter
     facebook_organic_metrics = { 'comments' => 0, 'likes' => 0, 'reach' => 0, 'shares' => 0, 'clicks' => 0 }
     facebook_paid_metrics = { 'comments' => 0, 'likes' => 0, 'reach' => 0, 'shares' => 0, 'clicks' => 0 }
 
-    Message.where('sent_to_buffer_at is not null').each do |message|
+    Message.where('sent_to_buffer_at is not null and statistics is not null').each do |message|
       if message.message_template.platform.start_with?('twitter')
         twitter_organic_metrics['retweets'] += message.statistics['retweets']
         twitter_organic_metrics['favorites'] += message.statistics['favorites']
