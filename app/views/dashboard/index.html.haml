@@ -1,0 +1,119 @@
+- dimension_metrics = DimensionMetric.all
+- twitter_organic_dimension_metric = DimensionMetric.where("dimensions = ?", ['twitter', 'organic'].to_yaml)[0]
+- facebook_organic_dimension_metric = DimensionMetric.where("dimensions = ?", ['facebook', 'organic'].to_yaml)[0]
+- facebook_paid_dimension_metric = DimensionMetric.where("dimensions = ?", ['facebook', 'paid'].to_yaml)[0]
+%h1.ui.block.header
+  Dashboard
+.ui.top.attached.tabular.menu
+  %a.active.item{ "data-tab" => 'rngagement' }
+    %h3.ui.header
+      Engagement
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'engagement'}
+  %table.ui.celled.padded.table
+  %thead
+    %tr
+      %th
+        Dimension
+      %th
+      %th
+      %th
+      %th
+      %th
+      %th
+  %tbody
+    %tr
+      %td= Twitter/Organic
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{twitter_organic_dimension_metric['retweets']}
+          .label
+            Retweets
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{twitter_organic_dimension_metric['favorites']}
+          .label
+            Favorites
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{twitter_organic_dimension_metric['mentions']}
+          .label
+            Mentions
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{twitter_organic_dimension_metric['clicks']}
+          .label
+            Clicks
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{twitter_organic_dimension_metric['reach']}
+          .label
+            Reach/Impressions
+    %tr
+      %td= Facebook/Organic
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_organic_dimension_metric['comments']}
+          .label
+            Comments
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_organic_dimension_metric['likes']}
+          .label
+            Likes
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_organic_dimension_metric['reach']}
+          .label
+            Reach/Impressions
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_organic_dimension_metric['shares']}
+          .label
+            Shares
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_organic_dimension_metric['clicks']}
+          .label
+            Clicks
+    %tr
+      %td= Facebook/Paid
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_paid_dimension_metric['comments']}
+          .label
+            Comments
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_paid_dimension_metric['likes']}
+          .label
+            Likes
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_paid_dimension_metric['reach']}
+          .label
+            Reach/Impressions
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_paid_dimension_metric['shares']}
+          .label
+            Shares
+      %td=
+        .ui.mini.horizontal.statistic
+          .value
+            #{facebook_paid_dimension_metric['clicks']}
+          .label
+            Clicks
