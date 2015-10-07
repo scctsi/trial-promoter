@@ -53,7 +53,7 @@
             .value
               #{twitter_organic_dimension_metric.metrics['reach']}
             .label
-              Reach/Impressions
+              Reach
       %tr
         %td
           Facebook/Organic
@@ -72,12 +72,6 @@
         %td
           .ui.mini.horizontal.statistic
             .value
-              #{facebook_organic_dimension_metric.metrics['reach']}
-            .label
-              Reach/Impressions
-        %td
-          .ui.mini.horizontal.statistic
-            .value
               #{facebook_organic_dimension_metric.metrics['shares']}
             .label
               Shares
@@ -87,6 +81,12 @@
               #{facebook_organic_dimension_metric.metrics['clicks']}
             .label
               Clicks
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{facebook_organic_dimension_metric.metrics['reach']}
+            .label
+              Reach
       %tr
         %td
           Facebook/Paid
@@ -105,12 +105,6 @@
         %td
           .ui.mini.horizontal.statistic
             .value
-              #{facebook_paid_dimension_metric.metrics['reach']}
-            .label
-              Reach/Impressions
-        %td
-          .ui.mini.horizontal.statistic
-            .value
               #{facebook_paid_dimension_metric.metrics['shares']}
             .label
               Shares
@@ -120,3 +114,9 @@
               #{facebook_paid_dimension_metric.metrics['clicks']}
             .label
               Clicks
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{facebook_paid_dimension_metric.metrics['reach']}
+            .label
+              Reach
