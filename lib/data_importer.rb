@@ -84,8 +84,8 @@ class DataImporter
     csv_text = File.read(Rails.root.join('data_dumps', 'twitter_activity_metrics_20150901_20151001.csv'))
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
-      message = Message.where('service_update_id = ?', csv[0].to_s)
-      message.service_statistics = { 'retweets' => csv[7], 'favorites' => csv[9], 'replies' => csv[8], 'clicks' => csv[11], 'user_profile_clicks' => csv[10], 'impressions' => csv[4]}
+      message = Message.where('service_update_id = ?', row[0].to_s)
+      message.service_statistics = { 'retweets' => row[7], 'favorites' => row[9], 'replies' => row[8], 'clicks' => row[11], 'user_profile_clicks' => row[10], 'impressions' => row[4]}
       message.save
     end
   end
