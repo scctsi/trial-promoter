@@ -84,7 +84,31 @@ class DataImporter
     csv_text = File.read(Rails.root.join('data_dumps', 'twitter_activity_metrics_20150901_20151001.csv'))
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
-
+      message = Message.where('service_update_id = ?', csv[0].to_s)
+      message.service_statistics = { 'retweets' => csv[7], 'favorites' => csv[9], 'replies' => csv[8], 'clicks' => csv[11], 'user_profile_clicks' => csv[10], 'impressions' => csv[4]}
+      message.save
     end
+  end
+
+  def process_twitter_data
+    if DimensionMetric.where("dimensions = ?", ['twitter', 'organic', 'twitter_analytics'].to_yaml).count != 0
+      twitter_organic_twitter_analytics_dimension_metric = DimensionMetric.where("dimensions = ?", ['twitter', 'organic', 'twitter_analytics'].to_yaml)[0]
+    else
+      twitter_organic_twitter_analytics_dimension_metric = DimensionMetric.new(:dimensions => ['twitter', 'organic', 'twitter_analytics'])
+    end
+
+    twitter_organic_metrics = { 'retweets' => 0, 'favorites' => 0, 'replies' => 0, 'clicks' => 0, 'user_profile_clicks' => 0, 'impressions' => 0}
+
+    Message.where('sent_to_buffer_at is not null and service_statistics is not null').each do |message|
+      twitter_organic_metrics['retweets'] += message.service_statistics['retweets']
+      twitter_organic_metrics['favorites'] += message.service_statistics['favorites']
+      twitter_organic_metrics['mentions'] += message.service_statistics['replies']
+      twitter_organic_metrics['clicks'] += message.service_statistics['clicks']
+      twitter_organic_metrics['reach'] += message.service_statistics['user_profile_clicks']
+      twitter_organic_metrics['reach'] += message.service_statistics['impressions']
+    end
+
+    twitter_organic_twitter_analytics_dimension_metric.metrics = twitter_organic_metrics
+    twitter_organic_twitter_analytics_dimension_metric.save
   end
 end
