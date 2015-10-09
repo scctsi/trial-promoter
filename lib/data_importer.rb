@@ -14,6 +14,10 @@ class DataImporter
           message.sent_from_buffer_at = DateTime.strptime(response['sent_at'].to_s, '%s')
         end
 
+        if response.has_key?('sent_at')
+          message.service_update_id = response['service_update_id']
+        end
+
         message.save
       end
     end
