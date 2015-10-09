@@ -106,8 +106,8 @@ class DataImporter
       twitter_organic_metrics['favorites'] += message.service_statistics['favorites']
       twitter_organic_metrics['mentions'] += message.service_statistics['replies']
       twitter_organic_metrics['clicks'] += message.service_statistics['clicks']
-      twitter_organic_metrics['reach'] += message.service_statistics['user_profile_clicks']
-      twitter_organic_metrics['reach'] += message.service_statistics['impressions']
+      twitter_organic_metrics['user_profile_clicks'] += message.service_statistics['user_profile_clicks']
+      twitter_organic_metrics['impressions'] += message.service_statistics['impressions']
     end
 
     twitter_organic_twitter_analytics_dimension_metric.metrics = twitter_organic_metrics
