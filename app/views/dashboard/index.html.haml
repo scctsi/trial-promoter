@@ -2,6 +2,7 @@
 - twitter_organic_dimension_metric = DimensionMetric.where("dimensions = ?", ['twitter', 'organic'].to_yaml)[0]
 - facebook_organic_dimension_metric = DimensionMetric.where("dimensions = ?", ['facebook', 'organic'].to_yaml)[0]
 - facebook_paid_dimension_metric = DimensionMetric.where("dimensions = ?", ['facebook', 'paid'].to_yaml)[0]
+- twitter_organic_twitter_analytics_dimension_metric = DimensionMetric.where("dimensions = ?", ['twitter', 'organic', 'twitter_analytics'].to_yaml)[0]
 %h1.ui.block.header
   Dashboard
 .ui.top.attached.tabular.menu
@@ -20,10 +21,12 @@
         %th
         %th
         %th
+        %th
+        %th
     %tbody
       %tr
         %td
-          Twitter/Organic
+          Twitter/Organic/Buffer Analytics
         %td
           .ui.mini.horizontal.statistic
             .value
@@ -56,7 +59,7 @@
               Reach
       %tr
         %td
-          Facebook/Organic
+          Facebook/Organic/Buffer Analytics
         %td
           .ui.mini.horizontal.statistic
             .value
@@ -89,7 +92,7 @@
               Reach
       %tr
         %td
-          Facebook/Paid
+          Facebook/Paid/Buffer Analytics
         %td
           .ui.mini.horizontal.statistic
             .value
@@ -120,3 +123,48 @@
               #{facebook_paid_dimension_metric.metrics['reach']}
             .label
               Reach
+      %tr
+        %td
+          Twitter/Organic/Twitter Analytics
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{twitter_organic_dimension_metric.service_metrics['retweets']}
+            .label
+              Retweets
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{twitter_organic_dimension_metric.service_metrics['favorites']}
+            .label
+              Favorites
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{twitter_organic_dimension_metric.service_metrics['replies']}
+            .label
+              Mentions
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{twitter_organic_dimension_metric.service_metrics['clicks']}
+            .label
+              Clicks
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              N/A
+            .label
+              Reach
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{twitter_organic_dimension_metric.service_metrics['impressions']}
+            .label
+              Clicks
+        %td
+          .ui.mini.horizontal.statistic
+            .value
+              #{twitter_organic_dimension_metric.service_metrics['user_profile_clicks']}
+            .label
+              User Profile Clicks
