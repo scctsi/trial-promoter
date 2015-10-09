@@ -99,12 +99,12 @@ class DataImporter
       twitter_organic_twitter_analytics_dimension_metric = DimensionMetric.new(:dimensions => ['twitter', 'organic', 'twitter_analytics'])
     end
 
-    twitter_organic_metrics = { 'retweets' => 0, 'favorites' => 0, 'mentions' => 0, 'clicks' => 0, 'user_profile_clicks' => 0, 'impressions' => 0}
+    twitter_organic_metrics = { 'retweets' => 0, 'favorites' => 0, 'replies' => 0, 'clicks' => 0, 'user_profile_clicks' => 0, 'impressions' => 0}
 
     Message.where('sent_to_buffer_at is not null and service_statistics is not null').each do |message|
       twitter_organic_metrics['retweets'] += message.service_statistics['retweets']
       twitter_organic_metrics['favorites'] += message.service_statistics['favorites']
-      twitter_organic_metrics['mentions'] += message.service_statistics['replies']
+      twitter_organic_metrics['replies'] += message.service_statistics['replies']
       twitter_organic_metrics['clicks'] += message.service_statistics['clicks']
       twitter_organic_metrics['user_profile_clicks'] += message.service_statistics['user_profile_clicks']
       twitter_organic_metrics['impressions'] += message.service_statistics['impressions']
