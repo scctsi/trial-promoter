@@ -79,4 +79,12 @@ class DataImporter
     facebook_paid_dimension_metric.metrics = facebook_paid_metrics
     facebook_paid_dimension_metric.save
   end
+
+  def import_twitter_data
+    csv_text = File.read(Rails.root.join('data_dumps', 'twitter_activity_metrics_20150901_20151001.csv'))
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+
+    end
+  end
 end
