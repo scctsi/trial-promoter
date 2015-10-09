@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151009190741) do
+ActiveRecord::Schema.define(version: 20151009201550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20151009190741) do
     t.string   "buffer_update_id"
     t.text     "statistics"
     t.string   "service_update_id"
+    t.text     "service_statistics"
   end
 
   create_table "platforms", force: :cascade do |t|
