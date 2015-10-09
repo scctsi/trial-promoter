@@ -86,7 +86,7 @@ class DataImporter
     csv.each do |row|
       twitter_messages = Message.where('service_update_id = ?', row[0].to_s)
       if twitter_messages != nil
-        twitter_messages[0].service_statistics = { 'retweets' => row[7], 'favorites' => row[9], 'replies' => row[8], 'clicks' => row[11], 'user_profile_clicks' => row[10], 'impressions' => row[4]}
+        twitter_messages[0].service_statistics = { 'retweets' => row[7].to_i, 'favorites' => row[9].to_i, 'replies' => row[8].to_i, 'clicks' => row[11].to_i, 'user_profile_clicks' => row[10].to_i, 'impressions' => row[4].to_i}
         twitter_messages[0].save
       end
     end
