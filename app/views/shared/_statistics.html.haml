@@ -14,7 +14,7 @@
       - if !message.statistics.blank?
         %tr
           %td
-            .ui.ribbon.label Buffer
+            .ui.label Buffer
           %td
             = message.statistics['retweets']
           %td
@@ -32,7 +32,7 @@
       - if !message.service_statistics.blank?
         %tr
           %td
-            .ui.ribbon.label Twitter
+            .ui.label Twitter
           %td
             = message.service_statistics['retweets']
           %td
