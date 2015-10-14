@@ -44,9 +44,9 @@
           %td
             N/A
           %td
-            = message.statistics['user_profile_clicks']
+            = message.service_statistics['user_profile_clicks']
           %td
-            = message.statistics['impressions']
+            = message.service_statistics['impressions']
 - elsif message.message_template.platform.start_with?('facebook')
   - if !message.statistics.blank?
     .ui.horizontal.segments
