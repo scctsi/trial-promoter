@@ -1,17 +1,17 @@
 - if message.message_template.platform.start_with?('twitter')
-  - if !message.statistics.blank?
-    %table
-      %thead
-        %tr
-          %th Data Source
-          %th Retweets
-          %th Favorites
-          %th Mentions/Replies
-          %th Clicks
-          %th Potential
-          %th Impressions
-          %th User Profile Clicks
-      %tbody
+  %table
+    %thead
+      %tr
+        %th Data Source
+        %th Retweets
+        %th Favorites
+        %th Mentions/Replies
+        %th Clicks
+        %th Potential
+        %th Impressions
+        %th User Profile Clicks
+    %tbody
+      - if !message.statistics.blank?
         %tr
           %td
             .ui.ribbon.label Buffer
@@ -29,6 +29,7 @@
             N/A
           %td
             N/A
+      - if !message.service_statistics.blank?
         %tr
           %td
             .ui.ribbon.label Twitter
