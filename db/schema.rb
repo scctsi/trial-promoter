@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006202817) do
+ActiveRecord::Schema.define(version: 20151009201550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20151006202817) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "dimension_metrics", force: :cascade do |t|
+    t.text     "dimensions"
+    t.text     "metrics"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "message_templates", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at",   null: false
@@ -71,13 +78,8 @@ ActiveRecord::Schema.define(version: 20151006202817) do
     t.datetime "sent_from_buffer_at"
     t.string   "buffer_update_id"
     t.text     "statistics"
-  end
-
-  create_table "metrics", force: :cascade do |t|
-    t.text     "dimensions"
-    t.text     "metrics"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "service_update_id"
+    t.text     "service_statistics"
   end
 
   create_table "platforms", force: :cascade do |t|

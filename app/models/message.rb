@@ -1,6 +1,7 @@
 class Message < ActiveRecord::Base
   serialize :content
   serialize :statistics
+  serialize :service_statistics
 
   validates :content, presence: true
   validates :campaign, presence: true
