@@ -147,7 +147,7 @@ class DataImporter
         }
 
         dimension_metrics[[source, medium, 'google_analytics']].metrics = metrics
-        dimension_metrics.save
+        dimension_metrics[[source, medium, 'google_analytics']].save
       end
     end
   end
