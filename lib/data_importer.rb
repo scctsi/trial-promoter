@@ -113,4 +113,54 @@ class DataImporter
     twitter_organic_twitter_analytics_dimension_metric.metrics = twitter_organic_metrics
     twitter_organic_twitter_analytics_dimension_metric.save
   end
+
+  def import_google_analytics_data
+    dimension_metrics = {}
+
+    dimensions = ['twitter', 'organic', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+    dimensions = ['facebook', 'organic', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+    dimensions = ['facebook', 'paid', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+    dimensions = ['google', 'paid', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+    dimensions = ['youtube_search_results', 'paid', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+
+    csv_text = File.read(Rails.root.join('data_dumps', 'google-metrics-all.csv'))
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      if row[0] == 'trial-promoter'
+        source = row[1].split('/')[0].strip
+        medium = row[1].split('/')[1].strip
+
+        metrics = {
+          'sessions' => row[2],
+          '%New Sessions' => row[3],
+          'New Users' => row[4],
+          'Bounce Rate' => row[5],
+          'Pages/Session' => row[6],
+          'Avg. Session Duration' => row[7],
+          'Conversion Rate' => row[8],
+          'Conversions' => row[9]
+        }
+
+        dimension_metrics[[source, medium, 'google_analytics']].metrics = metrics
+        dimension_metrics.save
+      end
+    end
+  end
+
+  def process_google_analytics_data
+
+  end
+
+  def find_or_build_dimension_metric(dimensions)
+    if DimensionMetric.where("dimensions = ?", dimensions.to_yaml).count != 0
+      return DimensionMetric.where("dimensions = ?", dimensions.to_yaml)[0]
+    else
+      return DimensionMetric.new(:dimensions => dimensions)
+    end
+  end
 end

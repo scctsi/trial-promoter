@@ -6,4 +6,6 @@ task :update_data => :environment do
   d.process_buffer_data
   d.import_twitter_data
   d.process_twitter_data
+  d.import_google_analytics_data
+  d.process_google_analytics_data
 end

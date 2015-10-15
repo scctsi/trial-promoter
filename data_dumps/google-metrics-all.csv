@@ -1,0 +1,26 @@
+Campaign,Source / Medium,Sessions,%New Sessions,New Users,Bounce Rate,Pages/Session,Avg. Session Duration,csdContactFormSubmit (Goal 1 Conversion Rate),csdContactFormSubmit (Goal 1 Completions),csdContactFormSubmit (Goal 1 Starts)
+(not set),(direct) / (none),333,81.68168168,272,55.55555556,2.867867868,123.4114114,1.501501502,5,5
+(not set),bing / organic,4,75,3,50,6,123,0,0,0
+(not set),brucepark.io / referral,3,66.66666667,2,100,1,0,0,0,0
+(not set),facebook.com / referral,10,60,6,60,2.3,130.2,0,0,0
+(not set),google / organic,103,79.61165049,82,57.2815534,2.825242718,151.1359223,0,0,0
+(not set),google.ee / referral,1,100,1,100,1,0,0,0,0
+(not set),keck.usc.edu / referral,14,85.71428571,12,28.57142857,4.928571429,81.07142857,0,0,0
+(not set),l.facebook.com / referral,11,100,11,90.90909091,1.181818182,1.272727273,0,0,0
+(not set),m.facebook.com / referral,10,70,7,100,1,0,0,0,0
+(not set),oprs.usc.edu / referral,21,90.47619048,19,23.80952381,3.952380952,87.52380952,4.761904762,1,1
+(not set),page.report / referral,4,0,0,25,2.75,86.75,0,0,0
+(not set),pharmaetrack.com / referral,1,100,1,100,1,0,0,0,0
+(not set),profiles.sc-ctsi.org / referral,24,58.33333333,14,66.66666667,1.333333333,51.91666667,0,0,0
+(not set),research.usc.edu / referral,41,78.04878049,32,21.95121951,5.536585366,156.5121951,4.87804878,2,2
+(not set),sc-ctsi.org / referral,41,63.41463415,26,63.41463415,2.170731707,52.12195122,0,0,0
+(not set),t.co / referral,6,100,6,100,1,0,0,0,0
+(not set),tp.sc-ctsi.org / referral,3,0,0,33.33333333,4,66,0,0,0
+(not set),universityofsoutherncalifornia.cmail19.com / referral,2,100,2,100,1,0,0,0,0
+(not set),yahoo / organic,2,100,2,50,1.5,5,0,0,0
+99c5bdc872-Trial_Promoter_email_9_9_2015,Trial Promoter Email - IRB-approved Project / email,2,0,0,50,2,8,0,0,0
+buffer,twitter.com / social,1,0,0,0,4,46,0,0,0
+trial-promoter,facebook / paid,101,96.03960396,97,100,1,0,0,0,0
+trial-promoter,google / paid,89,83.14606742,74,87.64044944,1.438202247,39.95505618,0,0,0
+trial-promoter,twitter / organic,27,62.96296296,17,85.18518519,1.259259259,60.40740741,3.703703704,1,1
+trial-promoter,youtube_search_results / paid,4,75,3,100,1,0,0,0,0
