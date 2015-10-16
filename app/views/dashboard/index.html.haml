@@ -237,13 +237,14 @@
           Conversions
     %tbody
       - google_analytics_metrics.each do |key, value|
-        %tr
-          %td= key.join('/').to_s
-          %td= value.metrics['sessions'].to_s
-          %td= value.metrics['percentage_new_sessions'].to_s
-          %td= value.metrics['new_users'].to_s
-          %td= value.metrics['bounce_rate'].to_s
-          %td= value.metrics['pages_per_session'].to_s
-          %td= value.metrics['average_session_duration'].to_s
-          %td= value.metrics['conversion_rate'].to_s
-          %td= value.metrics['conversions'].to_s
+        - if value != nil
+          %tr
+            %td= key.join('/').to_s
+            %td= value.metrics['sessions'].to_s
+            %td= value.metrics['percentage_new_sessions'].to_s
+            %td= value.metrics['new_users'].to_s
+            %td= value.metrics['bounce_rate'].to_s
+            %td= value.metrics['pages_per_session'].to_s
+            %td= value.metrics['average_session_duration'].to_s
+            %td= value.metrics['conversion_rate'].to_s
+            %td= value.metrics['conversions'].to_s
