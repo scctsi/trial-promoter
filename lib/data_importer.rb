@@ -137,13 +137,13 @@ class DataImporter
 
         metrics = {
           'sessions' => row[2],
-          '%New Sessions' => row[3],
-          'New Users' => row[4],
-          'Bounce Rate' => row[5],
-          'Pages/Session' => row[6],
-          'Avg. Session Duration' => row[7],
-          'Conversion Rate' => row[8],
-          'Conversions' => row[9]
+          'percentage_new_sessions' => row[3],
+          'new_users' => row[4],
+          'bounce_rate' => row[5],
+          'pages_per_session' => row[6],
+          'average_session_duration' => row[7],
+          'conversion_rate' => row[8],
+          'conversions' => row[9]
         }
 
         dimension_metrics[[source, medium, 'google_analytics']].metrics = metrics

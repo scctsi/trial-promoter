@@ -1,14 +1,23 @@
-- dimension_metrics = DimensionMetric.all
 - twitter_organic_dimension_metric = DimensionMetric.where("dimensions = ?", ['twitter', 'organic'].to_yaml)[0]
 - facebook_organic_dimension_metric = DimensionMetric.where("dimensions = ?", ['facebook', 'organic'].to_yaml)[0]
 - facebook_paid_dimension_metric = DimensionMetric.where("dimensions = ?", ['facebook', 'paid'].to_yaml)[0]
 - twitter_organic_twitter_analytics_dimension_metric = DimensionMetric.where("dimensions = ?", ['twitter', 'organic', 'twitter_analytics'].to_yaml)[0]
+
+- google_analytics_metrics = {}
+- google_analytics_metrics[['twitter', 'organic', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['twitter', 'organic', 'google_analytics'].to_yaml)[0]
+- google_analytics_metrics[['facebook', 'organic', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['facebook', 'organic', 'google_analytics'].to_yaml)[0]
+- google_analytics_metrics[['facebook', 'paid', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['facebook', 'paid', 'google_analytics'].to_yaml)[0]
+- google_analytics_metrics[['google', 'paid', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['google', 'paid', 'google_analytics'].to_yaml)[0]
+- google_analytics_metrics[['youtube_search_results', 'paid', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['youtube_search_results', 'paid', 'google_analytics'].to_yaml)[0]
 %h1.ui.block.header
   Dashboard
 .ui.top.attached.tabular.menu
-  %a.active.item{ "data-tab" => 'rngagement' }
+  %a.active.item{ "data-tab" => 'engagement' }
     %h3.ui.header
       Engagement
+  %a.active.item{ "data-tab" => 'conversion' }
+    %h3.ui.header
+      Conversion
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'engagement'}
   %table.ui.celled.padded.table
     %thead
@@ -204,3 +213,38 @@
               N/A
             .label
               User Profile Clicks
+
+.ui.bottom.attached.active.tab.segment{ "data-tab" => 'conversion'}
+  %table.ui.celled.padded.table
+    %thead
+      %tr
+        %th
+          Dimension
+        %th
+          Sessions
+        %th
+          %New Sessions
+        %th
+          New Users
+        %th
+          Bounce Rate
+        %th
+          Pages/Session
+        %th
+          Avg. Session Duration
+        %th
+          Conversion Rate
+        %th
+          Conversions
+    %tbody
+      - google_analytics_metrics.each do |key, value|
+        %tr
+          %td= key.join('/')
+          %td= value.metrics['sessions']
+          %td= value.metrics['percentage_new_sessions']
+          %td= value.metrics['new_users']
+          %td= value.metrics['bounce_rate']
+          %td= value.metrics['pages_per_session']
+          %td= value.metrics['average_session_duration']
+          %td= value.metrics['conversion_rate']
+          %td= value.metrics['conversions']
