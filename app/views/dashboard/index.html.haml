@@ -213,7 +213,6 @@
               N/A
             .label
               User Profile Clicks
-
 .ui.bottom.attached.active.tab.segment{ "data-tab" => 'conversion'}
   %table.ui.celled.padded.table
     %thead
@@ -239,12 +238,12 @@
     %tbody
       - google_analytics_metrics.each do |key, value|
         %tr
-          %td= key.join('/')
-          %td= value.metrics['sessions']
-          %td= value.metrics['percentage_new_sessions']
-          %td= value.metrics['new_users']
-          %td= value.metrics['bounce_rate']
-          %td= value.metrics['pages_per_session']
-          %td= value.metrics['average_session_duration']
-          %td= value.metrics['conversion_rate']
-          %td= value.metrics['conversions']
+          %td= key.join('/').to_s
+          %td= value.metrics['sessions'].to_s
+          %td= value.metrics['percentage_new_sessions'].to_s
+          %td= value.metrics['new_users'].to_s
+          %td= value.metrics['bounce_rate'].to_s
+          %td= value.metrics['pages_per_session'].to_s
+          %td= value.metrics['average_session_duration'].to_s
+          %td= value.metrics['conversion_rate'].to_s
+          %td= value.metrics['conversions'].to_s
