@@ -127,6 +127,7 @@ class DataImporter
     dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
     dimensions = ['youtube_search_results', 'paid', 'google_analytics']
     dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+    dimensions = ['profiles', 'organic', 'google_analytics']
 
     csv_text = File.read(Rails.root.join('data_dumps', 'google-metrics-all.csv'))
     csv = CSV.parse(csv_text, :headers => true)
@@ -144,6 +145,29 @@ class DataImporter
           'average_session_duration' => row[7],
           'conversion_rate' => row[8],
           'conversions' => row[9]
+        }
+
+        dimension_metrics[[source, medium, 'google_analytics']].metrics = metrics
+        dimension_metrics[[source, medium, 'google_analytics']].save
+      end
+    end
+
+    csv_text = File.read(Rails.root.join('data_dumps', 'google-metrics-all-referrer.csv'))
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      if row[0] == 'profiles.sc-ctsi.org/shindigusc/gadgets/ifr'
+        source = 'profiles'
+        medium = 'organic'
+
+        metrics = {
+            'sessions' => row[2],
+            'percentage_new_sessions' => row[3],
+            'new_users' => row[4],
+            'bounce_rate' => row[5],
+            'pages_per_session' => row[6],
+            'average_session_duration' => row[7],
+            'conversion_rate' => row[8],
+            'conversions' => row[9]
         }
 
         dimension_metrics[[source, medium, 'google_analytics']].metrics = metrics

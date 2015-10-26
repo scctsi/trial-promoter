@@ -9,6 +9,7 @@
 - google_analytics_metrics[['facebook', 'paid', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['facebook', 'paid', 'google_analytics'].to_yaml)[0]
 - google_analytics_metrics[['google', 'paid', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['google', 'paid', 'google_analytics'].to_yaml)[0]
 - google_analytics_metrics[['youtube_search_results', 'paid', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['youtube_search_results', 'paid', 'google_analytics'].to_yaml)[0]
+- google_analytics_metrics[['profiles', 'organic', 'google_analytics']] = DimensionMetric.where("dimensions = ?", ['profiles', 'organic', 'google_analytics'].to_yaml)[0]
 %h1.ui.block.header
   Dashboard
 .ui.top.attached.tabular.menu
