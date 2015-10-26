@@ -242,10 +242,10 @@
           %tr
             %td= key.join('/').to_s
             %td= value.metrics['sessions'].to_s
-            %td= value.metrics['percentage_new_sessions'].round(2).to_s
+            %td= value.metrics['percentage_new_sessions'].to_f.round(2).to_s
             %td= value.metrics['new_users'].to_s
-            %td= value.metrics['bounce_rate'].round(2).to_s
-            %td= value.metrics['pages_per_session'].round(2).to_s
-            %td= value.metrics['average_session_duration'].round(2).to_s
-            %td= value.metrics['conversion_rate'].round(2).to_s
+            %td= value.metrics['bounce_rate'].to_f.round(2).to_s
+            %td= value.metrics['pages_per_session'].to_f.round(2).to_s
+            %td= value.metrics['average_session_duration'].to_f.round(2).to_s
+            %td= value.metrics['conversion_rate'].to_f.round(2).to_s
             %td= value.metrics['conversions'].to_s
