@@ -128,6 +128,7 @@ class DataImporter
     dimensions = ['youtube_search_results', 'paid', 'google_analytics']
     dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
     dimensions = ['profiles', 'organic', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
 
     csv_text = File.read(Rails.root.join('data_dumps', 'google-metrics-all.csv'))
     csv = CSV.parse(csv_text, :headers => true)
