@@ -114,6 +114,18 @@ class DataImporter
     twitter_organic_twitter_analytics_dimension_metric.save
   end
 
+  def import_facebook_data
+    csv_text = File.read(Rails.root.join('data_dumps', 'twitter_activity_metrics_20150901_20151001.csv'))
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      twitter_messages = Message.where('service_update_id = ?', row[0].to_s)
+      if twitter_messages.count > 0
+        twitter_messages[0].service_statistics = { 'retweets' => row[7].to_i, 'favorites' => row[9].to_i, 'replies' => row[8].to_i, 'clicks' => row[11].to_i, 'user_profile_clicks' => row[10].to_i, 'impressions' => row[4].to_i}
+        twitter_messages[0].save
+      end
+    end
+  end
+
   def import_google_analytics_data
     dimension_metrics = {}
 
@@ -128,6 +140,8 @@ class DataImporter
     dimensions = ['youtube_search_results', 'paid', 'google_analytics']
     dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
     dimensions = ['profiles', 'organic', 'google_analytics']
+    dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
+    dimensions = ['outside_campaign', 'all', 'google_analytics']
     dimension_metrics[dimensions] = find_or_build_dimension_metric(dimensions)
 
     csv_text = File.read(Rails.root.join('data_dumps', 'google-metrics-all.csv'))
